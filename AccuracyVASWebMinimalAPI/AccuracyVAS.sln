@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccuracyVASMinimalAPI", "AccuracyVASMinimalAPI.csproj", "{20C034AC-11F0-4209-9E8B-E259C6E144FB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccuracyVASData", "..\AccuracyVASWebData\AccuracyVASData.csproj", "{63DA9E3C-A75A-40AC-B570-2202FF7C63C1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccuracyVASBussiness", "..\AccuracyVASWebBussiness\AccuracyVASBussiness.csproj", "{EAE994EE-B5EE-420A-86EC-EA0B5D0B13C4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccuracyVASModel", "..\AccuracyVASWebModel\AccuracyVASModel.csproj", "{97764641-995F-4F89-867F-3530253ED646}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20C034AC-11F0-4209-9E8B-E259C6E144FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20C034AC-11F0-4209-9E8B-E259C6E144FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20C034AC-11F0-4209-9E8B-E259C6E144FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20C034AC-11F0-4209-9E8B-E259C6E144FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63DA9E3C-A75A-40AC-B570-2202FF7C63C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63DA9E3C-A75A-40AC-B570-2202FF7C63C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63DA9E3C-A75A-40AC-B570-2202FF7C63C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63DA9E3C-A75A-40AC-B570-2202FF7C63C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAE994EE-B5EE-420A-86EC-EA0B5D0B13C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAE994EE-B5EE-420A-86EC-EA0B5D0B13C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAE994EE-B5EE-420A-86EC-EA0B5D0B13C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAE994EE-B5EE-420A-86EC-EA0B5D0B13C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97764641-995F-4F89-867F-3530253ED646}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97764641-995F-4F89-867F-3530253ED646}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97764641-995F-4F89-867F-3530253ED646}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97764641-995F-4F89-867F-3530253ED646}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A5393271-E03A-4F93-B705-014FFCBE4BFD}
+	EndGlobalSection
+EndGlobal

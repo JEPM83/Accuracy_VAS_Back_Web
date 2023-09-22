@@ -1,0 +1,12 @@
+C:\Proyectos\Cenares\CenaresMinimalApi\GIt\wms-mobile-app_back\CenaresModel\bin\Release\net6.0\CenaresModel.deps.json
+C:\Proyectos\Cenares\CenaresMinimalApi\GIt\wms-mobile-app_back\CenaresModel\bin\Release\net6.0\CenaresModel.dll
+C:\Proyectos\Cenares\CenaresMinimalApi\GIt\wms-mobile-app_back\CenaresModel\bin\Release\net6.0\CenaresModel.pdb
+C:\Proyectos\Cenares\CenaresMinimalApi\GIt\wms-mobile-app_back\CenaresModel\obj\Release\net6.0\CenaresModel.csproj.AssemblyReference.cache
+C:\Proyectos\Cenares\CenaresMinimalApi\GIt\wms-mobile-app_back\CenaresModel\obj\Release\net6.0\CenaresModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Proyectos\Cenares\CenaresMinimalApi\GIt\wms-mobile-app_back\CenaresModel\obj\Release\net6.0\CenaresModel.AssemblyInfoInputs.cache
+C:\Proyectos\Cenares\CenaresMinimalApi\GIt\wms-mobile-app_back\CenaresModel\obj\Release\net6.0\CenaresModel.AssemblyInfo.cs
+C:\Proyectos\Cenares\CenaresMinimalApi\GIt\wms-mobile-app_back\CenaresModel\obj\Release\net6.0\CenaresModel.csproj.CoreCompileInputs.cache
+C:\Proyectos\Cenares\CenaresMinimalApi\GIt\wms-mobile-app_back\CenaresModel\obj\Release\net6.0\CenaresModel.dll
+C:\Proyectos\Cenares\CenaresMinimalApi\GIt\wms-mobile-app_back\CenaresModel\obj\Release\net6.0\refint\CenaresModel.dll
+C:\Proyectos\Cenares\CenaresMinimalApi\GIt\wms-mobile-app_back\CenaresModel\obj\Release\net6.0\CenaresModel.pdb
+C:\Proyectos\Cenares\CenaresMinimalApi\GIt\wms-mobile-app_back\CenaresModel\obj\Release\net6.0\ref\CenaresModel.dll
