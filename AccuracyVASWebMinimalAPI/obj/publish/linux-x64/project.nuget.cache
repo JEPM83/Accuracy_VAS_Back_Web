@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8GqyMFW1ZQC+cnrHjt61WEKX0ZoeussVHQBFHkrwGvz0Xxv7flLvC6GWx3jBl1rv6KJraEfaBdaA/pit6EDd3w==",
+  "dgSpecHash": "R4Rt0PSRgSwaj2CjitpVWX/Fcaazi9+1ul6hnofRZcGIsbJpd44RrW6N2BUO0IKHoXm1u1n7jKqPntn1pa1c8Q==",
   "success": true,
-  "projectFilePath": "D:\\Accuracy\\WMS\\Accuracy_WMS_Back_Web\\AccuracyWMSWebMinimalAPI\\AccuracyMinimalAPI.csproj",
+  "projectFilePath": "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebMinimalAPI\\AccuracyVASMinimalAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Eduardo\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\Eduardo\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.0\\microsoft.aspnetcore.authentication.jwtbearer.6.0.0.nupkg.sha512",

@@ -1,5 +1,4 @@
 ﻿using AccuracyData.ObjectosDA;
-using AccuracyModel.Inventory;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -51,7 +50,6 @@ namespace AccuracyData.SecurityDA
                 plListDetail = null;
             }
         }
-
         public List<UserResponse> Logout(UserRequest model,string cnx)
         {
             var plListDetail = new List<UserResponse>();

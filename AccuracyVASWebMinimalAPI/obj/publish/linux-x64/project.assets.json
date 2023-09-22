@@ -454,27 +454,27 @@
           }
         }
       },
-      "AccuracyBussiness/1.0.0": {
+      "AccuracyVASBussiness/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "AccuracyData": "1.0.0",
-          "AccuracyModel": "1.0.0",
+          "AccuracyVASData": "1.0.0",
+          "AccuracyVASModel": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.0",
           "Microsoft.IdentityModel.Tokens": "6.10.0"
         },
         "compile": {
-          "bin/placeholder/AccuracyBussiness.dll": {}
+          "bin/placeholder/AccuracyVASBussiness.dll": {}
         },
         "runtime": {
-          "bin/placeholder/AccuracyBussiness.dll": {}
+          "bin/placeholder/AccuracyVASBussiness.dll": {}
         }
       },
-      "AccuracyData/1.0.0": {
+      "AccuracyVASData/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "AccuracyModel": "1.0.0",
+          "AccuracyVASModel": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.0",
           "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
           "Microsoft.IdentityModel.Tokens": "6.10.0",
@@ -482,13 +482,13 @@
           "System.Data.SqlClient": "4.8.3"
         },
         "compile": {
-          "bin/placeholder/AccuracyData.dll": {}
+          "bin/placeholder/AccuracyVASData.dll": {}
         },
         "runtime": {
-          "bin/placeholder/AccuracyData.dll": {}
+          "bin/placeholder/AccuracyVASData.dll": {}
         }
       },
-      "AccuracyModel/1.0.0": {
+      "AccuracyVASModel/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
@@ -496,10 +496,10 @@
           "Microsoft.IdentityModel.Tokens": "6.10.0"
         },
         "compile": {
-          "bin/placeholder/AccuracyModel.dll": {}
+          "bin/placeholder/AccuracyVASModel.dll": {}
         },
         "runtime": {
-          "bin/placeholder/AccuracyModel.dll": {}
+          "bin/placeholder/AccuracyVASModel.dll": {}
         }
       }
     },
@@ -896,27 +896,27 @@
           }
         }
       },
-      "AccuracyBussiness/1.0.0": {
+      "AccuracyVASBussiness/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "AccuracyData": "1.0.0",
-          "AccuracyModel": "1.0.0",
+          "AccuracyVASData": "1.0.0",
+          "AccuracyVASModel": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.0",
           "Microsoft.IdentityModel.Tokens": "6.10.0"
         },
         "compile": {
-          "bin/placeholder/AccuracyBussiness.dll": {}
+          "bin/placeholder/AccuracyVASBussiness.dll": {}
         },
         "runtime": {
-          "bin/placeholder/AccuracyBussiness.dll": {}
+          "bin/placeholder/AccuracyVASBussiness.dll": {}
         }
       },
-      "AccuracyData/1.0.0": {
+      "AccuracyVASData/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "AccuracyModel": "1.0.0",
+          "AccuracyVASModel": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.0",
           "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
           "Microsoft.IdentityModel.Tokens": "6.10.0",
@@ -924,13 +924,13 @@
           "System.Data.SqlClient": "4.8.3"
         },
         "compile": {
-          "bin/placeholder/AccuracyData.dll": {}
+          "bin/placeholder/AccuracyVASData.dll": {}
         },
         "runtime": {
-          "bin/placeholder/AccuracyData.dll": {}
+          "bin/placeholder/AccuracyVASData.dll": {}
         }
       },
-      "AccuracyModel/1.0.0": {
+      "AccuracyVASModel/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
@@ -938,10 +938,10 @@
           "Microsoft.IdentityModel.Tokens": "6.10.0"
         },
         "compile": {
-          "bin/placeholder/AccuracyModel.dll": {}
+          "bin/placeholder/AccuracyVASModel.dll": {}
         },
         "runtime": {
-          "bin/placeholder/AccuracyModel.dll": {}
+          "bin/placeholder/AccuracyVASModel.dll": {}
         }
       }
     }
@@ -1762,26 +1762,26 @@
         "version.txt"
       ]
     },
-    "AccuracyBussiness/1.0.0": {
+    "AccuracyVASBussiness/1.0.0": {
       "type": "project",
-      "path": "../AccuracyWMSWebBussiness/AccuracyBussiness.csproj",
-      "msbuildProject": "../AccuracyWMSWebBussiness/AccuracyBussiness.csproj"
+      "path": "../AccuracyVASWebBussiness/AccuracyVASBussiness.csproj",
+      "msbuildProject": "../AccuracyVASWebBussiness/AccuracyVASBussiness.csproj"
     },
-    "AccuracyData/1.0.0": {
+    "AccuracyVASData/1.0.0": {
       "type": "project",
-      "path": "../AccuracyWMSWebData/AccuracyData.csproj",
-      "msbuildProject": "../AccuracyWMSWebData/AccuracyData.csproj"
+      "path": "../AccuracyVASWebData/AccuracyVASData.csproj",
+      "msbuildProject": "../AccuracyVASWebData/AccuracyVASData.csproj"
     },
-    "AccuracyModel/1.0.0": {
+    "AccuracyVASModel/1.0.0": {
       "type": "project",
-      "path": "../AccuracyWMSWebModel/AccuracyModel.csproj",
-      "msbuildProject": "../AccuracyWMSWebModel/AccuracyModel.csproj"
+      "path": "../AccuracyVASWebModel/AccuracyVASModel.csproj",
+      "msbuildProject": "../AccuracyVASWebModel/AccuracyVASModel.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "AccuracyBussiness >= 1.0.0",
-      "AccuracyModel >= 1.0.0",
+      "AccuracyVASBussiness >= 1.0.0",
+      "AccuracyVASModel >= 1.0.0",
       "Dapper >= 2.0.123",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.0",
       "Microsoft.IdentityModel.Tokens >= 6.10.0",
@@ -1795,11 +1795,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Accuracy\\WMS\\Accuracy_WMS_Back_Web\\AccuracyWMSWebMinimalAPI\\AccuracyMinimalAPI.csproj",
-      "projectName": "AccuracyMinimalAPI",
-      "projectPath": "D:\\Accuracy\\WMS\\Accuracy_WMS_Back_Web\\AccuracyWMSWebMinimalAPI\\AccuracyMinimalAPI.csproj",
+      "projectUniqueName": "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebMinimalAPI\\AccuracyVASMinimalAPI.csproj",
+      "projectName": "AccuracyVASMinimalAPI",
+      "projectPath": "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebMinimalAPI\\AccuracyVASMinimalAPI.csproj",
       "packagesPath": "C:\\Users\\Eduardo\\.nuget\\packages\\",
-      "outputPath": "D:\\Accuracy\\WMS\\Accuracy_WMS_Back_Web\\AccuracyWMSWebMinimalAPI\\obj\\publish\\linux-x64\\",
+      "outputPath": "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebMinimalAPI\\obj\\publish\\linux-x64\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1821,11 +1821,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Accuracy\\WMS\\Accuracy_WMS_Back_Web\\AccuracyWMSWebBussiness\\AccuracyBussiness.csproj": {
-              "projectPath": "D:\\Accuracy\\WMS\\Accuracy_WMS_Back_Web\\AccuracyWMSWebBussiness\\AccuracyBussiness.csproj"
+            "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebBussiness\\AccuracyVASBussiness.csproj": {
+              "projectPath": "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebBussiness\\AccuracyVASBussiness.csproj"
             },
-            "D:\\Accuracy\\WMS\\Accuracy_WMS_Back_Web\\AccuracyWMSWebModel\\AccuracyModel.csproj": {
-              "projectPath": "D:\\Accuracy\\WMS\\Accuracy_WMS_Back_Web\\AccuracyWMSWebModel\\AccuracyModel.csproj"
+            "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebModel\\AccuracyVASModel.csproj": {
+              "projectPath": "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebModel\\AccuracyVASModel.csproj"
             }
           }
         }

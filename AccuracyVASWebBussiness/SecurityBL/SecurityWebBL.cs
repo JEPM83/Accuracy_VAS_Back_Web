@@ -1,6 +1,4 @@
-﻿using AccuracyData.ForecastDA;
-using AccuracyData.SecurityDA;
-using AccuracyModel.Forecast;
+﻿using AccuracyData.SecurityDA;
 using AccuracyModel.Security;
 using System;
 using System.Collections.Generic;

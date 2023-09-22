@@ -28,29 +28,5 @@ namespace AccuracyBussiness.PrinterBL
             BodyCorrelativoLPNWeb resp = poObjects.SP_PRINTER_WEB_GET_LPN_CORRELATIVE(model, cnx);
             return resp;
         }
-        public BodyGenerabultos SP_PRINTER_WEB_POST_CONVERTED_PACK(RequestGenerabultos model, string cnx)
-        {
-            PrinterWebDA poObjects = new PrinterWebDA();
-            BodyGenerabultos resp = poObjects.SP_PRINTER_WEB_POST_CONVERTED_PACK(model, cnx);
-            return resp;
-        }
-        public List<BodyCabeceraBultos> SP_PRINTER_WEB_GET_PACK(RequestCabeceraBultos model, string cnx)
-        {
-            PrinterWebDA poObjects = new PrinterWebDA();
-            List<BodyCabeceraBultos> resp = poObjects.SP_PRINTER_WEB_GET_PACK(model, cnx);
-            return resp;
-        }
-        public List<BodyDetalleBultos> SP_PRINTER_WEB_GET_PACK_DETAIL(RequestDetalleBultos model, string cnx)
-        {
-            PrinterWebDA poObjects = new PrinterWebDA();
-            List<BodyDetalleBultos> resp = poObjects.SP_PRINTER_WEB_GET_PACK_DETAIL(model, cnx);
-            return resp;
-        }
-        public List<ResponseBultoxBulto> SP_PRINTER_WEB_POST_INSERT_PRINTER_BULTO(RequestBultoxBulto model, string cnx)
-        {
-            PrinterWebDA poObjects = new PrinterWebDA();
-            List<ResponseBultoxBulto> resp = poObjects.SP_PRINTER_WEB_POST_INSERT_PRINTER_BULTO(model, cnx);
-            return resp;
-        }
     }
 }

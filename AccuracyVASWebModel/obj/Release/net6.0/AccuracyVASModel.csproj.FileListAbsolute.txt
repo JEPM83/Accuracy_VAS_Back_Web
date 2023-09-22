@@ -1,0 +1,12 @@
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebModel\bin\Release\net6.0\AccuracyVASModel.deps.json
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebModel\bin\Release\net6.0\AccuracyVASModel.dll
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebModel\bin\Release\net6.0\AccuracyVASModel.pdb
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebModel\obj\Release\net6.0\AccuracyVASModel.csproj.AssemblyReference.cache
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebModel\obj\Release\net6.0\AccuracyVASModel.GeneratedMSBuildEditorConfig.editorconfig
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebModel\obj\Release\net6.0\AccuracyVASModel.AssemblyInfoInputs.cache
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebModel\obj\Release\net6.0\AccuracyVASModel.AssemblyInfo.cs
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebModel\obj\Release\net6.0\AccuracyVASModel.csproj.CoreCompileInputs.cache
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebModel\obj\Release\net6.0\AccuracyVASModel.dll
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebModel\obj\Release\net6.0\refint\AccuracyVASModel.dll
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebModel\obj\Release\net6.0\AccuracyVASModel.pdb
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebModel\obj\Release\net6.0\ref\AccuracyVASModel.dll
