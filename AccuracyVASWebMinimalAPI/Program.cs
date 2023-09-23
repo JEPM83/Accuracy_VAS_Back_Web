@@ -199,7 +199,7 @@ app.MapPost("/accuracy/vas/api/v1/GetWarehouseUser",
                     {
                         title = "Error",
                         message = "Ocurrió un error al acceder al servidor",
-                        type = "0"
+                        type = "1"
                     };
                     context.Response.StatusCode = StatusCodes.Status500InternalServerError;
                     return Results.Json(errorResponse);
@@ -211,7 +211,7 @@ app.MapPost("/accuracy/vas/api/v1/GetWarehouseUser",
                     {
                         title = "Warning",
                         message = "La instancia poBL no contiene datos",
-                        type = "0"
+                        type = "3"
                     };
                     context.Response.StatusCode = StatusCodes.Status400BadRequest;
                     return Results.Json(errorResponse);
@@ -228,7 +228,7 @@ app.MapPost("/accuracy/vas/api/v1/GetWarehouseUser",
                 {
                     title = "Error",
                     message = "Token invalido",
-                    type = "0"
+                    type = "1"
 
                 };
                 context.Response.StatusCode = StatusCodes.Status401Unauthorized;
@@ -241,7 +241,7 @@ app.MapPost("/accuracy/vas/api/v1/GetWarehouseUser",
                 {
                     title = "Error",
                     message = "Error al validar token",
-                    type = "0"
+                    type = "1"
                 };
                 context.Response.StatusCode = StatusCodes.Status401Unauthorized;
                 return Results.Json(errorResponse);
@@ -252,9 +252,9 @@ app.MapPost("/accuracy/vas/api/v1/GetWarehouseUser",
             // El usuario no está autenticado, devolvemos un error de autorización con mensaje JSON personalizado
             var errorResponse = new
             {
-                title = "Error",
+                title = "Warning",
                 message = "Usuario no autorizado",
-                type = "0"
+                type = "3"
             };
             context.Response.StatusCode = StatusCodes.Status401Unauthorized;
             return Results.Json(errorResponse);
@@ -326,7 +326,7 @@ app.MapPost("/accuracy/vas/api/v1/GetPrinter",
                     {
                         title = "Warning",
                         message = "Error al obtener los datos",
-                        type = "0"
+                        type = "3"
                     };
                     context.Response.StatusCode = StatusCodes.Status400BadRequest;
                     return Results.Json(errorResponse);
@@ -340,9 +340,9 @@ app.MapPost("/accuracy/vas/api/v1/GetPrinter",
             {
                 var errorResponse = new
                 {
-                    title = "Warning",
+                    title = "Error",
                     message = ex.Message.ToString(),
-                    type = "0"
+                    type = "1"
                 };
                 context.Response.StatusCode = StatusCodes.Status400BadRequest;
                 return Results.Json(errorResponse);
@@ -355,7 +355,7 @@ app.MapPost("/accuracy/vas/api/v1/GetPrinter",
             {
                 title = "Warning",
                 message = "Usuario no autenticado",
-                type = "0"
+                type = "3"
             };
             context.Response.StatusCode = StatusCodes.Status401Unauthorized;
             return Results.Json(errorResponse);
@@ -404,7 +404,7 @@ app.MapPost("/accuracy/vas/api/v1/PostInsertLPNPrinter",
                     {
                         title = "Warning",
                         message = "Error al obtener los datos",
-                        type = "0"
+                        type = "3"
                     };
                     context.Response.StatusCode = StatusCodes.Status400BadRequest;
                     return Results.Json(errorResponse);
@@ -418,9 +418,9 @@ app.MapPost("/accuracy/vas/api/v1/PostInsertLPNPrinter",
             {
                 var errorResponse = new
                 {
-                    title = "Warning",
+                    title = "Error",
                     message = ex.Message.ToString(),
-                    type = "0"
+                    type = "1"
                 };
                 context.Response.StatusCode = StatusCodes.Status400BadRequest;
                 return Results.Json(errorResponse);
@@ -433,7 +433,7 @@ app.MapPost("/accuracy/vas/api/v1/PostInsertLPNPrinter",
             {
                 title = "Warning",
                 message = "Usuario no autenticado",
-                type = "0"
+                type = "3"
             };
             context.Response.StatusCode = StatusCodes.Status401Unauthorized;
             return Results.Json(errorResponse);
@@ -482,7 +482,7 @@ app.MapPost("/accuracy/vas/api/v1/GetCorrelativeLPN",
                     {
                         title = "Warning",
                         message = "Error al obtener los datos",
-                        type = "0"
+                        type = "3"
                     };
                     context.Response.StatusCode = StatusCodes.Status400BadRequest;
                     return Results.Json(errorResponse);
@@ -496,9 +496,9 @@ app.MapPost("/accuracy/vas/api/v1/GetCorrelativeLPN",
             {
                 var errorResponse = new
                 {
-                    title = "Warning",
+                    title = "Error",
                     message = ex.Message.ToString(),
-                    type = "0"
+                    type = "1"
                 };
                 context.Response.StatusCode = StatusCodes.Status400BadRequest;
                 return Results.Json(errorResponse);
@@ -511,7 +511,7 @@ app.MapPost("/accuracy/vas/api/v1/GetCorrelativeLPN",
             {
                 title = "Warning",
                 message = "Usuario no autenticado",
-                type = "0"
+                type = "3"
             };
             context.Response.StatusCode = StatusCodes.Status401Unauthorized;
             return Results.Json(errorResponse);
@@ -562,7 +562,7 @@ app.MapPost("/accuracy/vas/api/v1/GetAttributeObject",
                     {
                         title = "Warning",
                         message = "Error al obtener los datos",
-                        type = "0"
+                        type = "3"
                     };
                     context.Response.StatusCode = StatusCodes.Status400BadRequest;
                     return Results.Json(errorResponse);
@@ -579,7 +579,7 @@ app.MapPost("/accuracy/vas/api/v1/GetAttributeObject",
                 {
                     title = "Warning",
                     message = ex.Message.ToString(),
-                    type = "0"
+                    type = "3"
                 };
                 context.Response.StatusCode = StatusCodes.Status400BadRequest;
                 return Results.Json(errorResponse);
@@ -592,7 +592,7 @@ app.MapPost("/accuracy/vas/api/v1/GetAttributeObject",
             {
                 title = "Warning",
                 message = "Usuario no autenticado",
-                type = "0"
+                type = "3"
             };
             context.Response.StatusCode = StatusCodes.Status401Unauthorized;
             return Results.Json(errorResponse);
@@ -630,7 +630,7 @@ app.MapPost("/accuracy/vas/api/v1/GetLineProduction",
                 {
                     title = "Warning",
                     message = "Sin registros",
-                    type = "0"
+                    type = "3"
                 };
                 context.Response.StatusCode = StatusCodes.Status400BadRequest;
                 return Results.Json(errorResponse);
@@ -640,7 +640,7 @@ app.MapPost("/accuracy/vas/api/v1/GetLineProduction",
                 {
                     title = "Warning",
                     message = resp[0].mensaje.ToString(),
-                    type = "0"
+                    type = "3"
                 };
                 context.Response.StatusCode = StatusCodes.Status400BadRequest;
                 return Results.Json(errorResponse);
@@ -654,9 +654,9 @@ app.MapPost("/accuracy/vas/api/v1/GetLineProduction",
                 // Ocurrió un error al validar el token, devolver un error de autorización con mensaje JSON personalizado
                 var errorResponse = new
                 {
-                    title = "Warning",
+                    title = "Error",
                     message = ex.Message.ToString(),
-                    type = "0"
+                    type = "1"
                 };
                 context.Response.StatusCode = StatusCodes.Status400BadRequest;
                 return Results.Json(errorResponse);
@@ -703,7 +703,7 @@ app.MapPost("/accuracy/vas/api/v1/GetOrder",
                     {
                         title = "Warning",
                         message = "Error al obtener los datos",
-                        type = "0"
+                        type = "3"
                     };
                     context.Response.StatusCode = StatusCodes.Status400BadRequest;
                     return Results.Json(errorResponse);
@@ -715,7 +715,7 @@ app.MapPost("/accuracy/vas/api/v1/GetOrder",
                     {
                         title = "Warning",
                         message = "No hay registro de pedidos",
-                        type = "0"
+                        type = "3"
                     };
                     context.Response.StatusCode = StatusCodes.Status400BadRequest;
                     return Results.Json(errorResponse);
@@ -731,9 +731,9 @@ app.MapPost("/accuracy/vas/api/v1/GetOrder",
                 // Ocurrió un error al validar el token, devolver un error de autorización con mensaje JSON personalizado
                 var errorResponse = new
                 {
-                    title = "Warning",
+                    title = "Error",
                     message = ex.Message.ToString(),
-                    type = "0"
+                    type = "1"
                 };
                 context.Response.StatusCode = StatusCodes.Status400BadRequest;
                 return Results.Json(errorResponse);
@@ -746,7 +746,7 @@ app.MapPost("/accuracy/vas/api/v1/GetOrder",
             {
                 title = "Warning",
                 message = "Usuario no autenticado",
-                type = "0"
+                type = "3"
             };
             context.Response.StatusCode = StatusCodes.Status401Unauthorized;
             return Results.Json(errorResponse);
@@ -793,7 +793,7 @@ app.MapPost("/accuracy/vas/api/v1/GetOrderDetailPicking",
                     {
                         title = "Warning",
                         message = "Error al obtener los datos",
-                        type = "0"
+                        type = "3"
                     };
                     context.Response.StatusCode = StatusCodes.Status400BadRequest;
                     return Results.Json(errorResponse);
@@ -805,7 +805,7 @@ app.MapPost("/accuracy/vas/api/v1/GetOrderDetailPicking",
                     {
                         title = "Warning",
                         message = "No hay registro de pedidos",
-                        type = "0"
+                        type = "3"
                     };
                     context.Response.StatusCode = StatusCodes.Status400BadRequest;
                     return Results.Json(errorResponse);
@@ -821,9 +821,9 @@ app.MapPost("/accuracy/vas/api/v1/GetOrderDetailPicking",
                 // Ocurrió un error al validar el token, devolver un error de autorización con mensaje JSON personalizado
                 var errorResponse = new
                 {
-                    title = "Warning",
+                    title = "Error",
                     message = ex.Message.ToString(),
-                    type = "0"
+                    type = "1"
                 };
                 context.Response.StatusCode = StatusCodes.Status400BadRequest;
                 return Results.Json(errorResponse);
@@ -836,7 +836,7 @@ app.MapPost("/accuracy/vas/api/v1/GetOrderDetailPicking",
             {
                 title = "Warning",
                 message = "Usuario no autenticado",
-                type = "0"
+                type = "3"
             };
             context.Response.StatusCode = StatusCodes.Status401Unauthorized;
             return Results.Json(errorResponse);
@@ -883,7 +883,7 @@ app.MapPost("/accuracy/vas/api/v1/GetOrderDetailTask",
                     {
                         title = "Warning",
                         message = "Error al obtener los datos",
-                        type = "0"
+                        type = "3"
                     };
                     context.Response.StatusCode = StatusCodes.Status400BadRequest;
                     return Results.Json(errorResponse);
@@ -895,7 +895,7 @@ app.MapPost("/accuracy/vas/api/v1/GetOrderDetailTask",
                     {
                         title = "Warning",
                         message = "No hay registro de pedidos",
-                        type = "0"
+                        type = "3"
                     };
                     context.Response.StatusCode = StatusCodes.Status400BadRequest;
                     return Results.Json(errorResponse);
@@ -911,9 +911,9 @@ app.MapPost("/accuracy/vas/api/v1/GetOrderDetailTask",
                 // Ocurrió un error al validar el token, devolver un error de autorización con mensaje JSON personalizado
                 var errorResponse = new
                 {
-                    title = "Warning",
+                    title = "Error",
                     message = ex.Message.ToString(),
-                    type = "0"
+                    type = "1"
                 };
                 context.Response.StatusCode = StatusCodes.Status400BadRequest;
                 return Results.Json(errorResponse);
@@ -926,7 +926,7 @@ app.MapPost("/accuracy/vas/api/v1/GetOrderDetailTask",
             {
                 title = "Warning",
                 message = "Usuario no autenticado",
-                type = "0"
+                type = "3"
             };
             context.Response.StatusCode = StatusCodes.Status401Unauthorized;
             return Results.Json(errorResponse);
@@ -935,6 +935,96 @@ app.MapPost("/accuracy/vas/api/v1/GetOrderDetailTask",
     .Accepts<TaskRequest>("application/json")
     .Produces<TaskRequest>(StatusCodes.Status200OK)
     .WithName("GetOrderDetailTask")
+    .WithTags("Vas");
+//
+app.MapPost("/accuracy/vas/api/v1/PostStartTask",
+    [AllowAnonymous] async ([FromBody] InicioTareaRequest obj, HttpContext context) =>
+    {
+        var authorizationHeader = context.Request.Headers["Authorization"].FirstOrDefault();
+
+        if (!StringValues.IsNullOrEmpty(authorizationHeader) && authorizationHeader.StartsWith("Bearer "))
+        {
+            var token = authorizationHeader.Substring("Bearer ".Length).Trim();
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]));
+            var validationParameters = new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = true,
+                ValidIssuer = builder.Configuration["Jwt:Issuer"],
+                ValidAudience = builder.Configuration["Jwt:Audience"],
+                IssuerSigningKey = key
+            };
+
+            try
+            {
+                // Intenta validar el token
+                SecurityToken validatedToken;
+                var principal = tokenHandler.ValidateToken(token, validationParameters, out validatedToken);
+
+                // El token es válido, puedes continuar con la lógica de la ruta
+                AccuracyBussiness.VasBL.VasWebBL poBL = new AccuracyBussiness.VasBL.VasWebBL();
+
+                if (poBL == null || string.IsNullOrEmpty(poBL.ToString()))
+                {
+                    var errorResponse = new
+                    {
+                        title = "Warning",
+                        message = "Error al obtener el resultado del registro de inicio de tarea VAS",
+                        type = "3"
+                    };
+                    context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                    return Results.Json(errorResponse);
+                }
+                List<InicioTareaResponse> resp = poBL.POST_START_TASK_VAS(obj, connString);
+                if (resp == null || resp.Count == 0)
+                {
+                    var errorResponse = new
+                    {
+                        title = "Warning",
+                        message = "No se registro tarea",
+                        type = "3"
+                    };
+                    context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                    return Results.Json(errorResponse);
+                }
+                else
+                {
+                    context.Response.StatusCode = StatusCodes.Status200OK;
+                    return Results.Ok(resp);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Ocurrió un error al validar el token, devolver un error de autorización con mensaje JSON personalizado
+                var errorResponse = new
+                {
+                    title = "Error",
+                    message = ex.Message.ToString(),
+                    type = "1"
+                };
+                context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                return Results.Json(errorResponse);
+            }
+        }
+        else
+        {
+            // El usuario no está autenticado, devolvemos un error de autorización con mensaje JSON personalizado
+            var errorResponse = new
+            {
+                title = "Warning",
+                message = "Usuario no autenticado",
+                type = "3"
+            };
+            context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+            return Results.Json(errorResponse);
+        }
+    })
+    .Accepts<InicioTareaRequest>("application/json")
+    .Produces<InicioTareaRequest>(StatusCodes.Status200OK)
+    .WithName("PostStartTask")
     .WithTags("Vas");
 //
 #endregion

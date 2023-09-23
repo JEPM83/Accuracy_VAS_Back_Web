@@ -29,6 +29,7 @@ namespace AccuracyModel.Vas
         public int lineas_produccion { get; set; }
         public string id_hu { get; set; }
         public string categoria_inventario { get; set; }
+        public string color_fondo { get; set; }
     }
     public class OrderPedidoDetailPickingRequest
     {
@@ -84,5 +85,19 @@ namespace AccuracyModel.Vas
         public int secuencia { get; set; }
         public string descripcion_tarea { get; set; }
         public string comentario { get; set; }
+    }
+    public class InicioTareaRequest
+    {
+        public string id_almacen { get; set; }
+        public string numero_pedido { get; set; }
+        public string? id_hu { get; set; }
+        public string? numero_item { get; set; }
+        public int? id_tarea { get; set; }
+    }
+    public class InicioTareaResponse
+    {
+        public string type { get; set; }
+        public string message { get; set; }
+        public string tittle { get; set; }
     }
 }

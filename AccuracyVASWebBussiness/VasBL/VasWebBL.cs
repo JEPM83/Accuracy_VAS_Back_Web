@@ -57,5 +57,12 @@ namespace AccuracyBussiness.VasBL
             objTransformado = groupedData;
             return objTransformado;
         }
+        public List<InicioTareaResponse> POST_START_TASK_VAS(InicioTareaRequest model, string cnx)
+        {
+            VasWebDA poObjects = new VasWebDA();
+            List<InicioTareaResponse> resp = new List<InicioTareaResponse>();
+            resp = poObjects.POST_START_TASK_VAS(model, cnx);
+            return resp;
+        }
     }
 }

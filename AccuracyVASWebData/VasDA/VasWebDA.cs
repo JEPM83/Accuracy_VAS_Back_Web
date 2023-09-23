@@ -72,6 +72,7 @@ namespace AccuracyData.VasDA
                         plDetail.lineas_produccion = int.Parse(sqlReader["lineas_produccion"].ToString());
                         plDetail.id_hu = sqlReader["id_hu"].ToString();
                         plDetail.categoria_inventario = sqlReader["categoria_inventario"].ToString();
+                        plDetail.color_fondo = sqlReader["color_fondo"].ToString();
                         plListDetail.Add(plDetail);
                         plDetail = null;
                     }
@@ -160,6 +161,45 @@ namespace AccuracyData.VasDA
                         plDetail.secuencia = int.Parse(sqlReader["secuencia"].ToString());
                         plDetail.descripcion_tarea = sqlReader["descripcion_tarea"].ToString();
                         plDetail.comentario = sqlReader["comentario"].ToString();
+                        plListDetail.Add(plDetail);
+                        plDetail = null;
+                    }
+                    conn.Close();
+                    return plListDetail;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            finally
+            {
+                plListDetail = null;
+            }
+        }
+        public List<InicioTareaResponse> POST_START_TASK_VAS(InicioTareaRequest model, string cnx)
+        {
+            var plListDetail = new List<InicioTareaResponse>();
+            try
+            {
+
+                using (SqlConnection conn = new SqlConnection(cnx))
+                using (SqlCommand cmd = new SqlCommand(ObjectsDA.VAS_POST_START_TASK_VAS, conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@id_almacen", SqlDbType.NVarChar).Value = model.id_almacen;
+                    cmd.Parameters.Add("@numero_pedido", SqlDbType.NVarChar).Value = model.numero_pedido;
+                    cmd.Parameters.Add("@id_hu", SqlDbType.NVarChar).Value = model.id_hu;
+                    cmd.Parameters.Add("@numero_item", SqlDbType.NVarChar).Value = model.numero_item;
+                    cmd.Parameters.Add("@id_tarea", SqlDbType.Int).Value = model.id_tarea;
+                    conn.Open();
+                    SqlDataReader sqlReader = cmd.ExecuteReader();
+                    while (sqlReader.Read())
+                    {
+                        var plDetail = new InicioTareaResponse();
+                        plDetail.type = sqlReader["estado"].ToString();
+                        plDetail.message = sqlReader["mensaje"].ToString();
+                        plDetail.tittle = sqlReader["titulo"].ToString();
                         plListDetail.Add(plDetail);
                         plDetail = null;
                     }

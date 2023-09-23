@@ -27,6 +27,7 @@ namespace AccuracyData.ObjectosDA
         public static string VAS_GET_ORDER_VAS = "SP_VAS_WEB_GET_ORDER_VAS";
         public static string VAS_GET_ORDER_DETAIL_PICKING_VAS = "SP_VAS_WEB_GET_ORDER_DETAIL_PICKING_VAS";
         public static string VAS_GET_ORDER_DETAIL_TASK_VAS = "SP_VAS_WEB_GET_ORDER_DETAIL_TASK_VAS";
+        public static string VAS_POST_START_TASK_VAS = "SP_VAS_WEB_POST_START_TASK_VAS";
         #endregion
     }
 }
