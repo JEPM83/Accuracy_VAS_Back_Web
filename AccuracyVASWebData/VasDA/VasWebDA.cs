@@ -71,6 +71,7 @@ namespace AccuracyData.VasDA
                         plDetail.avance_vas = float.Parse(sqlReader["avance_vas"].ToString());
                         plDetail.lineas_produccion = int.Parse(sqlReader["lineas_produccion"].ToString());
                         plDetail.id_hu = sqlReader["id_hu"].ToString();
+                        plDetail.categoria_inventario = sqlReader["categoria_inventario"].ToString();
                         plListDetail.Add(plDetail);
                         plDetail = null;
                     }
@@ -100,6 +101,7 @@ namespace AccuracyData.VasDA
                     cmd.Parameters.Add("@id_almacen", SqlDbType.NVarChar).Value = model.id_almacen;
                     cmd.Parameters.Add("@numero_pedido", SqlDbType.NVarChar).Value = model.numero_pedido;
                     cmd.Parameters.Add("@id_hu", SqlDbType.NVarChar).Value = model.id_hu;
+                    cmd.Parameters.Add("@numero_item", SqlDbType.NVarChar).Value = model.numero_item;
                     conn.Open();
                     SqlDataReader sqlReader = cmd.ExecuteReader();
                     while (sqlReader.Read())

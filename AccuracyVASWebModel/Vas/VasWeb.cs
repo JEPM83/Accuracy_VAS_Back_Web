@@ -28,12 +28,14 @@ namespace AccuracyModel.Vas
         public float avance_vas { get; set; }
         public int lineas_produccion { get; set; }
         public string id_hu { get; set; }
+        public string categoria_inventario { get; set; }
     }
     public class OrderPedidoDetailPickingRequest
     {
         public string id_almacen { get; set; }
         public string numero_pedido { get; set; }
         public string? id_hu { get; set; }
+        public string? numero_item { get; set; }
     }
     public class OrderPedidoDetailPickingResponse
     {
