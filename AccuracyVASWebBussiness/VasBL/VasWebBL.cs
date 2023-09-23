@@ -19,5 +19,19 @@ namespace AccuracyBussiness.VasBL
             resp = poObjects.GET_PRODUCTION_LINE_BY_TERMINAL(model, cnx);
             return resp;
         }
+        public List<OrderPedidoResponse> GET_ORDER_VAS(OrderPedidoRequest model, string cnx)
+        {
+            VasWebDA poObjects = new VasWebDA();
+            List<OrderPedidoResponse> resp = new List<OrderPedidoResponse>();
+            resp = poObjects.GET_ORDER_VAS(model, cnx);
+            return resp;
+        }
+        public List<OrderPedidoDetailPickingResponse> GET_ORDER_DETAIL_PICKING_VAS(OrderPedidoDetailPickingRequest model, string cnx)
+        {
+            VasWebDA poObjects = new VasWebDA();
+            List<OrderPedidoDetailPickingResponse> resp = new List<OrderPedidoDetailPickingResponse>();
+            resp = poObjects.GET_ORDER_DETAIL_PICKING_VAS(model, cnx);
+            return resp;
+        }
     }
 }

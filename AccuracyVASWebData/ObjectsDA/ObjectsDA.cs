@@ -24,6 +24,8 @@ namespace AccuracyData.ObjectosDA
         #endregion
         #region VAS
         public static string WEB_GET_PRODUCTION_LINE_BY_TERMINAL = "SP_VAS_WEB_GET_PRODUCTION_LINE_BY_TERMINAL";
+        public static string WEB_GET_ORDER_VAS = "SP_VAS_WEB_GET_ORDER_VAS";
+        public static string WEB_GET_ORDER_DETAIL_PICKING_VAS = "SP_VAS_WEB_GET_ORDER_DETAIL_PICKING_VAS";
         #endregion
     }
 }
