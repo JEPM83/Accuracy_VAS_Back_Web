@@ -46,4 +46,41 @@ namespace AccuracyModel.Vas
         public string atributo_generico_1 { get; set; }
         public string atributo_generico_2 { get; set; }
     }
+    public class TaskRequest
+    {
+        public string id_almacen { get; set; }
+        public string numero_pedido { get; set; }
+        public string? id_hu { get; set; }
+        public string? numero_item { get; set; }
+    }
+    public class TaskResponse
+    {
+        //public string numero_pedido {get; set; }
+        public string cliente { get; set; }
+        public string categoria_inventario { get; set; }
+        public int id_agrupador { get; set; }
+        public string descripcion_agrupador { get; set; }
+        public int id_tarea { get; set; }
+        public int secuencia{ get; set; }
+        public string descripcion_tarea { get; set; }
+        public string comentario { get; set; }
+    }
+    public class RootTaskObject
+    {
+        //public string numero_pedido { get; set; }
+        public string cliente { get; set; }
+        public string categoria_inventario { get; set; }
+        public List<DetalleTaskGroup> grupo { get; set; }
+    }
+    public class DetalleTaskGroup { 
+        public int id_agrupador { get; set; }
+        public string descripcion_agrupador { get; set; }
+        public List<SubDetalleTaskDetail> tareas { get; set; }
+    }
+    public class SubDetalleTaskDetail { 
+        public int id_tarea { get; set; }
+        public int secuencia { get; set; }
+        public string descripcion_tarea { get; set; }
+        public string comentario { get; set; }
+    }
 }

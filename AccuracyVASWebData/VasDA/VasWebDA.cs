@@ -19,7 +19,7 @@ namespace AccuracyData.VasDA
             {
 
                 using (SqlConnection conn = new SqlConnection(cnx))
-                using (SqlCommand cmd = new SqlCommand(ObjectsDA.WEB_GET_PRODUCTION_LINE_BY_TERMINAL, conn))
+                using (SqlCommand cmd = new SqlCommand(ObjectsDA.VAS_GET_PRODUCTION_LINE_BY_TERMINAL, conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@id_almacen", SqlDbType.NVarChar).Value = model.id_almacen;
@@ -55,7 +55,7 @@ namespace AccuracyData.VasDA
             {
 
                 using (SqlConnection conn = new SqlConnection(cnx))
-                using (SqlCommand cmd = new SqlCommand(ObjectsDA.WEB_GET_ORDER_VAS, conn))
+                using (SqlCommand cmd = new SqlCommand(ObjectsDA.VAS_GET_ORDER_VAS, conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@id_almacen", SqlDbType.NVarChar).Value = model.id_almacen;
@@ -94,7 +94,7 @@ namespace AccuracyData.VasDA
             {
 
                 using (SqlConnection conn = new SqlConnection(cnx))
-                using (SqlCommand cmd = new SqlCommand(ObjectsDA.WEB_GET_ORDER_VAS, conn))
+                using (SqlCommand cmd = new SqlCommand(ObjectsDA.VAS_GET_ORDER_DETAIL_PICKING_VAS, conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@id_almacen", SqlDbType.NVarChar).Value = model.id_almacen;
@@ -113,6 +113,51 @@ namespace AccuracyData.VasDA
                         plDetail.subcategoria_inventario = sqlReader["subcategoria_inventario"].ToString();
                         plDetail.atributo_generico_1 = sqlReader["atributo_generico_1"].ToString();
                         plDetail.atributo_generico_2 = sqlReader["atributo_generico_2"].ToString();
+                        plListDetail.Add(plDetail);
+                        plDetail = null;
+                    }
+                    conn.Close();
+                    return plListDetail;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            finally
+            {
+                plListDetail = null;
+            }
+        }
+        public List<TaskResponse> GET_ORDER_DETAIL_TASK_VAS(TaskRequest model, string cnx)
+        {
+            var plListDetail = new List<TaskResponse>();
+            try
+            {
+
+                using (SqlConnection conn = new SqlConnection(cnx))
+                using (SqlCommand cmd = new SqlCommand(ObjectsDA.VAS_GET_ORDER_DETAIL_TASK_VAS, conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@id_almacen", SqlDbType.NVarChar).Value = model.id_almacen;
+                    cmd.Parameters.Add("@numero_pedido", SqlDbType.NVarChar).Value = model.numero_pedido;
+                    cmd.Parameters.Add("@id_hu", SqlDbType.NVarChar).Value = model.id_hu;
+                    cmd.Parameters.Add("@numero_item", SqlDbType.NVarChar).Value = model.numero_item;
+                    conn.Open();
+                    SqlDataReader sqlReader = cmd.ExecuteReader();
+                    while (sqlReader.Read())
+                    {
+                        var plDetail = new TaskResponse();
+                        
+                        //plDetail.numero_pedido = sqlReader["numero_pedido"].ToString();
+                        plDetail.cliente = sqlReader["cliente"].ToString();
+                        plDetail.categoria_inventario = sqlReader["categoria_inventario"].ToString();
+                        plDetail.id_agrupador = int.Parse(sqlReader["id_agrupador"].ToString());
+                        plDetail.descripcion_agrupador = sqlReader["descripcion_agrupador"].ToString();
+                        plDetail.id_tarea =  int.Parse(sqlReader["id_tarea"].ToString());
+                        plDetail.secuencia = int.Parse(sqlReader["secuencia"].ToString());
+                        plDetail.descripcion_tarea = sqlReader["descripcion_tarea"].ToString();
+                        plDetail.comentario = sqlReader["comentario"].ToString();
                         plListDetail.Add(plDetail);
                         plDetail = null;
                     }

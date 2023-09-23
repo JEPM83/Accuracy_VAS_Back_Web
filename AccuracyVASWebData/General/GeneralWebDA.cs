@@ -24,7 +24,7 @@ namespace AccuracyData.General
                 ordenC.idioma = obj.idioma;
                 ordenC.modo = obj.modo;
                 using (SqlConnection conn = new SqlConnection(cnx))
-                using (SqlCommand cmd = new SqlCommand(ObjectsDA.WEB_GET_LISTA_ATRIBUTO_OBJETO, conn))
+                using (SqlCommand cmd = new SqlCommand(ObjectsDA.GENERAL_GET_LISTA_ATRIBUTO_OBJETO, conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@objeto", SqlDbType.VarChar).Value = obj.objeto;

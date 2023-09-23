@@ -22,7 +22,7 @@ namespace AccuracyData.PrinterDA
                 printerC.id_almacen = obj.id_almacen;
                 printerC.id_printer = obj.id_printer;
                 using (SqlConnection conn = new SqlConnection(cnx))
-                using (SqlCommand cmd = new SqlCommand(ObjectsDA.WEB_GET_PRINTER_CONFIG, conn))
+                using (SqlCommand cmd = new SqlCommand(ObjectsDA.PRINTER_GET_PRINTER_CONFIG, conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@FacilityCode", SqlDbType.VarChar).Value = obj.id_almacen;
@@ -65,7 +65,7 @@ namespace AccuracyData.PrinterDA
                 printerC.cantidad = obj.cantidad;
                 printerC.usuario_creacion = obj.usuario_creacion;
                 using (SqlConnection conn = new SqlConnection(cnx))
-                using (SqlCommand cmd = new SqlCommand(ObjectsDA.WEB_POST_INSERT_PRINTER_LPN, conn))
+                using (SqlCommand cmd = new SqlCommand(ObjectsDA.PRINTER_POST_INSERT_PRINTER_LPN, conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@id_almacen", SqlDbType.VarChar).Value = obj.id_almacen;
@@ -104,7 +104,7 @@ namespace AccuracyData.PrinterDA
             {
                 printerC.id_almacen = obj.id_almacen;
                 using (SqlConnection conn = new SqlConnection(cnx))
-                using (SqlCommand cmd = new SqlCommand(ObjectsDA.WEB_GET_LPN_CORRELATIVE, conn))
+                using (SqlCommand cmd = new SqlCommand(ObjectsDA.PRINTER_GET_LPN_CORRELATIVE, conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@id_almacen", SqlDbType.VarChar).Value = obj.id_almacen;

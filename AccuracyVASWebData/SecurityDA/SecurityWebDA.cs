@@ -19,7 +19,7 @@ namespace AccuracyData.SecurityDA
             {
 
                 using (SqlConnection conn = new SqlConnection(cnx))
-                using (SqlCommand cmd = new SqlCommand(ObjectsDA.WEB_GET_DATALISTLOGIN, conn))
+                using (SqlCommand cmd = new SqlCommand(ObjectsDA.SECURITY_GET_DATALISTLOGIN, conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@usuario", SqlDbType.NVarChar).Value = model.usuario;
@@ -57,7 +57,7 @@ namespace AccuracyData.SecurityDA
             {
 
                 using (SqlConnection conn = new SqlConnection(cnx))
-                using (SqlCommand cmd = new SqlCommand(ObjectsDA.WEB_GET_DATALISTLOGOUT, conn))
+                using (SqlCommand cmd = new SqlCommand(ObjectsDA.SECURITY_GET_DATALISTLOGOUT, conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@usuario", SqlDbType.NVarChar).Value = model.usuario;
@@ -95,7 +95,7 @@ namespace AccuracyData.SecurityDA
             {
 
                 using (SqlConnection conn = new SqlConnection(cnx))
-                using (SqlCommand cmd = new SqlCommand(ObjectsDA.WEB_GET_WAREHOUSE_USER, conn))
+                using (SqlCommand cmd = new SqlCommand(ObjectsDA.SECURITY_GET_WAREHOUSE_USER, conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@usuario", SqlDbType.NVarChar).Value = model.usuario;
