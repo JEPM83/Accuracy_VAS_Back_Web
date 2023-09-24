@@ -377,6 +377,164 @@ namespace AccuracyData.VasDA
                 plListDetail = null;
             }
         }
+        public List<InicioIncidenciaResponse> POST_START_INCIDENCE_VAS(InicioIncidenciaRequest model, string cnx)
+        {
+            var plListDetail = new List<InicioIncidenciaResponse>();
+            try
+            {
+
+                using (SqlConnection conn = new SqlConnection(cnx))
+                using (SqlCommand cmd = new SqlCommand(ObjectsDA.VAS_POST_START_INCIDENCE_VAS, conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@id_almacen", SqlDbType.NVarChar).Value = model.id_almacen;
+                    cmd.Parameters.Add("@numero_pedido", SqlDbType.NVarChar).Value = model.numero_pedido;
+                    cmd.Parameters.Add("@linea_produccion", SqlDbType.NVarChar).Value = model.linea_produccion;
+                    cmd.Parameters.Add("@id_hu", SqlDbType.NVarChar).Value = model.id_hu;
+                    cmd.Parameters.Add("@id_razon", SqlDbType.Int).Value = model.id_razon;
+                    cmd.Parameters.Add("@descripcion_razon", SqlDbType.NVarChar).Value = model.descripcion_razon;
+                    cmd.Parameters.Add("@observacion", SqlDbType.NVarChar).Value = model.observacion;
+                    cmd.Parameters.Add("@usuario", SqlDbType.NVarChar).Value = model.usuario;
+                    conn.Open();
+                    SqlDataReader sqlReader = cmd.ExecuteReader();
+                    while (sqlReader.Read())
+                    {
+                        var plDetail = new InicioIncidenciaResponse();
+                        plDetail.type = sqlReader["estado"].ToString();
+                        plDetail.message = sqlReader["mensaje"].ToString();
+                        plDetail.tittle = sqlReader["titulo"].ToString();
+                        plListDetail.Add(plDetail);
+                        plDetail = null;
+                    }
+                    conn.Close();
+                    return plListDetail;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            finally
+            {
+                plListDetail = null;
+            }
+        }
+        public List<FinIncidenciaResponse> POST_END_INCIDENCE_VAS(FinIncidenciaRequest model, string cnx)
+        {
+            var plListDetail = new List<FinIncidenciaResponse>();
+            try
+            {
+
+                using (SqlConnection conn = new SqlConnection(cnx))
+                using (SqlCommand cmd = new SqlCommand(ObjectsDA.VAS_POST_END_INCIDENCE_VAS, conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@id_almacen", SqlDbType.NVarChar).Value = model.id_almacen;
+                    cmd.Parameters.Add("@linea_produccion", SqlDbType.NVarChar).Value = model.linea_produccion;
+                    cmd.Parameters.Add("@usuario", SqlDbType.NVarChar).Value = model.usuario;
+                    conn.Open();
+                    SqlDataReader sqlReader = cmd.ExecuteReader();
+                    while (sqlReader.Read())
+                    {
+                        var plDetail = new FinIncidenciaResponse();
+                        plDetail.type = sqlReader["estado"].ToString();
+                        plDetail.message = sqlReader["mensaje"].ToString();
+                        plDetail.tittle = sqlReader["titulo"].ToString();
+                        plListDetail.Add(plDetail);
+                        plDetail = null;
+                    }
+                    conn.Close();
+                    return plListDetail;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            finally
+            {
+                plListDetail = null;
+            }
+        }
+        public List<ListaNotificacionResponse> GET_LIST_NOTIFY_VAS(ListaNotificacionRequest model, string cnx)
+        {
+            var plListDetail = new List<ListaNotificacionResponse>();
+            try
+            {
+
+                using (SqlConnection conn = new SqlConnection(cnx))
+                using (SqlCommand cmd = new SqlCommand(ObjectsDA.VAS_GET_LIST_NOTIFY_VAS, conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@id_almacen", SqlDbType.NVarChar).Value = model.id_almacen;
+                    cmd.Parameters.Add("@proceso", SqlDbType.NVarChar).Value = model.proceso;
+                    conn.Open();
+                    SqlDataReader sqlReader = cmd.ExecuteReader();
+                    while (sqlReader.Read())
+                    {
+                        var plDetail = new ListaNotificacionResponse();
+                        plDetail.id_notificacion = int.Parse(sqlReader["id_notificacion"].ToString());
+                        plDetail.proceso = sqlReader["proceso"].ToString();
+                        plDetail.linea_produccion = sqlReader["linea_produccion"].ToString();
+                        plDetail.usuario = sqlReader["usuario"].ToString();
+                        plDetail.id_razon = int.Parse( sqlReader["id_razon"].ToString());
+                        plDetail.descripcion_razon = sqlReader["descripcion_razon"].ToString();
+                        plDetail.observacion = sqlReader["observacion"].ToString();
+                        plDetail.minutos_atras_reportado = int.Parse(sqlReader["minutos_atras_reportado"].ToString());
+                        plListDetail.Add(plDetail);
+                        plDetail = null;
+                    }
+                    conn.Close();
+                    return plListDetail;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            finally
+            {
+                plListDetail = null;
+            }
+        }
+        public List<ActualizacionNotificacionResponse> POST_UPDATE_NOTIFY_VAS(ActualizacionNotificacionRequest model, string cnx)
+        {
+            var plListDetail = new List<ActualizacionNotificacionResponse>();
+            try
+            {
+
+                using (SqlConnection conn = new SqlConnection(cnx))
+                using (SqlCommand cmd = new SqlCommand(ObjectsDA.VAS_POST_UPDATE_NOTIFY_VAS, conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@id_almacen", SqlDbType.NVarChar).Value = model.id_almacen;
+                    cmd.Parameters.Add("@proceso", SqlDbType.NVarChar).Value = model.proceso;
+                    cmd.Parameters.Add("@id_notificacion", SqlDbType.NVarChar).Value = model.id_notificacion;
+                    cmd.Parameters.Add("@usuario", SqlDbType.NVarChar).Value = model.usuario;
+                    conn.Open();
+                    SqlDataReader sqlReader = cmd.ExecuteReader();
+                    while (sqlReader.Read())
+                    {
+                        var plDetail = new ActualizacionNotificacionResponse();
+                        plDetail.type = sqlReader["estado"].ToString();
+                        plDetail.message = sqlReader["mensaje"].ToString();
+                        plDetail.tittle = sqlReader["titulo"].ToString();
+                        plListDetail.Add(plDetail);
+                        plDetail = null;
+                    }
+                    conn.Close();
+                    return plListDetail;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            finally
+            {
+                plListDetail = null;
+            }
+        }
     }
 }
 

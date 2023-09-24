@@ -159,4 +159,59 @@ namespace AccuracyModel.Vas
         public string message { get; set; }
         public string tittle { get; set; }
     }
+    public class InicioIncidenciaRequest {
+        public string id_almacen { get; set; }
+        public string numero_pedido { get; set; }
+        public string linea_produccion { get; set; }
+        public string? id_hu { get; set; }
+        public int id_razon { get; set; }
+        public string descripcion_razon { get; set; }
+        public string observacion { get; set; }
+        public string usuario { get; set; }
+    }
+    public class InicioIncidenciaResponse
+    {
+        public string type { get; set; }
+        public string message { get; set; }
+        public string tittle { get; set; }
+    }
+    public class FinIncidenciaRequest
+    {
+        public string id_almacen { get; set; }
+        public string linea_produccion { get; set; }
+        public string usuario { get; set; }
+    }
+    public class FinIncidenciaResponse
+    {
+        public string type { get; set; }
+        public string message { get; set; }
+        public string tittle { get; set; }
+    }
+    public class ListaNotificacionRequest {
+        public string id_almacen { get; set; }
+        public string proceso { get; set; }
+    }
+    public class ListaNotificacionResponse
+    {
+        public int id_notificacion { get; set; }
+        public string proceso { get; set; }
+        public string linea_produccion { get; set; }
+        public string usuario { get; set; }
+        public int id_razon { get; set; }
+        public string descripcion_razon { get; set; }
+        public string observacion { get; set; }
+        public int minutos_atras_reportado { get; set; }
+    }
+    public class ActualizacionNotificacionRequest
+    {
+        public string id_almacen { get; set; }
+        public string proceso { get; set; }
+        public int id_notificacion { get; set; }
+        public string usuario { get; set; }
+    }
+    public class ActualizacionNotificacionResponse {
+        public string type { get; set; }
+        public string message { get; set; }
+        public string tittle { get; set; }
+    }
 }

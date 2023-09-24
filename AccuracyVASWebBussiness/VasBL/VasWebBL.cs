@@ -92,5 +92,34 @@ namespace AccuracyBussiness.VasBL
             resp = poObjects.POST_END_TASK_VAS(model, cnx);
             return resp;
         }
+        public List<InicioIncidenciaResponse> POST_START_INCIDENCE_VAS(InicioIncidenciaRequest model, string cnx)
+        {
+            VasWebDA poObjects = new VasWebDA();
+            List<InicioIncidenciaResponse> resp = new List<InicioIncidenciaResponse>();
+            resp = poObjects.POST_START_INCIDENCE_VAS(model, cnx);
+            return resp;
+        }
+        public List<FinIncidenciaResponse> POST_END_INCIDENCE_VAS(FinIncidenciaRequest model, string cnx)
+        {
+            VasWebDA poObjects = new VasWebDA();
+            List<FinIncidenciaResponse> resp = new List<FinIncidenciaResponse>();
+            resp = poObjects.POST_END_INCIDENCE_VAS(model, cnx);
+            return resp;
+        }
+        public List<ListaNotificacionResponse> GET_LIST_NOTIFY_VAS(ListaNotificacionRequest model, string cnx)
+        {
+            VasWebDA poObjects = new VasWebDA();
+            List<ListaNotificacionResponse> resp = new List<ListaNotificacionResponse>();
+            resp = poObjects.GET_LIST_NOTIFY_VAS(model, cnx);
+            return resp;
+        }
+        public List<ActualizacionNotificacionResponse> POST_UPDATE_NOTIFY_VAS(ActualizacionNotificacionRequest model, string cnx)
+        {
+            VasWebDA poObjects = new VasWebDA();
+            List<ActualizacionNotificacionResponse> resp = new List<ActualizacionNotificacionResponse>();
+            resp = poObjects.POST_UPDATE_NOTIFY_VAS(model, cnx);
+            return resp;
+        }
+
     }
 }
