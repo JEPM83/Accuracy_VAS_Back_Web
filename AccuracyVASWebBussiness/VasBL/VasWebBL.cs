@@ -64,5 +64,33 @@ namespace AccuracyBussiness.VasBL
             resp = poObjects.POST_START_TASK_VAS(model, cnx);
             return resp;
         }
+        public List<PackingdetailResponse> GET_HU_DETAIL_BY_ORDER_VAS(PackingdetailRequest model, string cnx)
+        {
+            VasWebDA poObjects = new VasWebDA();
+            List<PackingdetailResponse> resp = new List<PackingdetailResponse>();
+            resp = poObjects.GET_HU_DETAIL_BY_ORDER_VAS(model, cnx);
+            return resp;
+        }
+        public List<LPNvalidaResponse> GET_LPN_VALIDATE_VAS(LPNvalidateRequest model, string cnx)
+        {
+            VasWebDA poObjects = new VasWebDA();
+            List<LPNvalidaResponse> resp = new List<LPNvalidaResponse>();
+            resp = poObjects.GET_LPN_VALIDATE_VAS(model, cnx);
+            return resp;
+        }
+        public List<LPNSKUResponse> POST_LPN_SKU_VAS(LPNSKURequest model, string cnx)
+        {
+            VasWebDA poObjects = new VasWebDA();
+            List<LPNSKUResponse> resp = new List<LPNSKUResponse>();
+            resp = poObjects.POST_LPN_SKU_VAS(model, cnx);
+            return resp;
+        }
+        public List<FinTareaResponse> POST_END_TASK_VAS(FinTareaRequest model, string cnx)
+        {
+            VasWebDA poObjects = new VasWebDA();
+            List<FinTareaResponse> resp = new List<FinTareaResponse>();
+            resp = poObjects.POST_END_TASK_VAS(model, cnx);
+            return resp;
+        }
     }
 }

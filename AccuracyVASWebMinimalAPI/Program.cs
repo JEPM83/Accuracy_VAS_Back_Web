@@ -624,28 +624,28 @@ app.MapPost("/accuracy/vas/api/v1/GetLineProduction",
                     return Results.Json(errorResponse);
                 }
                 List<LineResponse> resp = poBL.GET_PRODUCTION_LINE_BY_TERMINAL(obj, connString);
-                context.Response.StatusCode = StatusCodes.Status200OK;
                 if (resp.Count == 0) {
-                var errorResponse = new
-                {
-                    title = "Warning",
-                    message = "Sin registros",
-                    type = "3"
-                };
-                context.Response.StatusCode = StatusCodes.Status400BadRequest;
-                return Results.Json(errorResponse);
-            }
+                    var errorResponse = new
+                    {
+                        title = "Warning",
+                        message = "Sin registros",
+                        type = "3"
+                    };
+                    context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                    return Results.Json(errorResponse);
+                }
                 else if (resp[0].estado == 1) {
-                var errorResponse = new
-                {
-                    title = "Warning",
-                    message = resp[0].mensaje.ToString(),
-                    type = "3"
-                };
-                context.Response.StatusCode = StatusCodes.Status400BadRequest;
-                return Results.Json(errorResponse);
-            }
+                    var errorResponse = new
+                    {
+                        title = "Warning",
+                        message = resp[0].mensaje.ToString(),
+                        type = "3"
+                    };
+                    context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                    return Results.Json(errorResponse);
+                }      
                 else {
+                    context.Response.StatusCode = StatusCodes.Status200OK;
                     return Results.Ok(resp);
                 }
             }
@@ -1025,6 +1025,407 @@ app.MapPost("/accuracy/vas/api/v1/PostStartTask",
     .Accepts<InicioTareaRequest>("application/json")
     .Produces<InicioTareaRequest>(StatusCodes.Status200OK)
     .WithName("PostStartTask")
+    .WithTags("Vas");
+//
+app.MapPost("/accuracy/vas/api/v1/GetPackingDetail",
+    [AllowAnonymous] async ([FromBody] PackingdetailRequest obj, HttpContext context) =>
+    {
+        var authorizationHeader = context.Request.Headers["Authorization"].FirstOrDefault();
+
+        if (!StringValues.IsNullOrEmpty(authorizationHeader) && authorizationHeader.StartsWith("Bearer "))
+        {
+            var token = authorizationHeader.Substring("Bearer ".Length).Trim();
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]));
+            var validationParameters = new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = true,
+                ValidIssuer = builder.Configuration["Jwt:Issuer"],
+                ValidAudience = builder.Configuration["Jwt:Audience"],
+                IssuerSigningKey = key
+            };
+
+            try
+            {
+                // Intenta validar el token
+                SecurityToken validatedToken;
+                var principal = tokenHandler.ValidateToken(token, validationParameters, out validatedToken);
+
+                // El token es válido, puedes continuar con la lógica de la ruta
+                AccuracyBussiness.VasBL.VasWebBL poBL = new AccuracyBussiness.VasBL.VasWebBL();
+
+                if (poBL == null || string.IsNullOrEmpty(poBL.ToString()))
+                {
+                    var errorResponse = new
+                    {
+                        title = "Warning",
+                        message = "Error al obtener el resultado del registro de inicio de tarea VAS",
+                        type = "3"
+                    };
+                    context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                    return Results.Json(errorResponse);
+                }
+                List<PackingdetailResponse> resp = poBL.GET_HU_DETAIL_BY_ORDER_VAS(obj, connString);
+                if (resp == null || resp.Count == 0)
+                {
+                    var errorResponse = new
+                    {
+                        title = "Warning",
+                        message = "No se registro tarea",
+                        type = "3"
+                    };
+                    context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                    return Results.Json(errorResponse);
+                }
+                else
+                {
+                    context.Response.StatusCode = StatusCodes.Status200OK;
+                    return Results.Ok(resp);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Ocurrió un error al validar el token, devolver un error de autorización con mensaje JSON personalizado
+                var errorResponse = new
+                {
+                    title = "Error",
+                    message = ex.Message.ToString(),
+                    type = "1"
+                };
+                context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                return Results.Json(errorResponse);
+            }
+        }
+        else
+        {
+            // El usuario no está autenticado, devolvemos un error de autorización con mensaje JSON personalizado
+            var errorResponse = new
+            {
+                title = "Warning",
+                message = "Usuario no autenticado",
+                type = "3"
+            };
+            context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+            return Results.Json(errorResponse);
+        }
+    })
+    .Accepts<PackingdetailRequest>("application/json")
+    .Produces<PackingdetailRequest>(StatusCodes.Status200OK)
+    .WithName("GetPackingDetail")
+    .WithTags("Vas");
+//
+app.MapPost("/accuracy/vas/api/v1/GetLPNvalidate",
+    [AllowAnonymous] async ([FromBody] LPNvalidateRequest obj, HttpContext context) =>
+    {
+        var authorizationHeader = context.Request.Headers["Authorization"].FirstOrDefault();
+
+        if (!StringValues.IsNullOrEmpty(authorizationHeader) && authorizationHeader.StartsWith("Bearer "))
+        {
+            var token = authorizationHeader.Substring("Bearer ".Length).Trim();
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]));
+            var validationParameters = new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = true,
+                ValidIssuer = builder.Configuration["Jwt:Issuer"],
+                ValidAudience = builder.Configuration["Jwt:Audience"],
+                IssuerSigningKey = key
+            };
+
+            try
+            {
+                // Intenta validar el token
+                SecurityToken validatedToken;
+                var principal = tokenHandler.ValidateToken(token, validationParameters, out validatedToken);
+
+                // El token es válido, puedes continuar con la lógica de la ruta
+                AccuracyBussiness.VasBL.VasWebBL poBL = new AccuracyBussiness.VasBL.VasWebBL();
+
+                if (poBL == null || string.IsNullOrEmpty(poBL.ToString()))
+                {
+                    var errorResponse = new
+                    {
+                        title = "Warning",
+                        message = "Error al obtener el resultado del registro de inicio de tarea VAS",
+                        type = "3"
+                    };
+                    context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                    return Results.Json(errorResponse);
+                }
+                List<LPNvalidaResponse> resp = poBL.GET_LPN_VALIDATE_VAS(obj, connString);
+                if (resp == null || resp.Count == 0)
+                {
+                    var errorResponse = new
+                    {
+                        title = "Warning",
+                        message = "No se registro tarea",
+                        type = "3"
+                    };
+                    context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                    return Results.Json(errorResponse);
+                }
+                else
+                {
+                    if (resp[0].type != "0")
+                    {
+                        var errorResponse = new
+                        {
+                            title = resp[0].tittle.ToString(),
+                            message = resp[0].message.ToString(),
+                            type = resp[0].type.ToString()
+                        };
+                        context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                        return Results.Json(errorResponse);
+                    }
+                    else {
+                        context.Response.StatusCode = StatusCodes.Status200OK;
+                        return Results.Ok(resp);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Ocurrió un error al validar el token, devolver un error de autorización con mensaje JSON personalizado
+                var errorResponse = new
+                {
+                    title = "Error",
+                    message = ex.Message.ToString(),
+                    type = "1"
+                };
+                context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                return Results.Json(errorResponse);
+            }
+        }
+        else
+        {
+            // El usuario no está autenticado, devolvemos un error de autorización con mensaje JSON personalizado
+            var errorResponse = new
+            {
+                title = "Warning",
+                message = "Usuario no autenticado",
+                type = "3"
+            };
+            context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+            return Results.Json(errorResponse);
+        }
+    })
+    .Accepts<LPNvalidateRequest>("application/json")
+    .Produces<LPNvalidateRequest>(StatusCodes.Status200OK)
+    .WithName("GetLPNvalidate")
+    .WithTags("Vas");
+//
+app.MapPost("/accuracy/vas/api/v1/PostLPNSKU",
+    [AllowAnonymous] async ([FromBody] LPNSKURequest obj, HttpContext context) =>
+    {
+        var authorizationHeader = context.Request.Headers["Authorization"].FirstOrDefault();
+
+        if (!StringValues.IsNullOrEmpty(authorizationHeader) && authorizationHeader.StartsWith("Bearer "))
+        {
+            var token = authorizationHeader.Substring("Bearer ".Length).Trim();
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]));
+            var validationParameters = new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = true,
+                ValidIssuer = builder.Configuration["Jwt:Issuer"],
+                ValidAudience = builder.Configuration["Jwt:Audience"],
+                IssuerSigningKey = key
+            };
+
+            try
+            {
+                // Intenta validar el token
+                SecurityToken validatedToken;
+                var principal = tokenHandler.ValidateToken(token, validationParameters, out validatedToken);
+
+                // El token es válido, puedes continuar con la lógica de la ruta
+                AccuracyBussiness.VasBL.VasWebBL poBL = new AccuracyBussiness.VasBL.VasWebBL();
+
+                if (poBL == null || string.IsNullOrEmpty(poBL.ToString()))
+                {
+                    var errorResponse = new
+                    {
+                        title = "Warning",
+                        message = "Error al obtener el resultado del registro de inicio de tarea VAS",
+                        type = "3"
+                    };
+                    context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                    return Results.Json(errorResponse);
+                }
+                List<LPNSKUResponse> resp = poBL.POST_LPN_SKU_VAS(obj, connString);
+                if (resp == null || resp.Count == 0)
+                {
+                    var errorResponse = new
+                    {
+                        title = "Warning",
+                        message = "No se registro tarea",
+                        type = "3"
+                    };
+                    context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                    return Results.Json(errorResponse);
+                }
+                else
+                {
+                    if (resp[0].type != "0")
+                    {
+                        var errorResponse = new
+                        {
+                            title = resp[0].tittle.ToString(),
+                            message = resp[0].message.ToString(),
+                            type = resp[0].type.ToString()
+                        };
+                        context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                        return Results.Json(errorResponse);
+                    }
+                    else
+                    {
+                        context.Response.StatusCode = StatusCodes.Status200OK;
+                        return Results.Ok(resp);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Ocurrió un error al validar el token, devolver un error de autorización con mensaje JSON personalizado
+                var errorResponse = new
+                {
+                    title = "Error",
+                    message = ex.Message.ToString(),
+                    type = "1"
+                };
+                context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                return Results.Json(errorResponse);
+            }
+        }
+        else
+        {
+            // El usuario no está autenticado, devolvemos un error de autorización con mensaje JSON personalizado
+            var errorResponse = new
+            {
+                title = "Warning",
+                message = "Usuario no autenticado",
+                type = "3"
+            };
+            context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+            return Results.Json(errorResponse);
+        }
+    })
+    .Accepts<LPNSKURequest>("application/json")
+    .Produces<LPNSKURequest>(StatusCodes.Status200OK)
+    .WithName("PostLPNSKU")
+    .WithTags("Vas");
+//
+app.MapPost("/accuracy/vas/api/v1/PostEndTask",
+    [AllowAnonymous] async ([FromBody] FinTareaRequest obj, HttpContext context) =>
+    {
+        var authorizationHeader = context.Request.Headers["Authorization"].FirstOrDefault();
+
+        if (!StringValues.IsNullOrEmpty(authorizationHeader) && authorizationHeader.StartsWith("Bearer "))
+        {
+            var token = authorizationHeader.Substring("Bearer ".Length).Trim();
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]));
+            var validationParameters = new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = true,
+                ValidIssuer = builder.Configuration["Jwt:Issuer"],
+                ValidAudience = builder.Configuration["Jwt:Audience"],
+                IssuerSigningKey = key
+            };
+
+            try
+            {
+                // Intenta validar el token
+                SecurityToken validatedToken;
+                var principal = tokenHandler.ValidateToken(token, validationParameters, out validatedToken);
+
+                // El token es válido, puedes continuar con la lógica de la ruta
+                AccuracyBussiness.VasBL.VasWebBL poBL = new AccuracyBussiness.VasBL.VasWebBL();
+
+                if (poBL == null || string.IsNullOrEmpty(poBL.ToString()))
+                {
+                    var errorResponse = new
+                    {
+                        title = "Warning",
+                        message = "Error al obtener el resultado del registro de inicio de tarea VAS",
+                        type = "3"
+                    };
+                    context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                    return Results.Json(errorResponse);
+                }
+                List<FinTareaResponse> resp = poBL.POST_END_TASK_VAS(obj, connString);
+                if (resp == null || resp.Count == 0)
+                {
+                    var errorResponse = new
+                    {
+                        title = "Warning",
+                        message = "No se registro tarea",
+                        type = "3"
+                    };
+                    context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                    return Results.Json(errorResponse);
+                }
+                else
+                {
+                    if (resp[0].type != "0")
+                    {
+                        var errorResponse = new
+                        {
+                            title = resp[0].tittle.ToString(),
+                            message = resp[0].message.ToString(),
+                            type = resp[0].type.ToString()
+                        };
+                        context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                        return Results.Json(errorResponse);
+                    }
+                    else
+                    {
+                        context.Response.StatusCode = StatusCodes.Status200OK;
+                        return Results.Ok(resp);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Ocurrió un error al validar el token, devolver un error de autorización con mensaje JSON personalizado
+                var errorResponse = new
+                {
+                    title = "Error",
+                    message = ex.Message.ToString(),
+                    type = "1"
+                };
+                context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                return Results.Json(errorResponse);
+            }
+        }
+        else
+        {
+            // El usuario no está autenticado, devolvemos un error de autorización con mensaje JSON personalizado
+            var errorResponse = new
+            {
+                title = "Warning",
+                message = "Usuario no autenticado",
+                type = "3"
+            };
+            context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+            return Results.Json(errorResponse);
+        }
+    })
+    .Accepts<FinTareaRequest>("application/json")
+    .Produces<FinTareaRequest>(StatusCodes.Status200OK)
+    .WithName("PostEndTask")
     .WithTags("Vas");
 //
 #endregion

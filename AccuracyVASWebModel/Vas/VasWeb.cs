@@ -90,11 +90,67 @@ namespace AccuracyModel.Vas
     {
         public string id_almacen { get; set; }
         public string numero_pedido { get; set; }
+        public string linea_produccion { get; set; }
         public string? id_hu { get; set; }
         public string? numero_item { get; set; }
         public int? id_tarea { get; set; }
     }
     public class InicioTareaResponse
+    {
+        public string type { get; set; }
+        public string message { get; set; }
+        public string tittle { get; set; }
+    }
+    public class PackingdetailRequest {
+        public string id_almacen { get; set; }
+        public string numero_pedido { get; set; }
+        public string linea_produccion { get; set; }
+        public string? id_hu { get; set; }
+    }
+    public class PackingdetailResponse
+    {
+        public string lpn { get; set; }
+        public string numero_item { get; set; }
+        public string descripcion { get; set; }
+        public float cantidad { get; set; }
+        public string unidad_medida { get; set; }
+    }
+    public class LPNvalidateRequest
+    {
+        public string id_almacen { get; set; }
+        public string lpn { get; set; }
+    }
+    public class LPNvalidaResponse {
+        public string type { get; set; }
+        public string message { get; set; }
+        public string tittle { get; set; }
+    }
+    public class LPNSKURequest
+    {
+        public string id_almacen { get; set; }
+        public string numero_pedido { get; set; }
+        public string linea_produccion { get; set; }
+        public string? id_hu { get; set; }
+        public string lpn { get; set; }
+        public string numero_item { get; set; }
+        public float cantidad { get; set; }
+    }
+    public class LPNSKUResponse
+    {
+        public string type { get; set; }
+        public string message { get; set; }
+        public string tittle { get; set; }
+    }
+    public class FinTareaRequest
+    {
+        public string id_almacen { get; set; }
+        public string numero_pedido { get; set; }
+        public string linea_produccion { get; set; }
+        public string? id_hu { get; set; }
+        public string? numero_item { get; set; }
+        public int? id_tarea { get; set; }
+    }
+    public class FinTareaResponse
     {
         public string type { get; set; }
         public string message { get; set; }

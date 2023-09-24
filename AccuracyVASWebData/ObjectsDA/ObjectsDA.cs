@@ -28,6 +28,10 @@ namespace AccuracyData.ObjectosDA
         public static string VAS_GET_ORDER_DETAIL_PICKING_VAS = "SP_VAS_WEB_GET_ORDER_DETAIL_PICKING_VAS";
         public static string VAS_GET_ORDER_DETAIL_TASK_VAS = "SP_VAS_WEB_GET_ORDER_DETAIL_TASK_VAS";
         public static string VAS_POST_START_TASK_VAS = "SP_VAS_WEB_POST_START_TASK_VAS";
+        public static string VAS_GET_HU_DETAIL_BY_ORDER_VAS = "SP_VAS_WEB_GET_HU_DETAIL_BY_ORDER_VAS";
+        public static string VAS_GET_LPN_VALIDATE_VAS = "SP_VAS_WEB_GET_LPN_VALIDATE_VAS";
+        public static string VAS_POST_LPN_SKU_VAS = "SP_VAS_WEB_POST_LPN_SKU_VAS";
+        public static string VAS_POST_END_TASK_VAS = "SP_VAS_WEB_POST_END_TASK_VAS";
         #endregion
     }
 }
