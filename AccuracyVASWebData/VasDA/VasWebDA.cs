@@ -193,6 +193,7 @@ namespace AccuracyData.VasDA
                     cmd.Parameters.Add("@id_hu", SqlDbType.NVarChar).Value = model.id_hu;
                     cmd.Parameters.Add("@numero_item", SqlDbType.NVarChar).Value = model.numero_item;
                     cmd.Parameters.Add("@id_tarea", SqlDbType.Int).Value = model.id_tarea;
+                    cmd.Parameters.Add("@usuario", SqlDbType.NVarChar).Value = model.usuario;
                     conn.Open();
                     SqlDataReader sqlReader = cmd.ExecuteReader();
                     while (sqlReader.Read())
@@ -310,6 +311,7 @@ namespace AccuracyData.VasDA
                     cmd.Parameters.Add("@lpn", SqlDbType.NVarChar).Value = model.lpn;
                     cmd.Parameters.Add("@numero_item", SqlDbType.NVarChar).Value = model.numero_item;
                     cmd.Parameters.Add("@cantidad", SqlDbType.Float).Value = model.cantidad;
+                    cmd.Parameters.Add("@usuario", SqlDbType.NVarChar).Value = model.usuario;
                     conn.Open();
                     SqlDataReader sqlReader = cmd.ExecuteReader();
                     while (sqlReader.Read())
@@ -350,6 +352,7 @@ namespace AccuracyData.VasDA
                     cmd.Parameters.Add("@id_hu", SqlDbType.NVarChar).Value = model.id_hu;
                     cmd.Parameters.Add("@numero_item", SqlDbType.NVarChar).Value = model.numero_item;
                     cmd.Parameters.Add("@id_tarea", SqlDbType.Int).Value = model.id_tarea;
+                    cmd.Parameters.Add("@usuario", SqlDbType.NVarChar).Value = model.usuario;
                     conn.Open();
                     SqlDataReader sqlReader = cmd.ExecuteReader();
                     while (sqlReader.Read())

@@ -94,6 +94,7 @@ namespace AccuracyModel.Vas
         public string? id_hu { get; set; }
         public string? numero_item { get; set; }
         public int? id_tarea { get; set; }
+        public string usuario { get; set; }
     }
     public class InicioTareaResponse
     {
@@ -134,6 +135,7 @@ namespace AccuracyModel.Vas
         public string lpn { get; set; }
         public string numero_item { get; set; }
         public float cantidad { get; set; }
+        public string usuario { get; set; }
     }
     public class LPNSKUResponse
     {
@@ -149,6 +151,7 @@ namespace AccuracyModel.Vas
         public string? id_hu { get; set; }
         public string? numero_item { get; set; }
         public int? id_tarea { get; set; }
+        public string? usuario { get; set; }
     }
     public class FinTareaResponse
     {
