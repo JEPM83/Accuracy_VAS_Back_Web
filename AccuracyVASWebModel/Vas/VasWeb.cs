@@ -178,7 +178,11 @@ namespace AccuracyModel.Vas
     public class FinIncidenciaRequest
     {
         public string id_almacen { get; set; }
+        public string numero_pedido { get; set; }
         public string linea_produccion { get; set; }
+        public string? id_hu { get; set; }
+        public int id_razon { get; set; }
+        public string descripcion_razon { get; set; }
         public string usuario { get; set; }
     }
     public class FinIncidenciaResponse

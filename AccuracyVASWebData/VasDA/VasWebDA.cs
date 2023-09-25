@@ -430,7 +430,11 @@ namespace AccuracyData.VasDA
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@id_almacen", SqlDbType.NVarChar).Value = model.id_almacen;
+                    cmd.Parameters.Add("@numero_pedido", SqlDbType.NVarChar).Value = model.numero_pedido;
                     cmd.Parameters.Add("@linea_produccion", SqlDbType.NVarChar).Value = model.linea_produccion;
+                    cmd.Parameters.Add("@id_hu", SqlDbType.NVarChar).Value = model.id_hu;
+                    cmd.Parameters.Add("@id_razon", SqlDbType.Int).Value = model.id_razon;
+                    cmd.Parameters.Add("@descripcion_razon", SqlDbType.NVarChar).Value = model.descripcion_razon;
                     cmd.Parameters.Add("@usuario", SqlDbType.NVarChar).Value = model.usuario;
                     conn.Open();
                     SqlDataReader sqlReader = cmd.ExecuteReader();
