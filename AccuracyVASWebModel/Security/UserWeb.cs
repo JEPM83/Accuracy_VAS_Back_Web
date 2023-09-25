@@ -10,6 +10,7 @@ namespace AccuracyModel.Security
     {
         public string usuario { get; set; }
         public string? password { get; set; }
+        public string? sistema { get; set; }
     }
     public class UserResponse
     {

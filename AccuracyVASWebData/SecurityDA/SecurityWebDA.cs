@@ -24,6 +24,7 @@ namespace AccuracyData.SecurityDA
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@usuario", SqlDbType.NVarChar).Value = model.usuario;
                     cmd.Parameters.Add("@password", SqlDbType.NVarChar).Value = model.password;
+                    cmd.Parameters.Add("@sistema", SqlDbType.NVarChar).Value = model.sistema;
                     conn.Open();
                     SqlDataReader sqlReader = cmd.ExecuteReader();
                     while (sqlReader.Read())
@@ -62,6 +63,7 @@ namespace AccuracyData.SecurityDA
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@usuario", SqlDbType.NVarChar).Value = model.usuario;
                     cmd.Parameters.Add("@password", SqlDbType.NVarChar).Value = model.password;
+                    cmd.Parameters.Add("@sistema", SqlDbType.NVarChar).Value = model.sistema;
                     conn.Open();
                     SqlDataReader sqlReader = cmd.ExecuteReader();
                     while (sqlReader.Read())

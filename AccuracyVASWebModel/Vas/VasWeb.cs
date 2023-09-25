@@ -27,7 +27,7 @@ namespace AccuracyModel.Vas
         public string numero_pedido { get; set; }
         public float avance_vas { get; set; }
         public int lineas_produccion { get; set; }
-        public string id_hu { get; set; }
+        public string? id_hu { get; set; }
         public string categoria_inventario { get; set; }
         public string color_fondo { get; set; }
     }
@@ -46,8 +46,8 @@ namespace AccuracyModel.Vas
         public float cantidad_picking { get; set; }
         public string categoria_inventario { get; set; }
         public string subcategoria_inventario { get; set; }
-        public string atributo_generico_1 { get; set; }
-        public string atributo_generico_2 { get; set; }
+        public string? atributo_generico_1 { get; set; }
+        public string? atributo_generico_2 { get; set; }
     }
     public class TaskRequest
     {
@@ -66,7 +66,7 @@ namespace AccuracyModel.Vas
         public int id_tarea { get; set; }
         public int secuencia{ get; set; }
         public string descripcion_tarea { get; set; }
-        public string comentario { get; set; }
+        public string? comentario { get; set; }
     }
     public class RootTaskObject
     {

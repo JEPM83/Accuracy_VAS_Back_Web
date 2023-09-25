@@ -894,7 +894,7 @@ app.MapPost("/accuracy/vas/api/v1/GetOrderDetailTask",
                     var errorResponse = new
                     {
                         title = "Warning",
-                        message = "No hay registro de pedidos",
+                        message = "No hay registros que cumplan dicha coincidencia",
                         type = "3"
                     };
                     context.Response.StatusCode = StatusCodes.Status400BadRequest;
