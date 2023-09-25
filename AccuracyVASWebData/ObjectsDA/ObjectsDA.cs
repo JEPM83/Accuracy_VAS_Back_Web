@@ -25,6 +25,7 @@ namespace AccuracyData.ObjectosDA
         #region VAS
         public static string VAS_GET_PRODUCTION_LINE_BY_TERMINAL = "SP_VAS_WEB_GET_PRODUCTION_LINE_BY_TERMINAL";
         public static string VAS_GET_ORDER_VAS = "SP_VAS_WEB_GET_ORDER_VAS";
+        public static string VAS_POST_NOTIFY_ORDER_VAS = "SP_VAS_WEB_POST_NOTIFY_ORDER_VAS";
         public static string VAS_GET_ORDER_DETAIL_PICKING_VAS = "SP_VAS_WEB_GET_ORDER_DETAIL_PICKING_VAS";
         public static string VAS_GET_ORDER_DETAIL_TASK_VAS = "SP_VAS_WEB_GET_ORDER_DETAIL_TASK_VAS";
         public static string VAS_POST_START_TASK_VAS = "SP_VAS_WEB_POST_START_TASK_VAS";
@@ -36,6 +37,8 @@ namespace AccuracyData.ObjectosDA
         public static string VAS_POST_END_INCIDENCE_VAS = "SP_VAS_WEB_POST_END_INCIDENCE_VAS";
         public static string VAS_GET_LIST_NOTIFY_VAS = "SP_VAS_WEB_GET_LIST_NOTIFY_VAS";
         public static string VAS_POST_UPDATE_NOTIFY_VAS = "SP_VAS_WEB_POST_UPDATE_NOTIFY_VAS";
+        public static string VAS_GET_PANEL_LINEA_PRODUCCION_VAS = "SP_VAS_WEB_GET_PANEL_LINEA_PRODUCCION_VAS";
+        public static string VAS_GET_PANEL_ORDER_PRODUCCION_VAS = "SP_VAS_WEB_GET_PANEL_ORDER_PRODUCCION_VAS";
         #endregion
     }
 }

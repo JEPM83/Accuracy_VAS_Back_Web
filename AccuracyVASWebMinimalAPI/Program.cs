@@ -126,6 +126,7 @@ app.MapPost("/accuracy/vas/api/v1/LoginWeb", [AllowAnonymous] async ([FromBody] 
         claims.Add(new Claim("nombres", userResponse.nombres ?? ""));
         claims.Add(new Claim("apellidos", userResponse.apellidos ?? ""));
         claims.Add(new Claim("guid_sesion", userResponse.guid_sesion));
+        claims.Add(new Claim("linea_produccion", userResponse.linea_produccion));
         claims.Add(new Claim("almacen", "01"));
     } 
     var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:key"])); 
@@ -757,6 +758,96 @@ app.MapPost("/accuracy/vas/api/v1/GetOrder",
     .WithName("GetOrder")
     .WithTags("Vas");
 //
+app.MapPost("/accuracy/vas/api/v1/PostNotifyOrder",
+    [AllowAnonymous] async ([FromBody] NotifyOrderRequest obj, HttpContext context) =>
+    {
+        var authorizationHeader = context.Request.Headers["Authorization"].FirstOrDefault();
+
+        if (!StringValues.IsNullOrEmpty(authorizationHeader) && authorizationHeader.StartsWith("Bearer "))
+        {
+            var token = authorizationHeader.Substring("Bearer ".Length).Trim();
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]));
+            var validationParameters = new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = true,
+                ValidIssuer = builder.Configuration["Jwt:Issuer"],
+                ValidAudience = builder.Configuration["Jwt:Audience"],
+                IssuerSigningKey = key
+            };
+
+            try
+            {
+                // Intenta validar el token
+                SecurityToken validatedToken;
+                var principal = tokenHandler.ValidateToken(token, validationParameters, out validatedToken);
+
+                // El token es válido, puedes continuar con la lógica de la ruta
+                AccuracyBussiness.VasBL.VasWebBL poBL = new AccuracyBussiness.VasBL.VasWebBL();
+
+                if (poBL == null || string.IsNullOrEmpty(poBL.ToString()))
+                {
+                    var errorResponse = new
+                    {
+                        title = "Warning",
+                        message = "Error al obtener el resultado del registro de inicio de tarea VAS",
+                        type = "3"
+                    };
+                    context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                    return Results.Json(errorResponse);
+                }
+                List<NotifyOrderResponse> resp = poBL.POST_NOTIFY_ORDER_VAS(obj, connString);
+                if (resp == null || resp.Count == 0)
+                {
+                    var errorResponse = new
+                    {
+                        title = "Warning",
+                        message = "No se registro notificacion de orden",
+                        type = "3"
+                    };
+                    context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                    return Results.Json(errorResponse);
+                }
+                else
+                {
+                    context.Response.StatusCode = StatusCodes.Status200OK;
+                    return Results.Ok(resp);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Ocurrió un error al validar el token, devolver un error de autorización con mensaje JSON personalizado
+                var errorResponse = new
+                {
+                    title = "Error",
+                    message = ex.Message.ToString(),
+                    type = "1"
+                };
+                context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                return Results.Json(errorResponse);
+            }
+        }
+        else
+        {
+            // El usuario no está autenticado, devolvemos un error de autorización con mensaje JSON personalizado
+            var errorResponse = new
+            {
+                title = "Warning",
+                message = "Usuario no autenticado",
+                type = "3"
+            };
+            context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+            return Results.Json(errorResponse);
+        }
+    })
+    .Accepts<NotifyOrderRequest>("application/json")
+    .Produces<NotifyOrderRequest>(StatusCodes.Status200OK)
+    .WithName("PostNotifyOrder")
+    .WithTags("Vas");
+//
 app.MapPost("/accuracy/vas/api/v1/GetOrderDetailPicking",
     [AllowAnonymous] async ([FromBody] OrderPedidoDetailPickingRequest obj, HttpContext context) =>
     {
@@ -1074,7 +1165,7 @@ app.MapPost("/accuracy/vas/api/v1/GetPackingDetail",
                     var errorResponse = new
                     {
                         title = "Warning",
-                        message = "No se registro tarea",
+                        message = "No hay registros a mostrar",
                         type = "3"
                     };
                     context.Response.StatusCode = StatusCodes.Status400BadRequest;
@@ -1828,6 +1919,186 @@ app.MapPost("/accuracy/vas/api/v1/PostUpdateNotify",
     .Accepts<ActualizacionNotificacionRequest>("application/json")
     .Produces<ActualizacionNotificacionRequest>(StatusCodes.Status200OK)
     .WithName("PostUpdateNotify")
+    .WithTags("Vas");
+//
+app.MapPost("/accuracy/vas/api/v1/GetPanelLineaProduccion",
+    [AllowAnonymous] async ([FromBody] PanelLineaRequest obj, HttpContext context) =>
+    {
+        var authorizationHeader = context.Request.Headers["Authorization"].FirstOrDefault();
+
+        if (!StringValues.IsNullOrEmpty(authorizationHeader) && authorizationHeader.StartsWith("Bearer "))
+        {
+            var token = authorizationHeader.Substring("Bearer ".Length).Trim();
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]));
+            var validationParameters = new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = true,
+                ValidIssuer = builder.Configuration["Jwt:Issuer"],
+                ValidAudience = builder.Configuration["Jwt:Audience"],
+                IssuerSigningKey = key
+            };
+
+            try
+            {
+                // Intenta validar el token
+                SecurityToken validatedToken;
+                var principal = tokenHandler.ValidateToken(token, validationParameters, out validatedToken);
+
+                // El token es válido, puedes continuar con la lógica de la ruta
+                AccuracyBussiness.VasBL.VasWebBL poBL = new AccuracyBussiness.VasBL.VasWebBL();
+
+                if (poBL == null || string.IsNullOrEmpty(poBL.ToString()))
+                {
+                    var errorResponse = new
+                    {
+                        title = "Warning",
+                        message = "Error al obtener el resultado del registro de inicio de tarea VAS",
+                        type = "3"
+                    };
+                    context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                    return Results.Json(errorResponse);
+                }
+                List<PanelLineaResponse> resp = poBL.GET_PANEL_LINEA_PRODUCCION_VAS(obj, connString);
+                if (resp == null || resp.Count == 0)
+                {
+                    var errorResponse = new
+                    {
+                        title = "Warning",
+                        message = "No se registro incidencia",
+                        type = "3"
+                    };
+                    context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                    return Results.Json(errorResponse);
+                }
+                else
+                {
+                    context.Response.StatusCode = StatusCodes.Status200OK;
+                    return Results.Ok(resp);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Ocurrió un error al validar el token, devolver un error de autorización con mensaje JSON personalizado
+                var errorResponse = new
+                {
+                    title = "Error",
+                    message = ex.Message.ToString(),
+                    type = "1"
+                };
+                context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                return Results.Json(errorResponse);
+            }
+        }
+        else
+        {
+            // El usuario no está autenticado, devolvemos un error de autorización con mensaje JSON personalizado
+            var errorResponse = new
+            {
+                title = "Warning",
+                message = "Usuario no autenticado",
+                type = "3"
+            };
+            context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+            return Results.Json(errorResponse);
+        }
+    })
+    .Accepts<PanelLineaRequest>("application/json")
+    .Produces<PanelLineaRequest>(StatusCodes.Status200OK)
+    .WithName("GetPanelLineaProduccion")
+    .WithTags("Vas");
+//
+app.MapPost("/accuracy/vas/api/v1/GetPanelOrder",
+    [AllowAnonymous] async ([FromBody] PanelOrdenRequest obj, HttpContext context) =>
+    {
+        var authorizationHeader = context.Request.Headers["Authorization"].FirstOrDefault();
+
+        if (!StringValues.IsNullOrEmpty(authorizationHeader) && authorizationHeader.StartsWith("Bearer "))
+        {
+            var token = authorizationHeader.Substring("Bearer ".Length).Trim();
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]));
+            var validationParameters = new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = true,
+                ValidIssuer = builder.Configuration["Jwt:Issuer"],
+                ValidAudience = builder.Configuration["Jwt:Audience"],
+                IssuerSigningKey = key
+            };
+
+            try
+            {
+                // Intenta validar el token
+                SecurityToken validatedToken;
+                var principal = tokenHandler.ValidateToken(token, validationParameters, out validatedToken);
+
+                // El token es válido, puedes continuar con la lógica de la ruta
+                AccuracyBussiness.VasBL.VasWebBL poBL = new AccuracyBussiness.VasBL.VasWebBL();
+
+                if (poBL == null || string.IsNullOrEmpty(poBL.ToString()))
+                {
+                    var errorResponse = new
+                    {
+                        title = "Warning",
+                        message = "Error al obtener el resultado del registro de inicio de tarea VAS",
+                        type = "3"
+                    };
+                    context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                    return Results.Json(errorResponse);
+                }
+                List<PanelOrdenResponse> resp = poBL.GET_PANEL_ORDER_PRODUCCION_VAS(obj, connString);
+                if (resp == null || resp.Count == 0)
+                {
+                    var errorResponse = new
+                    {
+                        title = "Warning",
+                        message = "No se registro incidencia",
+                        type = "3"
+                    };
+                    context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                    return Results.Json(errorResponse);
+                }
+                else
+                {
+                    context.Response.StatusCode = StatusCodes.Status200OK;
+                    return Results.Ok(resp);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Ocurrió un error al validar el token, devolver un error de autorización con mensaje JSON personalizado
+                var errorResponse = new
+                {
+                    title = "Error",
+                    message = ex.Message.ToString(),
+                    type = "1"
+                };
+                context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                return Results.Json(errorResponse);
+            }
+        }
+        else
+        {
+            // El usuario no está autenticado, devolvemos un error de autorización con mensaje JSON personalizado
+            var errorResponse = new
+            {
+                title = "Warning",
+                message = "Usuario no autenticado",
+                type = "3"
+            };
+            context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+            return Results.Json(errorResponse);
+        }
+    })
+    .Accepts<PanelOrdenRequest>("application/json")
+    .Produces<PanelOrdenRequest>(StatusCodes.Status200OK)
+    .WithName("GetPanelOrder")
     .WithTags("Vas");
 //
 #endregion

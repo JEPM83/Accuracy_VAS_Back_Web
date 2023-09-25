@@ -25,6 +25,7 @@ namespace AccuracyData.SecurityDA
                     cmd.Parameters.Add("@usuario", SqlDbType.NVarChar).Value = model.usuario;
                     cmd.Parameters.Add("@password", SqlDbType.NVarChar).Value = model.password;
                     cmd.Parameters.Add("@sistema", SqlDbType.NVarChar).Value = model.sistema;
+                    cmd.Parameters.Add("@identificador", SqlDbType.NVarChar).Value = model.identificador;
                     conn.Open();
                     SqlDataReader sqlReader = cmd.ExecuteReader();
                     while (sqlReader.Read())
@@ -35,6 +36,7 @@ namespace AccuracyData.SecurityDA
                         plDetail.guid_sesion = sqlReader["guid_sesion"].ToString();
                         plDetail.status = sqlReader["status"].ToString();
                         plDetail.mensaje = sqlReader["mensaje"].ToString();
+                        plDetail.linea_produccion = sqlReader["linea_produccion"].ToString();
                         plListDetail.Add(plDetail);
                         plDetail = null;
                     }

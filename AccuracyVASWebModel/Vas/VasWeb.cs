@@ -31,6 +31,20 @@ namespace AccuracyModel.Vas
         public string categoria_inventario { get; set; }
         public string color_fondo { get; set; }
     }
+    public class  NotifyOrderRequest
+    {
+        public string id_almacen { get; set; }
+        public string numero_pedido { get; set; }
+        public string linea_produccion { get; set; }
+        public string? id_hu { get; set; }
+        public string usuario { get; set; }
+    }
+    public class NotifyOrderResponse
+    {
+        public string type { get; set; }
+        public string message { get; set; }
+        public string tittle { get; set; }
+    }
     public class OrderPedidoDetailPickingRequest
     {
         public string id_almacen { get; set; }
@@ -217,5 +231,32 @@ namespace AccuracyModel.Vas
         public string type { get; set; }
         public string message { get; set; }
         public string tittle { get; set; }
+    }
+    public class PanelLineaRequest { 
+        public string id_almacen { get; set; }
+    }
+    public class PanelLineaResponse { 
+        public string linea_produccion { get; set; }
+        public string nombres { get; set;}
+        public string numero_pedido { get; set; }
+        public float cantidad_vas { get; set; }
+        public int estado { get; set; }
+        public string semaforo { get; set; }
+        public string tiempo { get; set; }
+        public int fila { get; set; }
+        public int columna { get; set; }
+        public int grupo { get; set; }
+    }
+    public class PanelOrdenRequest
+    {
+        public string id_almacen { get; set; }
+    }
+    public class PanelOrdenResponse
+    {
+        public string numero_pedido { get; set; }
+        public float cantidad_picada { get; set; }
+        public float cantidad_vas { get; set; }
+        public int estado { get; set; }
+        public string color_barra { get;set; }
     }
 }

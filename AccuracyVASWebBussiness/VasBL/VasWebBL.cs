@@ -26,6 +26,13 @@ namespace AccuracyBussiness.VasBL
             resp = poObjects.GET_ORDER_VAS(model, cnx);
             return resp;
         }
+        public List<NotifyOrderResponse> POST_NOTIFY_ORDER_VAS(NotifyOrderRequest model, string cnx)
+        {
+            VasWebDA poObjects = new VasWebDA();
+            List<NotifyOrderResponse> resp = new List<NotifyOrderResponse>();
+            resp = poObjects.POST_NOTIFY_ORDER_VAS(model, cnx);
+            return resp;
+        }
         public List<OrderPedidoDetailPickingResponse> GET_ORDER_DETAIL_PICKING_VAS(OrderPedidoDetailPickingRequest model, string cnx)
         {
             VasWebDA poObjects = new VasWebDA();
@@ -120,6 +127,19 @@ namespace AccuracyBussiness.VasBL
             resp = poObjects.POST_UPDATE_NOTIFY_VAS(model, cnx);
             return resp;
         }
-
+        public List<PanelLineaResponse> GET_PANEL_LINEA_PRODUCCION_VAS(PanelLineaRequest model, string cnx)
+        {
+            VasWebDA poObjects = new VasWebDA();
+            List<PanelLineaResponse> resp = new List<PanelLineaResponse>();
+            resp = poObjects.GET_PANEL_LINEA_PRODUCCION_VAS(model, cnx);
+            return resp;
+        }
+        public List<PanelOrdenResponse> GET_PANEL_ORDER_PRODUCCION_VAS(PanelOrdenRequest model, string cnx)
+        {
+            VasWebDA poObjects = new VasWebDA();
+            List<PanelOrdenResponse> resp = new List<PanelOrdenResponse>();
+            resp = poObjects.GET_PANEL_ORDER_PRODUCCION_VAS(model, cnx);
+            return resp;
+        }
     }
 }

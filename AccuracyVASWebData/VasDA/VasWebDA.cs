@@ -89,6 +89,45 @@ namespace AccuracyData.VasDA
                 plListDetail = null;
             }
         }
+        public List<NotifyOrderResponse> POST_NOTIFY_ORDER_VAS(NotifyOrderRequest model, string cnx)
+        {
+            var plListDetail = new List<NotifyOrderResponse>();
+            try
+            {
+
+                using (SqlConnection conn = new SqlConnection(cnx))
+                using (SqlCommand cmd = new SqlCommand(ObjectsDA.VAS_POST_NOTIFY_ORDER_VAS, conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@id_almacen", SqlDbType.NVarChar).Value = model.id_almacen;
+                    cmd.Parameters.Add("@numero_pedido", SqlDbType.NVarChar).Value = model.numero_pedido;
+                    cmd.Parameters.Add("@linea_produccion", SqlDbType.NVarChar).Value = model.linea_produccion;
+                    cmd.Parameters.Add("@id_hu", SqlDbType.NVarChar).Value = model.id_hu;
+                    cmd.Parameters.Add("@usuario", SqlDbType.NVarChar).Value = model.usuario;
+                    conn.Open();
+                    SqlDataReader sqlReader = cmd.ExecuteReader();
+                    while (sqlReader.Read())
+                    {
+                        var plDetail = new NotifyOrderResponse();
+                        plDetail.type = sqlReader["estado"].ToString();
+                        plDetail.message = sqlReader["mensaje"].ToString();
+                        plDetail.tittle = sqlReader["titulo"].ToString();
+                        plListDetail.Add(plDetail);
+                        plDetail = null;
+                    }
+                    conn.Close();
+                    return plListDetail;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            finally
+            {
+                plListDetail = null;
+            }
+        }
         public List<OrderPedidoDetailPickingResponse> GET_ORDER_DETAIL_PICKING_VAS(OrderPedidoDetailPickingRequest model, string cnx)
         {
             var plListDetail = new List<OrderPedidoDetailPickingResponse>();
@@ -523,6 +562,85 @@ namespace AccuracyData.VasDA
                         plDetail.type = sqlReader["estado"].ToString();
                         plDetail.message = sqlReader["mensaje"].ToString();
                         plDetail.tittle = sqlReader["titulo"].ToString();
+                        plListDetail.Add(plDetail);
+                        plDetail = null;
+                    }
+                    conn.Close();
+                    return plListDetail;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            finally
+            {
+                plListDetail = null;
+            }
+        }
+        public List<PanelLineaResponse> GET_PANEL_LINEA_PRODUCCION_VAS(PanelLineaRequest model, string cnx)
+        {
+            var plListDetail = new List<PanelLineaResponse>();
+            try
+            {
+
+                using (SqlConnection conn = new SqlConnection(cnx))
+                using (SqlCommand cmd = new SqlCommand(ObjectsDA.VAS_GET_PANEL_LINEA_PRODUCCION_VAS, conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@id_almacen", SqlDbType.NVarChar).Value = model.id_almacen;
+                    conn.Open();
+                    SqlDataReader sqlReader = cmd.ExecuteReader();
+                    while (sqlReader.Read())
+                    {
+                        var plDetail = new PanelLineaResponse();
+                        plDetail.linea_produccion = sqlReader["linea_produccion"].ToString();
+                        plDetail.nombres = sqlReader["nombres"].ToString();
+                        plDetail.numero_pedido = sqlReader["numero_pedido"].ToString();
+                        plDetail.cantidad_vas = float.Parse(sqlReader["cantidad_vas"].ToString());
+                        plDetail.estado = int.Parse(sqlReader["estado"].ToString());
+                        plDetail.semaforo = sqlReader["semaforo"].ToString();
+                        plDetail.tiempo = sqlReader["tiempo"].ToString();
+                        plDetail.fila = int.Parse(sqlReader["fila"].ToString());
+                        plDetail.columna = int.Parse(sqlReader["columna"].ToString());
+                        plDetail.grupo = int.Parse(sqlReader["grupo"].ToString());
+                        plListDetail.Add(plDetail);
+                        plDetail = null;
+                    }
+                    conn.Close();
+                    return plListDetail;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            finally
+            {
+                plListDetail = null;
+            }
+        }
+        public List<PanelOrdenResponse> GET_PANEL_ORDER_PRODUCCION_VAS(PanelOrdenRequest model, string cnx)
+        {
+            var plListDetail = new List<PanelOrdenResponse>();
+            try
+            {
+
+                using (SqlConnection conn = new SqlConnection(cnx))
+                using (SqlCommand cmd = new SqlCommand(ObjectsDA.VAS_GET_PANEL_ORDER_PRODUCCION_VAS, conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@id_almacen", SqlDbType.NVarChar).Value = model.id_almacen;
+                    conn.Open();
+                    SqlDataReader sqlReader = cmd.ExecuteReader();
+                    while (sqlReader.Read())
+                    {
+                        var plDetail = new PanelOrdenResponse();
+                        plDetail.numero_pedido = sqlReader["numero_pedido"].ToString();
+                        plDetail.cantidad_picada = float.Parse(sqlReader["cantidad_picada"].ToString());
+                        plDetail.cantidad_vas = float.Parse(sqlReader["cantidad_vas"].ToString());
+                        plDetail.estado = int.Parse(sqlReader["estado"].ToString());
+                        plDetail.color_barra = sqlReader["color_barra"].ToString();
                         plListDetail.Add(plDetail);
                         plDetail = null;
                     }
