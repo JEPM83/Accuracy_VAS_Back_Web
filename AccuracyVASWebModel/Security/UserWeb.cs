@@ -22,7 +22,7 @@ namespace AccuracyModel.Security
         public string guid_sesion { get; set; }
         public string status { get; set; }
         public string mensaje { get; set; }
-        public string linea_produccion { get; set; }
+        public string? linea_produccion { get; set; }
     }
     public class UserWarehouseRequest {
         public string usuario { get; set; }
