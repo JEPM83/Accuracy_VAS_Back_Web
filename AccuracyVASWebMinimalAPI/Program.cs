@@ -104,14 +104,14 @@ app.MapPost("/accuracy/vas/api/v1/LoginWeb", [AllowAnonymous] async ([FromBody] 
     AccuracyBussiness.SecurityBL.SecurityWebBL poBL = new AccuracyBussiness.SecurityBL.SecurityWebBL();
     string HostGroupId = DateTime.Now.ToString("yyyyMMddHHmmssfff");
     List<UserResponse> resp = poBL.Login(obj, HostGroupId, connString);
-
-    if (resp[0].mensaje == "EL USUARIO YA TIENE UNA SESIÓN ACTIVA EN OTRO DISPOSITIVO" || resp[0].mensaje == "LAS CREDENCIALES ESTAN INCORRECTAS" || resp[0].mensaje == "NO EXISTE EL USUARIO EN LA BASE DE DATOS, VERIFIQUE.")
+    if (resp[0].status == "1")
+    //if (resp[0].mensaje == "EL USUARIO YA TIENE UNA SESIÓN ACTIVA EN OTRO DISPOSITIVO" || resp[0].mensaje == "LAS CREDENCIALES ESTAN INCORRECTAS" || resp[0].mensaje == "NO EXISTE EL USUARIO EN LA BASE DE DATOS, VERIFIQUE.")
     {
         var modalResponse = new
         {
             title = "Warning",
             message = resp[0].mensaje,
-            type = resp[0].mensaje == "EL USUARIO YA TIENE UNA SESIÓN ACTIVA EN OTRO DISPOSITIVO" ? 1 : resp[0].mensaje == "LAS CREDENCIALES ESTAN INCORRECTAS" ? 2 : 3
+            type = 3//resp[0].mensaje == "EL USUARIO YA TIENE UNA SESIÓN ACTIVA EN OTRO DISPOSITIVO" ? 1 : resp[0].mensaje == "LAS CREDENCIALES ESTAN INCORRECTAS" ? 2 : 3
         };
 
         response.Headers.Add("Access-Control-Allow-Origin", "*");
