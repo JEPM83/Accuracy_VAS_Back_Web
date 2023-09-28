@@ -641,6 +641,8 @@ namespace AccuracyData.VasDA
                         plDetail.cantidad_vas = float.Parse(sqlReader["cantidad_vas"].ToString());
                         plDetail.estado = int.Parse(sqlReader["estado"].ToString());
                         plDetail.color_barra = sqlReader["color_barra"].ToString();
+                        plDetail.total_linea_produccion = int.Parse(sqlReader["total_linea_produccion"].ToString());
+                        plDetail.total_usuario = int.Parse(sqlReader["total_usuario"].ToString());
                         plListDetail.Add(plDetail);
                         plDetail = null;
                     }

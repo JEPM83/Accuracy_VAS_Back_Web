@@ -258,5 +258,7 @@ namespace AccuracyModel.Vas
         public float cantidad_vas { get; set; }
         public int estado { get; set; }
         public string color_barra { get;set; }
+        public int? total_linea_produccion { get; set; }
+        public int? total_usuario { get; set; }
     }
 }
