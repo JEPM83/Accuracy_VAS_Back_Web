@@ -73,6 +73,7 @@ namespace AccuracyData.VasDA
                         plDetail.id_hu = sqlReader["id_hu"].ToString();
                         plDetail.categoria_inventario = sqlReader["categoria_inventario"].ToString();
                         plDetail.color_fondo = sqlReader["color_fondo"].ToString();
+                        plDetail.medida = sqlReader["medida"].ToString();
                         plListDetail.Add(plDetail);
                         plDetail = null;
                     }
@@ -281,6 +282,7 @@ namespace AccuracyData.VasDA
                         plDetail.descripcion = sqlReader["descripcion"].ToString();
                         plDetail.cantidad = float.Parse(sqlReader["cantidad"].ToString());
                         plDetail.unidad_medida = sqlReader["unidad_medida"].ToString();
+                        plDetail.talla_b2b = sqlReader["talla_b2b"].ToString();
                         plListDetail.Add(plDetail);
                         plDetail = null;
                     }
@@ -659,6 +661,7 @@ namespace AccuracyData.VasDA
                 plListDetail = null;
             }
         }
+        /*Vistas supervisor*/
     }
 }
 

@@ -30,6 +30,7 @@ namespace AccuracyModel.Vas
         public string? id_hu { get; set; }
         public string categoria_inventario { get; set; }
         public string color_fondo { get; set; }
+        public string medida { get; set; }
     }
     public class  NotifyOrderRequest
     {
@@ -129,6 +130,7 @@ namespace AccuracyModel.Vas
         public string descripcion { get; set; }
         public float cantidad { get; set; }
         public string unidad_medida { get; set; }
+        public string? talla_b2b { get; set; }
     }
     public class LPNvalidateRequest
     {
