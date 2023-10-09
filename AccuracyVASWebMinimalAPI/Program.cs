@@ -1924,29 +1924,29 @@ app.MapPost("/accuracy/vas/api/v1/PostUpdateNotify",
 app.MapPost("/accuracy/vas/api/v1/GetPanelLineaProduccion",
     [AllowAnonymous] async ([FromBody] PanelLineaRequest obj, HttpContext context) =>
     {
-        var authorizationHeader = context.Request.Headers["Authorization"].FirstOrDefault();
+        //var authorizationHeader = context.Request.Headers["Authorization"].FirstOrDefault();
 
-        if (!StringValues.IsNullOrEmpty(authorizationHeader) && authorizationHeader.StartsWith("Bearer "))
-        {
-            var token = authorizationHeader.Substring("Bearer ".Length).Trim();
+        //if (!StringValues.IsNullOrEmpty(authorizationHeader) && authorizationHeader.StartsWith("Bearer "))
+        //{
+        //    var token = authorizationHeader.Substring("Bearer ".Length).Trim();
 
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]));
-            var validationParameters = new TokenValidationParameters
-            {
-                ValidateIssuer = true,
-                ValidateAudience = true,
-                ValidateLifetime = true,
-                ValidIssuer = builder.Configuration["Jwt:Issuer"],
-                ValidAudience = builder.Configuration["Jwt:Audience"],
-                IssuerSigningKey = key
-            };
+        //    var tokenHandler = new JwtSecurityTokenHandler();
+        //    var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]));
+        //    var validationParameters = new TokenValidationParameters
+        //    {
+        //        ValidateIssuer = true,
+        //        ValidateAudience = true,
+        //        ValidateLifetime = true,
+        //        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        //        ValidAudience = builder.Configuration["Jwt:Audience"],
+        //        IssuerSigningKey = key
+        //    };
 
             try
             {
                 // Intenta validar el token
-                SecurityToken validatedToken;
-                var principal = tokenHandler.ValidateToken(token, validationParameters, out validatedToken);
+                //SecurityToken validatedToken;
+                //var principal = tokenHandler.ValidateToken(token, validationParameters, out validatedToken);
 
                 // El token es válido, puedes continuar con la lógica de la ruta
                 AccuracyBussiness.VasBL.VasWebBL poBL = new AccuracyBussiness.VasBL.VasWebBL();
@@ -1992,19 +1992,19 @@ app.MapPost("/accuracy/vas/api/v1/GetPanelLineaProduccion",
                 context.Response.StatusCode = StatusCodes.Status400BadRequest;
                 return Results.Json(errorResponse);
             }
-        }
-        else
-        {
-            // El usuario no está autenticado, devolvemos un error de autorización con mensaje JSON personalizado
-            var errorResponse = new
-            {
-                title = "Warning",
-                message = "Usuario no autenticado",
-                type = "3"
-            };
-            context.Response.StatusCode = StatusCodes.Status401Unauthorized;
-            return Results.Json(errorResponse);
-        }
+        //}
+        //else
+        //{
+        //    // El usuario no está autenticado, devolvemos un error de autorización con mensaje JSON personalizado
+        //    var errorResponse = new
+        //    {
+        //        title = "Warning",
+        //        message = "Usuario no autenticado",
+        //        type = "3"
+        //    };
+        //    context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+        //    return Results.Json(errorResponse);
+        //}
     })
     .Accepts<PanelLineaRequest>("application/json")
     .Produces<PanelLineaRequest>(StatusCodes.Status200OK)
@@ -2014,29 +2014,29 @@ app.MapPost("/accuracy/vas/api/v1/GetPanelLineaProduccion",
 app.MapPost("/accuracy/vas/api/v1/GetPanelOrder",
     [AllowAnonymous] async ([FromBody] PanelOrdenRequest obj, HttpContext context) =>
     {
-        var authorizationHeader = context.Request.Headers["Authorization"].FirstOrDefault();
+    //    var authorizationHeader = context.Request.Headers["Authorization"].FirstOrDefault();
 
-        if (!StringValues.IsNullOrEmpty(authorizationHeader) && authorizationHeader.StartsWith("Bearer "))
-        {
-            var token = authorizationHeader.Substring("Bearer ".Length).Trim();
+    //    if (!StringValues.IsNullOrEmpty(authorizationHeader) && authorizationHeader.StartsWith("Bearer "))
+    //    {
+    //        var token = authorizationHeader.Substring("Bearer ".Length).Trim();
 
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]));
-            var validationParameters = new TokenValidationParameters
-            {
-                ValidateIssuer = true,
-                ValidateAudience = true,
-                ValidateLifetime = true,
-                ValidIssuer = builder.Configuration["Jwt:Issuer"],
-                ValidAudience = builder.Configuration["Jwt:Audience"],
-                IssuerSigningKey = key
-            };
+    //        var tokenHandler = new JwtSecurityTokenHandler();
+    //        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]));
+    //        var validationParameters = new TokenValidationParameters
+    //        {
+    //            ValidateIssuer = true,
+    //            ValidateAudience = true,
+    //            ValidateLifetime = true,
+    //            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+    //            ValidAudience = builder.Configuration["Jwt:Audience"],
+    //            IssuerSigningKey = key
+    //        };
 
             try
             {
                 // Intenta validar el token
-                SecurityToken validatedToken;
-                var principal = tokenHandler.ValidateToken(token, validationParameters, out validatedToken);
+                //SecurityToken validatedToken;
+                //var principal = tokenHandler.ValidateToken(token, validationParameters, out validatedToken);
 
                 // El token es válido, puedes continuar con la lógica de la ruta
                 AccuracyBussiness.VasBL.VasWebBL poBL = new AccuracyBussiness.VasBL.VasWebBL();
@@ -2082,19 +2082,19 @@ app.MapPost("/accuracy/vas/api/v1/GetPanelOrder",
                 context.Response.StatusCode = StatusCodes.Status400BadRequest;
                 return Results.Json(errorResponse);
             }
-        }
-        else
-        {
-            // El usuario no está autenticado, devolvemos un error de autorización con mensaje JSON personalizado
-            var errorResponse = new
-            {
-                title = "Warning",
-                message = "Usuario no autenticado",
-                type = "3"
-            };
-            context.Response.StatusCode = StatusCodes.Status401Unauthorized;
-            return Results.Json(errorResponse);
-        }
+        //}
+        //else
+        //{
+        //    // El usuario no está autenticado, devolvemos un error de autorización con mensaje JSON personalizado
+        //    var errorResponse = new
+        //    {
+        //        title = "Warning",
+        //        message = "Usuario no autenticado",
+        //        type = "3"
+        //    };
+        //    context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+        //    return Results.Json(errorResponse);
+        //}
     })
     .Accepts<PanelOrdenRequest>("application/json")
     .Produces<PanelOrdenRequest>(StatusCodes.Status200OK)
