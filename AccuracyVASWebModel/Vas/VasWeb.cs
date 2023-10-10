@@ -159,6 +159,22 @@ namespace AccuracyModel.Vas
         public string message { get; set; }
         public string tittle { get; set; }
     }
+    public class DeleteVasRequest
+    {
+        public string id_almacen { get; set; }
+        public string numero_pedido { get; set; }
+        public string linea_produccion { get; set; }
+        public string? id_hu { get; set; }
+        public string lpn { get; set; }
+        public string numero_item { get; set; }
+        public string usuario { get; set; }
+    }
+    public class DeleteVasResponse
+    {
+        public string type { get; set; }
+        public string message { get; set; }
+        public string tittle { get; set; }
+    }
     public class FinTareaRequest
     {
         public string id_almacen { get; set; }

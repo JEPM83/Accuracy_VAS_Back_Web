@@ -92,6 +92,13 @@ namespace AccuracyBussiness.VasBL
             resp = poObjects.POST_LPN_SKU_VAS(model, cnx);
             return resp;
         }
+        public List<DeleteVasResponse> POST_DELETE_VAS(DeleteVasRequest model, string cnx)
+        {
+            VasWebDA poObjects = new VasWebDA();
+            List<DeleteVasResponse> resp = new List<DeleteVasResponse>();
+            resp = poObjects.POST_DELETE_VAS(model, cnx);
+            return resp;
+        }
         public List<FinTareaResponse> POST_END_TASK_VAS(FinTareaRequest model, string cnx)
         {
             VasWebDA poObjects = new VasWebDA();

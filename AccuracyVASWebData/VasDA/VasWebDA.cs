@@ -377,6 +377,47 @@ namespace AccuracyData.VasDA
                 plListDetail = null;
             }
         }
+        public List<DeleteVasResponse> POST_DELETE_VAS(DeleteVasRequest model, string cnx)
+        {
+            var plListDetail = new List<DeleteVasResponse>();
+            try
+            {
+
+                using (SqlConnection conn = new SqlConnection(cnx))
+                using (SqlCommand cmd = new SqlCommand(ObjectsDA.VAS_POST_DELETE_VAS, conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@id_almacen", SqlDbType.NVarChar).Value = model.id_almacen;
+                    cmd.Parameters.Add("@numero_pedido", SqlDbType.NVarChar).Value = model.numero_pedido;
+                    cmd.Parameters.Add("@linea_produccion", SqlDbType.NVarChar).Value = model.linea_produccion;
+                    cmd.Parameters.Add("@id_hu", SqlDbType.NVarChar).Value = model.id_hu;
+                    cmd.Parameters.Add("@lpn", SqlDbType.NVarChar).Value = model.lpn;
+                    cmd.Parameters.Add("@numero_item", SqlDbType.NVarChar).Value = model.numero_item;
+                    cmd.Parameters.Add("@usuario", SqlDbType.NVarChar).Value = model.usuario;
+                    conn.Open();
+                    SqlDataReader sqlReader = cmd.ExecuteReader();
+                    while (sqlReader.Read())
+                    {
+                        var plDetail = new DeleteVasResponse();
+                        plDetail.type = sqlReader["estado"].ToString();
+                        plDetail.message = sqlReader["mensaje"].ToString();
+                        plDetail.tittle = sqlReader["titulo"].ToString();
+                        plListDetail.Add(plDetail);
+                        plDetail = null;
+                    }
+                    conn.Close();
+                    return plListDetail;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            finally
+            {
+                plListDetail = null;
+            }
+        }
         public List<FinTareaResponse> POST_END_TASK_VAS(FinTareaRequest model, string cnx)
         {
             var plListDetail = new List<FinTareaResponse>();
