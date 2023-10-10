@@ -40,6 +40,9 @@ namespace AccuracyData.ObjectosDA
         public static string VAS_POST_UPDATE_NOTIFY_VAS = "SP_VAS_WEB_POST_UPDATE_NOTIFY_VAS";
         public static string VAS_GET_PANEL_LINEA_PRODUCCION_VAS = "SP_VAS_WEB_GET_PANEL_LINEA_PRODUCCION_VAS";
         public static string VAS_GET_PANEL_ORDER_PRODUCCION_VAS = "SP_VAS_WEB_GET_PANEL_ORDER_PRODUCCION_VAS";
+        /**/
+        public static string VAS_GET_LIST_ORDER_PRODUCCION_VAS = "SP_VAS_WEB_GET_LIST_ORDER_PRODUCCION_VAS";
+        public static string VAS_GET_LIST_STATE_USERS_VAS = "SP_VAS_WEB_GET_LIST_STATE_USERS_VAS";
         #endregion
     }
 }

@@ -703,6 +703,89 @@ namespace AccuracyData.VasDA
             }
         }
         /*Vistas supervisor*/
+        public List<OrdenesVasResponse> GET_LIST_ORDER_PRODUCCION_VAS(OrdenesVasRequest model, string cnx)
+        {
+            var plListDetail = new List<OrdenesVasResponse>();
+            try
+            {
+
+                using (SqlConnection conn = new SqlConnection(cnx))
+                using (SqlCommand cmd = new SqlCommand(ObjectsDA.VAS_GET_LIST_ORDER_PRODUCCION_VAS, conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@id_almacen", SqlDbType.NVarChar).Value = model.id_almacen;
+                    cmd.Parameters.Add("@numero_pedido", SqlDbType.NVarChar).Value = model.numero_pedido;
+                    cmd.Parameters.Add("@fecha_inicial_despacho", SqlDbType.Date).Value = model.fecha_inicial_despacho;
+                    cmd.Parameters.Add("@fecha_final_despacho", SqlDbType.Date).Value = model.fecha_final_despacho;
+                    conn.Open();
+                    SqlDataReader sqlReader = cmd.ExecuteReader();
+                    while (sqlReader.Read())
+                    {
+                        var plDetail = new OrdenesVasResponse();
+                        plDetail.proveedor = sqlReader["proveedor"].ToString();
+                        plDetail.numero_pedido = sqlReader["numero_pedido"].ToString();
+                        plDetail.destino = sqlReader["destino"].ToString();
+                        plDetail.familia_producto = sqlReader["familia_producto"].ToString();
+                        plDetail.cantidad = float.Parse(sqlReader["cantidad"].ToString());
+                        plDetail.avance = float.Parse(sqlReader["avance"].ToString());
+                        plDetail.fecha_despacho = sqlReader["fecha_despacho"].ToString();
+                        plListDetail.Add(plDetail);
+                        plDetail = null;
+                    }
+                    conn.Close();
+                    return plListDetail;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            finally
+            {
+                plListDetail = null;
+            }
+        }
+        public List<UsuariosVasResponse> GET_LIST_STATE_USERS_VAS(UsuariosVasRequest model, string cnx)
+        {
+            var plListDetail = new List<UsuariosVasResponse>();
+            try
+            {
+
+                using (SqlConnection conn = new SqlConnection(cnx))
+                using (SqlCommand cmd = new SqlCommand(ObjectsDA.VAS_GET_LIST_STATE_USERS_VAS, conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@id_almacen", SqlDbType.NVarChar).Value = model.id_almacen;
+                    cmd.Parameters.Add("@numero_pedido", SqlDbType.NVarChar).Value = model.numero_pedido;
+                    cmd.Parameters.Add("@fecha_inicial_despacho", SqlDbType.Date).Value = model.fecha_inicial_despacho;
+                    cmd.Parameters.Add("@fecha_final_despacho", SqlDbType.Date).Value = model.fecha_final_despacho;
+                    conn.Open();
+                    SqlDataReader sqlReader = cmd.ExecuteReader();
+                    while (sqlReader.Read())
+                    {
+                        var plDetail = new UsuariosVasResponse();
+                        plDetail.colaborador = sqlReader["colaborador"].ToString();
+                        plDetail.linea_produccion = sqlReader["linea_produccion"].ToString();
+                        plDetail.estado = sqlReader["estado"].ToString();
+                        plDetail.numero_pedido = sqlReader["numero_pedido"].ToString();
+                        plDetail.destino = sqlReader["destino"].ToString();
+                        plDetail.categoria_inventario = sqlReader["categoria_inventario"].ToString();
+                        plListDetail.Add(plDetail);
+                        plDetail = null;
+                    }
+                    conn.Close();
+                    return plListDetail;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            finally
+            {
+                plListDetail = null;
+            }
+        }
     }
 }
 

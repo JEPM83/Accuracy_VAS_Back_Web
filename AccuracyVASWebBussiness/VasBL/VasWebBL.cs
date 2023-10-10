@@ -148,5 +148,19 @@ namespace AccuracyBussiness.VasBL
             resp = poObjects.GET_PANEL_ORDER_PRODUCCION_VAS(model, cnx);
             return resp;
         }
+        public List<OrdenesVasResponse> GET_LIST_ORDER_PRODUCCION_VAS(OrdenesVasRequest model, string cnx)
+        {
+            VasWebDA poObjects = new VasWebDA();
+            List<OrdenesVasResponse> resp = new List<OrdenesVasResponse>();
+            resp = poObjects.GET_LIST_ORDER_PRODUCCION_VAS(model, cnx);
+            return resp;
+        }
+        public List<UsuariosVasResponse> GET_LIST_STATE_USERS_VAS(UsuariosVasRequest model, string cnx)
+        {
+            VasWebDA poObjects = new VasWebDA();
+            List<UsuariosVasResponse> resp = new List<UsuariosVasResponse>();
+            resp = poObjects.GET_LIST_STATE_USERS_VAS(model, cnx);
+            return resp;
+        }
     }
 }

@@ -279,4 +279,38 @@ namespace AccuracyModel.Vas
         public int? total_linea_produccion { get; set; }
         public int? total_usuario { get; set; }
     }
+    /*SUPERVISOR*/
+    public class OrdenesVasRequest
+    {
+        public string id_almacen { get; set; }
+        public string numero_pedido { get; set; }
+        public string? fecha_inicial_despacho { get; set; }
+        public string? fecha_final_despacho { get; set; }
+    }
+    public class OrdenesVasResponse
+    {
+        public string proveedor { get; set; }
+        public string numero_pedido { get; set; }
+        public string destino { get; set; }
+        public string familia_producto { get; set; }
+        public float cantidad{ get; set; }
+        public float avance { get; set; }
+        public string fecha_despacho { get; set; }
+    }
+    public class UsuariosVasRequest
+    {
+        public string id_almacen { get; set; }
+        public string numero_pedido { get; set; }
+        public string? fecha_inicial_despacho { get; set; }
+        public string? fecha_final_despacho { get; set; }
+    }
+    public class UsuariosVasResponse
+    {
+        public string colaborador { get; set; }
+        public string linea_produccion { get; set; }
+        public string estado { get; set; }
+        public string numero_pedido { get; set; }
+        public string destino { get; set; }
+        public string categoria_inventario { get; set; }
+    }
 }
