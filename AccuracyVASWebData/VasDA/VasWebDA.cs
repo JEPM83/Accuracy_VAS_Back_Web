@@ -786,6 +786,54 @@ namespace AccuracyData.VasDA
                 plListDetail = null;
             }
         }
+        public List<B2BVasResponse> GET_LIST_ORDER_B2B_VAS(B2BVasRequest model, string cnx)
+        {
+            var plListDetail = new List<B2BVasResponse>();
+            try
+            {
+
+                using (SqlConnection conn = new SqlConnection(cnx))
+                using (SqlCommand cmd = new SqlCommand(ObjectsDA.VAS_GET_LIST_ORDER_B2B_VAS, conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@id_almacen", SqlDbType.NVarChar).Value = model.id_almacen;
+                    cmd.Parameters.Add("@numero_pedido", SqlDbType.NVarChar).Value = model.numero_pedido;
+                    cmd.Parameters.Add("@fecha_inicial_despacho", SqlDbType.Date).Value = model.fecha_inicial_despacho;
+                    cmd.Parameters.Add("@fecha_final_despacho", SqlDbType.Date).Value = model.fecha_final_despacho;
+                    conn.Open();
+                    SqlDataReader sqlReader = cmd.ExecuteReader();
+                    while (sqlReader.Read())
+                    {
+                        var plDetail = new B2BVasResponse();
+                        plDetail.o_r = sqlReader["o_r"].ToString();
+                        plDetail.o_c = sqlReader["o_c"].ToString();
+                        plDetail.id_cliente = sqlReader["id_cliente"].ToString();
+                        plDetail.nombre_cliente = sqlReader["nombre_cliente"].ToString();
+                        plDetail.destino_cod = sqlReader["destino_cod"].ToString();
+                        plDetail.destino_des = sqlReader["destino_des"].ToString();
+                        plDetail.sku = sqlReader["sku"].ToString();
+                        plDetail.item = sqlReader["item"].ToString();
+                        plDetail.talla = sqlReader["talla"].ToString();
+                        plDetail.cantidad = sqlReader["cantidad"].ToString();
+                        plDetail.ean13 = sqlReader["ean13"].ToString();
+                        plDetail.precio = sqlReader["precio"].ToString();
+                        plDetail.lpn = sqlReader["lpn"].ToString();
+                        plListDetail.Add(plDetail);
+                        plDetail = null;
+                    }
+                    conn.Close();
+                    return plListDetail;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            finally
+            {
+                plListDetail = null;
+            }
+        }
     }
 }
 

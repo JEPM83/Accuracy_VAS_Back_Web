@@ -148,7 +148,8 @@ app.MapPost("/accuracy/vas/api/v1/LoginWeb", [AllowAnonymous] async ([FromBody] 
         estado_sesion = resp[0].estado_sesion,
         guid_sesion = resp[0].guid_sesion,
         status = resp[0].status,
-        mensaje = resp[0].mensaje
+        mensaje = resp[0].mensaje,
+        ruta = resp[0].ruta
     }; 
     response.Headers.Add("Access-Control-Allow-Origin", "*");
     return Results.Ok(tokenResponse);
@@ -2383,6 +2384,96 @@ app.MapPost("/accuracy/vas/api/v1/GetUsersState",
     .Accepts<UsuariosVasRequest>("application/json")
     .Produces<UsuariosVasRequest>(StatusCodes.Status200OK)
     .WithName("GetUsersState")
+    .WithTags("Vas");
+//
+app.MapPost("/accuracy/vas/api/v1/GetB2BVas",
+    [AllowAnonymous] async ([FromBody] B2BVasRequest obj, HttpContext context) =>
+    {
+        var authorizationHeader = context.Request.Headers["Authorization"].FirstOrDefault();
+
+        if (!StringValues.IsNullOrEmpty(authorizationHeader) && authorizationHeader.StartsWith("Bearer "))
+        {
+            var token = authorizationHeader.Substring("Bearer ".Length).Trim();
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]));
+            var validationParameters = new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = true,
+                ValidIssuer = builder.Configuration["Jwt:Issuer"],
+                ValidAudience = builder.Configuration["Jwt:Audience"],
+                IssuerSigningKey = key
+            };
+
+            try
+            {
+                // Intenta validar el token
+                SecurityToken validatedToken;
+                var principal = tokenHandler.ValidateToken(token, validationParameters, out validatedToken);
+
+                // El token es válido, puedes continuar con la lógica de la ruta
+                AccuracyBussiness.VasBL.VasWebBL poBL = new AccuracyBussiness.VasBL.VasWebBL();
+
+                if (poBL == null || string.IsNullOrEmpty(poBL.ToString()))
+                {
+                    var errorResponse = new
+                    {
+                        title = "Warning",
+                        message = "Error al obtener el resultado del registro de inicio de tarea VAS",
+                        type = "3"
+                    };
+                    context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                    return Results.Json(errorResponse);
+                }
+                List<B2BVasResponse> resp = poBL.GET_LIST_ORDER_B2B_VAS(obj, connString);
+                if (resp == null || resp.Count == 0)
+                {
+                    var errorResponse = new
+                    {
+                        title = "Warning",
+                        message = "No hay registros a mostrar",
+                        type = "3"
+                    };
+                    context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                    return Results.Json(errorResponse);
+                }
+                else
+                {
+                    context.Response.StatusCode = StatusCodes.Status200OK;
+                    return Results.Ok(resp);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Ocurrió un error al validar el token, devolver un error de autorización con mensaje JSON personalizado
+                var errorResponse = new
+                {
+                    title = "Error",
+                    message = ex.Message.ToString(),
+                    type = "1"
+                };
+                context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                return Results.Json(errorResponse);
+            }
+        }
+        else
+        {
+            // El usuario no está autenticado, devolvemos un error de autorización con mensaje JSON personalizado
+            var errorResponse = new
+            {
+                title = "Warning",
+                message = "Usuario no autenticado",
+                type = "3"
+            };
+            context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+            return Results.Json(errorResponse);
+        }
+    })
+    .Accepts<B2BVasRequest>("application/json")
+    .Produces<B2BVasRequest>(StatusCodes.Status200OK)
+    .WithName("GetB2BVas")
     .WithTags("Vas");
 //
 #endregion

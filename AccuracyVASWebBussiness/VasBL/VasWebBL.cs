@@ -162,5 +162,12 @@ namespace AccuracyBussiness.VasBL
             resp = poObjects.GET_LIST_STATE_USERS_VAS(model, cnx);
             return resp;
         }
+        public List<B2BVasResponse> GET_LIST_ORDER_B2B_VAS(B2BVasRequest model, string cnx)
+        {
+            VasWebDA poObjects = new VasWebDA();
+            List<B2BVasResponse> resp = new List<B2BVasResponse>();
+            resp = poObjects.GET_LIST_ORDER_B2B_VAS(model, cnx);
+            return resp;
+        }
     }
 }

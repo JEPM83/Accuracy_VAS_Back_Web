@@ -1,0 +1,17 @@
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\bin\Debug\net6.0\AccuracyVASBussiness.deps.json
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\bin\Debug\net6.0\AccuracyVASBussiness.dll
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\bin\Debug\net6.0\AccuracyVASBussiness.pdb
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\bin\Debug\net6.0\AccuracyVASData.dll
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\bin\Debug\net6.0\AccuracyVASModel.dll
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\bin\Debug\net6.0\AccuracyVASData.pdb
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\bin\Debug\net6.0\AccuracyVASModel.pdb
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\obj\Debug\net6.0\AccuracyVASBussiness.csproj.AssemblyReference.cache
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\obj\Debug\net6.0\AccuracyVASBussiness.GeneratedMSBuildEditorConfig.editorconfig
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\obj\Debug\net6.0\AccuracyVASBussiness.AssemblyInfoInputs.cache
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\obj\Debug\net6.0\AccuracyVASBussiness.AssemblyInfo.cs
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\obj\Debug\net6.0\AccuracyVASBussiness.csproj.CoreCompileInputs.cache
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\obj\Debug\net6.0\AccuracyVASBussiness.csproj.CopyComplete
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\obj\Debug\net6.0\AccuracyVASBussiness.dll
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\obj\Debug\net6.0\refint\AccuracyVASBussiness.dll
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\obj\Debug\net6.0\AccuracyVASBussiness.pdb
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\obj\Debug\net6.0\ref\AccuracyVASBussiness.dll

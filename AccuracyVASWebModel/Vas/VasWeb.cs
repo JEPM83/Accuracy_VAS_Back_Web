@@ -313,4 +313,26 @@ namespace AccuracyModel.Vas
         public string destino { get; set; }
         public string categoria_inventario { get; set; }
     }
+    public class B2BVasRequest {
+        public string id_almacen { get; set; }
+        public string numero_pedido { get; set; }
+        public string? fecha_inicial_despacho { get; set; }
+        public string? fecha_final_despacho { get; set; }
+    }
+    public class B2BVasResponse { 
+        public string o_r { get; set; }
+        public string o_c { get; set; }
+        public string id_cliente { get; set; }
+        public string nombre_cliente { get; set; }
+        public string destino_cod { get; set; }
+        public string destino_des { get; set; }
+        public string sku { get; set; }
+        public string item { get; set; }
+        public string talla { get; set; }
+        public string cantidad { get; set; }
+        public string ean13 { get; set; }
+        public string precio { get; set; }
+        public string lpn { get; set; }
+
+    }
 }

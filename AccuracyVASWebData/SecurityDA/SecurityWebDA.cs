@@ -37,6 +37,7 @@ namespace AccuracyData.SecurityDA
                         plDetail.status = sqlReader["status"].ToString();
                         plDetail.mensaje = sqlReader["mensaje"].ToString();
                         plDetail.linea_produccion = sqlReader["linea_produccion"].ToString();
+                        plDetail.ruta = sqlReader["ruta"].ToString();
                         plListDetail.Add(plDetail);
                         plDetail = null;
                     }
