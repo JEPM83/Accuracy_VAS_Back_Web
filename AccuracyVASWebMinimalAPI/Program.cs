@@ -1169,7 +1169,7 @@ app.MapPost("/accuracy/vas/api/v1/GetPackingDetail",
                         message = "No hay registros a mostrar",
                         type = "3"
                     };
-                    context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                    context.Response.StatusCode = StatusCodes.Status204NoContent;
                     return Results.Json(errorResponse);
                 }
                 else
@@ -2256,7 +2256,7 @@ app.MapPost("/accuracy/vas/api/v1/GetOrderArc",
                         message = "No hay registros a mostrar",
                         type = "3"
                     };
-                    context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                    context.Response.StatusCode = StatusCodes.Status204NoContent;
                     return Results.Json(errorResponse);
                 }
                 else
@@ -2346,7 +2346,7 @@ app.MapPost("/accuracy/vas/api/v1/GetUsersState",
                         message = "No hay registros a mostrar",
                         type = "3"
                     };
-                    context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                    context.Response.StatusCode = StatusCodes.Status204NoContent;
                     return Results.Json(errorResponse);
                 }
                 else
@@ -2436,7 +2436,7 @@ app.MapPost("/accuracy/vas/api/v1/GetB2BVas",
                         message = "No hay registros a mostrar",
                         type = "3"
                     };
-                    context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                    context.Response.StatusCode = StatusCodes.Status204NoContent;
                     return Results.Json(errorResponse);
                 }
                 else
