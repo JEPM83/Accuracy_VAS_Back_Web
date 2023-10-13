@@ -331,7 +331,7 @@ namespace AccuracyModel.Vas
         public string talla { get; set; }
         public string cantidad { get; set; }
         public string ean13 { get; set; }
-        public string precio { get; set; }
+        public string? precio { get; set; }
         public string lpn { get; set; }
 
     }
