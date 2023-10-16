@@ -729,6 +729,7 @@ namespace AccuracyData.VasDA
                         plDetail.cantidad = float.Parse(sqlReader["cantidad"].ToString());
                         plDetail.avance = float.Parse(sqlReader["avance"].ToString());
                         plDetail.fecha_despacho = sqlReader["fecha_despacho"].ToString();
+                        plDetail.estado = sqlReader["estado"].ToString();
                         plListDetail.Add(plDetail);
                         plDetail = null;
                     }

@@ -296,6 +296,7 @@ namespace AccuracyModel.Vas
         public float cantidad{ get; set; }
         public float avance { get; set; }
         public string fecha_despacho { get; set; }
+        public string estado { get; set; }
     }
     public class UsuariosVasRequest
     {
