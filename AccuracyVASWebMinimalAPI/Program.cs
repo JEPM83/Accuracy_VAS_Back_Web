@@ -128,6 +128,7 @@ app.MapPost("/accuracy/vas/api/v1/LoginWeb", [AllowAnonymous] async ([FromBody] 
         claims.Add(new Claim("guid_sesion", userResponse.guid_sesion));
         claims.Add(new Claim("linea_produccion", userResponse.linea_produccion));
         claims.Add(new Claim("almacen", "01"));
+        claims.Add(new Claim("tipo", userResponse.tipo.ToString()));
     } 
     var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:key"])); 
     // Crear el token JWT
@@ -149,7 +150,8 @@ app.MapPost("/accuracy/vas/api/v1/LoginWeb", [AllowAnonymous] async ([FromBody] 
         guid_sesion = resp[0].guid_sesion,
         status = resp[0].status,
         mensaje = resp[0].mensaje,
-        ruta = resp[0].ruta
+        ruta = resp[0].ruta,
+        tipo = resp[0].tipo
     }; 
     response.Headers.Add("Access-Control-Allow-Origin", "*");
     return Results.Ok(tokenResponse);

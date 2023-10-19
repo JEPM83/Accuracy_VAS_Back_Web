@@ -24,6 +24,7 @@ namespace AccuracyModel.Security
         public string mensaje { get; set; }
         public string? linea_produccion { get; set; }
         public string? ruta { get; set; }
+        public int? tipo { get; set; }
     }
     public class UserWarehouseRequest {
         public string usuario { get; set; }
