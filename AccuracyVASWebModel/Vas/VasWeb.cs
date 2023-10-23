@@ -291,6 +291,7 @@ namespace AccuracyModel.Vas
     {
         public string proveedor { get; set; }
         public string numero_pedido { get; set; }
+        public string id_destino { get; set; }
         public string destino { get; set; }
         public string familia_producto { get; set; }
         public float cantidad{ get; set; }

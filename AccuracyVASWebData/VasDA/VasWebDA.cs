@@ -724,6 +724,7 @@ namespace AccuracyData.VasDA
                         var plDetail = new OrdenesVasResponse();
                         plDetail.proveedor = sqlReader["proveedor"].ToString();
                         plDetail.numero_pedido = sqlReader["numero_pedido"].ToString();
+                        plDetail.id_destino = sqlReader["id_destino"].ToString();
                         plDetail.destino = sqlReader["destino"].ToString();
                         plDetail.familia_producto = sqlReader["familia_producto"].ToString();
                         plDetail.cantidad = float.Parse(sqlReader["cantidad"].ToString());
