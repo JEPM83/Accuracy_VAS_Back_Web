@@ -809,8 +809,8 @@ namespace AccuracyData.VasDA
                         var plDetail = new B2BVasResponse();
                         plDetail.o_r = sqlReader["o_r"].ToString();
                         plDetail.o_c = sqlReader["o_c"].ToString();
-                        plDetail.id_cliente = sqlReader["id_cliente"].ToString();
-                        plDetail.nombre_cliente = sqlReader["nombre_cliente"].ToString();
+                        plDetail.id_destino = sqlReader["id_destino"].ToString();
+                        plDetail.nombre_destino = sqlReader["nombre_destino"].ToString();
                         plDetail.destino_cod = sqlReader["destino_cod"].ToString();
                         plDetail.destino_des = sqlReader["destino_des"].ToString();
                         plDetail.sku = sqlReader["sku"].ToString();

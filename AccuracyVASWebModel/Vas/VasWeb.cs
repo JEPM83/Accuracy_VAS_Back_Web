@@ -324,8 +324,8 @@ namespace AccuracyModel.Vas
     public class B2BVasResponse { 
         public string o_r { get; set; }
         public string o_c { get; set; }
-        public string id_cliente { get; set; }
-        public string nombre_cliente { get; set; }
+        public string id_destino { get; set; }
+        public string nombre_destino { get; set; }
         public string destino_cod { get; set; }
         public string destino_des { get; set; }
         public string sku { get; set; }
