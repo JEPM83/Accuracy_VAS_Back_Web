@@ -203,5 +203,12 @@ namespace AccuracyBussiness.VasBL
             resp = poObjects.GET_LIST_ORDER_B2B_VAS(model, cnx);
             return resp;
         }
+        public List<PrinterLpnResponse> POST_PRINTER_VAS(PrinteLpnRequest model, string cnx)
+        {
+            VasWebDA poObjects = new VasWebDA();
+            List<PrinterLpnResponse> resp = new List<PrinterLpnResponse>();
+            resp = poObjects.POST_PRINTER_VAS(model, cnx);
+            return resp;
+        }
     }
 }

@@ -337,4 +337,22 @@ namespace AccuracyModel.Vas
         public string lpn { get; set; }
 
     }
+    public class PrinteLpnRequest { 
+        public string id_almacen { get; set; }
+        public int id_printer { get; set; }
+        public string modelo { get; set; }
+        public string numero_pedido { get; set;}
+        public string id_destino { get; set; }
+        public string linea { get; set; }
+        public string lote { get; set; }
+        public string cita { get; set; }
+        public string factura { get; set; }
+        public int cantidad { get; set; }
+        public string usuario_creacion { get; set; }
+    }
+    public class PrinterLpnResponse {
+        public string type { get; set; }
+        public string message { get; set; }
+        public string tittle { get; set; }
+    }
 }

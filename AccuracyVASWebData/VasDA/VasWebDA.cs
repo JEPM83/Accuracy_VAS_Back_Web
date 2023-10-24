@@ -836,6 +836,52 @@ namespace AccuracyData.VasDA
                 plListDetail = null;
             }
         }
+        /*Impresion*/
+        public List<PrinterLpnResponse> POST_PRINTER_VAS(PrinteLpnRequest model, string cnx)
+        {
+            var plListDetail = new List<PrinterLpnResponse>();
+            try
+            {
+
+                using (SqlConnection conn = new SqlConnection(cnx))
+                using (SqlCommand cmd = new SqlCommand(ObjectsDA.VAS_POST_PRINTER_VAS, conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@id_almacen", SqlDbType.NVarChar).Value = model.id_almacen;
+                    cmd.Parameters.Add("@id_printer", SqlDbType.Int).Value = model.id_printer;
+                    cmd.Parameters.Add("@modelo", SqlDbType.NVarChar).Value = model.modelo;
+                    cmd.Parameters.Add("@numero_pedido", SqlDbType.NVarChar).Value = model.numero_pedido;
+                    cmd.Parameters.Add("@id_destino", SqlDbType.NVarChar).Value = model.id_destino;
+                    cmd.Parameters.Add("@linea", SqlDbType.NVarChar).Value = model.linea;
+                    cmd.Parameters.Add("@lote", SqlDbType.NVarChar).Value = model.lote;
+                    cmd.Parameters.Add("@cita", SqlDbType.NVarChar).Value = model.cita;
+                    cmd.Parameters.Add("@factura", SqlDbType.NVarChar).Value = model.factura;
+                    cmd.Parameters.Add("@cantidad", SqlDbType.Int).Value = model.cantidad;
+                    cmd.Parameters.Add("@usuario_creacion", SqlDbType.NVarChar).Value = model.usuario_creacion;
+                    conn.Open();
+                    SqlDataReader sqlReader = cmd.ExecuteReader();
+                    while (sqlReader.Read())
+                    {
+                        var plDetail = new PrinterLpnResponse();
+                        plDetail.type = sqlReader["STATE"].ToString();
+                        plDetail.message = sqlReader["MESSAGE"].ToString();
+                        plDetail.tittle = sqlReader["ErrorMessage"].ToString();
+                        plListDetail.Add(plDetail);
+                        plDetail = null;
+                    }
+                    conn.Close();
+                    return plListDetail;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            finally
+            {
+                plListDetail = null;
+            }
+        }
     }
 }
 
