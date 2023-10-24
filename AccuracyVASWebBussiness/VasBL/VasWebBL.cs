@@ -210,5 +210,12 @@ namespace AccuracyBussiness.VasBL
             resp = poObjects.POST_PRINTER_VAS(model, cnx);
             return resp;
         }
+        public List<UpdateStateResponse> POST_UPDATE_STATE_DELIVERY_VAS(UpdateStateRequest model, string cnx)
+        {
+            VasWebDA poObjects = new VasWebDA();
+            List<UpdateStateResponse> resp = new List<UpdateStateResponse>();
+            resp = poObjects.POST_UPDATE_STATE_DELIVERY_VAS(model, cnx);
+            return resp;
+        }
     }
 }

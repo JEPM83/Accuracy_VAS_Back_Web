@@ -355,4 +355,16 @@ namespace AccuracyModel.Vas
         public string message { get; set; }
         public string tittle { get; set; }
     }
+    public class UpdateStateRequest { 
+        public string id_almacen { get; set; }
+        public string numero_pedido { get; set; }
+        public string estado { get; set; }
+        public string usuario { get; set; }
+    }
+    public class UpdateStateResponse
+    {
+        public string type { get; set; }
+        public string message { get; set; }
+        public string tittle { get; set; }
+    }
 }

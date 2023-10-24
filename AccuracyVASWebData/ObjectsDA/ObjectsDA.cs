@@ -46,6 +46,7 @@ namespace AccuracyData.ObjectosDA
         public static string VAS_GET_LIST_ORDER_B2B_VAS = "SP_VAS_WEB_GET_LIST_ORDER_B2B_VAS";
         /**/
         public static string VAS_POST_PRINTER_VAS = "SP_VAS_WEB_POST_PRINTER_VAS";
+        public static string VAS_POST_UPDATE_STATE_DELIVERY_VAS = "SP_VAS_WEB_POST_UPDATE_STATE_DELIVERY_VAS";
         #endregion
     }
 }
