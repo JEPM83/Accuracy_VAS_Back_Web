@@ -24,7 +24,41 @@ namespace AccuracyBussiness.VasBL
             VasWebDA poObjects = new VasWebDA();
             List<OrderPedidoResponse> resp = new List<OrderPedidoResponse>();
             resp = poObjects.GET_ORDER_VAS(model, cnx);
-            return resp;
+            List<OrderPedidoResponse> resp1 = new List<OrderPedidoResponse>();
+            int contador = 0;
+            string pedido = string.Empty;
+            string categoria_inventario = string.Empty;
+            foreach (var a in resp)
+            {
+                if (contador == 0)
+                {
+                    pedido = a.numero_pedido;
+                    categoria_inventario = a.categoria_inventario;
+                }
+                if (a.numero_pedido == pedido && contador > 0)
+                {
+                    categoria_inventario = String.Concat(categoria_inventario, '/', a.categoria_inventario);
+                    resp1[contador - 1].categoria_inventario = categoria_inventario;
+                }
+                else
+                {
+                    OrderPedidoResponse b = new OrderPedidoResponse();
+                    categoria_inventario = a.categoria_inventario;
+                    b.cliente = a.cliente;
+                    b.tienda = a.tienda;
+                    b.numero_pedido = a.numero_pedido;
+                    b.avance_vas = a.avance_vas;
+                    b.lineas_produccion = a.lineas_produccion;
+                    b.id_hu = a.id_hu;
+                    b.categoria_inventario = categoria_inventario;
+                    b.color_fondo = a.color_fondo;
+                    b.medida = a.medida;
+                    resp1.Add(a);
+                    pedido = a.numero_pedido;
+                    contador++;
+                }
+            }
+            return resp1;
         }
         public List<NotifyOrderResponse> POST_NOTIFY_ORDER_VAS(NotifyOrderRequest model, string cnx)
         {
