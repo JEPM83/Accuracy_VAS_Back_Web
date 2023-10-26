@@ -348,6 +348,7 @@ namespace AccuracyModel.Vas
         public string cita { get; set; }
         public string factura { get; set; }
         public int cantidad { get; set; }
+        public string lpn { get; set; }
         public string usuario_creacion { get; set; }
     }
     public class PrinterLpnResponse {

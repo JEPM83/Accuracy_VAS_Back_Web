@@ -857,6 +857,7 @@ namespace AccuracyData.VasDA
                     cmd.Parameters.Add("@cita", SqlDbType.NVarChar).Value = model.cita;
                     cmd.Parameters.Add("@factura", SqlDbType.NVarChar).Value = model.factura;
                     cmd.Parameters.Add("@cantidad", SqlDbType.Int).Value = model.cantidad;
+                    cmd.Parameters.Add("@lpn", SqlDbType.NVarChar).Value = model.lpn;
                     cmd.Parameters.Add("@usuario_creacion", SqlDbType.NVarChar).Value = model.usuario_creacion;
                     conn.Open();
                     SqlDataReader sqlReader = cmd.ExecuteReader();
