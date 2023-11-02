@@ -21,6 +21,7 @@ namespace AccuracyData.ObjectosDA
         #endregion
         #region GENERAL
         public static string GENERAL_GET_LISTA_ATRIBUTO_OBJETO= "SP_GENERAL_WEB_GET_LISTA_ATRIBUTO_OBJETO";
+        public static string GENERAL_GET_LISTA_CLIENTE = "SP_GENERAL_WEB_GET_LISTA_CLIENTE";
         #endregion
         #region VAS
         public static string VAS_GET_PRODUCTION_LINE_BY_TERMINAL = "SP_VAS_WEB_GET_PRODUCTION_LINE_BY_TERMINAL";

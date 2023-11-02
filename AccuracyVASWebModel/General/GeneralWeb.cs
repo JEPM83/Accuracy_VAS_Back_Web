@@ -21,5 +21,13 @@ namespace AccuracyModel.General
         public string display { get; set; }
         public string display_large { get; set; }
     }
-    
+    public class ClientRequest
+    {
+        public string id_almacen { get; set; }
+    }
+    public class ClientResponse
+    {
+        public string valuemember { get; set; }
+        public string displaymember { get; set; }
+    }
 }

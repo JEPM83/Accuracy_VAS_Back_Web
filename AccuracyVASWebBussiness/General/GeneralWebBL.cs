@@ -17,5 +17,12 @@ namespace AccuracyBussiness.General
             resp = poObjects.SP_KPI_WEB_GET_LISTA_ATRIBUTO_OBJETO(model, cnx);
             return resp;
         }
+        public List<ClientResponse> GENERAL_GET_LISTA_CLIENTE(ClientRequest model, string cnx)
+        {
+            GeneralWebDA poObjects = new GeneralWebDA();
+            List<ClientResponse> resp = new List<ClientResponse>();
+            resp = poObjects.GENERAL_GET_LISTA_CLIENTE(model, cnx);
+            return resp;
+        }
     }
 }

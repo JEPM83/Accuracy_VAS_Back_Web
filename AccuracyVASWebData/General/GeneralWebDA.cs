@@ -56,5 +56,34 @@ namespace AccuracyData.General
             }
 
         }
+        public List<ClientResponse> GENERAL_GET_LISTA_CLIENTE(ClientRequest obj, string cnx)
+        {
+            List<ClientResponse> orderList = new List<ClientResponse>();
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(cnx))
+                using (SqlCommand cmd = new SqlCommand(ObjectsDA.GENERAL_GET_LISTA_CLIENTE, conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@id_almacen", SqlDbType.VarChar).Value = obj.id_almacen;
+                    conn.Open();
+                    SqlDataReader sqlReader = cmd.ExecuteReader();
+                    while (sqlReader.Read())
+                    {
+                        var Order = new ClientResponse();
+                        Order.valuemember = sqlReader["valuemember"].ToString();
+                        Order.displaymember = sqlReader["displaymember"].ToString();
+                        orderList.Add(Order);
+                    }
+                    conn.Close();
+                    return orderList;
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
     }
 }
