@@ -217,5 +217,26 @@ namespace AccuracyBussiness.VasBL
             resp = poObjects.POST_UPDATE_STATE_DELIVERY_VAS(model, cnx);
             return resp;
         }
+        public List<DestinoResponse> GET_LIST_DESTINITY(DestinoRequest model, string cnx)
+        {
+            VasWebDA poObjects = new VasWebDA();
+            List<DestinoResponse> resp = new List<DestinoResponse>();
+            resp = poObjects.GET_LIST_DESTINITY(model, cnx);
+            return resp;
+        }
+        public List<ImprimirLpnResponse> POST_PRINTER_LPN_VAS(ImprimirLpnRequest model, string cnx)
+        {
+            VasWebDA poObjects = new VasWebDA();
+            List<ImprimirLpnResponse> resp = new List<ImprimirLpnResponse>();
+            resp = poObjects.POST_PRINTER_LPN_VAS(model, cnx);
+            return resp;
+        }
+        public List<CorrelativoLpnResponse> GET_LPN_CORRELATIVE_DESTINITY(CorrelativoLpnRequest model, string cnx)
+        {
+            VasWebDA poObjects = new VasWebDA();
+            List<CorrelativoLpnResponse> resp = new List<CorrelativoLpnResponse>();
+            resp = poObjects.GET_LPN_CORRELATIVE_DESTINITY(model, cnx);
+            return resp;
+        }
     }
 }

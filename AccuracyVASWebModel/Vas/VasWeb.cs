@@ -335,7 +335,6 @@ namespace AccuracyModel.Vas
         public string ean13 { get; set; }
         public string? precio { get; set; }
         public string lpn { get; set; }
-
     }
     public class PrinteLpnRequest { 
         public string id_almacen { get; set; }
@@ -348,7 +347,6 @@ namespace AccuracyModel.Vas
         public string cita { get; set; }
         public string factura { get; set; }
         public int cantidad { get; set; }
-        public string lpn { get; set; }
         public string usuario_creacion { get; set; }
     }
     public class PrinterLpnResponse {
@@ -367,5 +365,39 @@ namespace AccuracyModel.Vas
         public string type { get; set; }
         public string message { get; set; }
         public string tittle { get; set; }
+    }
+    public class DestinoRequest {
+        public string id_almacen { get; set; }
+        public string id_cliente { get; set; }
+        public string? usuario { get; set; }
+    }
+    public class DestinoResponse
+    {
+        public string id_destino { get; set; }
+        public string nombre_destino { get; set;}
+    }
+    public class ImprimirLpnRequest {
+        public string id_almacen { get; set; }
+        public string id_cliente { get; set; }
+        public string id_destino { get; set; }
+        public int id_printer { get; set; }
+        public int cantidad { get; set; }
+        public string? usuario_creacion { get; set; }
+    }
+    public class ImprimirLpnResponse
+    {
+        public string type { get; set; }
+        public string message { get; set; }
+        public string tittle { get; set; }
+    }
+    public class CorrelativoLpnRequest {
+        public string id_almacen { get; set; }
+        public string id_cliente { get; set; }
+        public string id_destino { get; set; }
+    }
+    public class CorrelativoLpnResponse
+    {
+        public string prefijo { get; set; }
+        public string correlativo { get; set; }
     }
 }
