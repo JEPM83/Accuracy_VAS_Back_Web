@@ -2150,14 +2150,14 @@ app.MapPost("/accuracy/vas/api/v1/GetPanelLineaProduccion",
                 List<PanelLineaResponse> resp = poBL.GET_PANEL_LINEA_PRODUCCION_VAS(obj, connString);
                 if (resp == null || resp.Count == 0)
                 {
-                    var errorResponse = new
-                    {
-                        title = "Warning",
-                        message = "No se registro incidencia",
-                        type = "3"
-                    };
-                    context.Response.StatusCode = StatusCodes.Status400BadRequest;
-                    return Results.Json(errorResponse);
+                    //var errorResponse = new
+                    //{
+                    //    title = "Warning",
+                    //    message = "No se registro incidencia",
+                    //    type = "3"
+                    //};
+                    context.Response.StatusCode = StatusCodes.Status200OK;
+                    return Results.Ok(resp);
                 }
                 else
                 {
@@ -2240,14 +2240,14 @@ app.MapPost("/accuracy/vas/api/v1/GetPanelOrder",
                 List<PanelOrdenResponse> resp = poBL.GET_PANEL_ORDER_PRODUCCION_VAS(obj, connString);
                 if (resp == null || resp.Count == 0)
                 {
-                    var errorResponse = new
-                    {
-                        title = "Warning",
-                        message = "No se registro incidencia",
-                        type = "3"
-                    };
-                    context.Response.StatusCode = StatusCodes.Status400BadRequest;
-                    return Results.Json(errorResponse);
+                    //var errorResponse = new
+                    //{
+                    //    title = "Warning",
+                    //    message = "No se registro incidencia",
+                    //    type = "3"
+                    //};
+                    context.Response.StatusCode = StatusCodes.Status200OK;
+                    return Results.Ok(resp);
                 }
                 else
                 {
