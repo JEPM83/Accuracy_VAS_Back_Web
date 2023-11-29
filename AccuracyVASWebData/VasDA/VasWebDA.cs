@@ -722,6 +722,7 @@ namespace AccuracyData.VasDA
                     while (sqlReader.Read())
                     {
                         var plDetail = new OrdenesVasResponse();
+                        plDetail.id_pedido = int.Parse(sqlReader["id_pedido"].ToString());
                         plDetail.proveedor = sqlReader["proveedor"].ToString();
                         plDetail.numero_pedido = sqlReader["numero_pedido"].ToString();
                         plDetail.id_destino = sqlReader["id_destino"].ToString();
@@ -822,6 +823,145 @@ namespace AccuracyData.VasDA
                         plDetail.lpn = sqlReader["lpn"].ToString();
                         plListDetail.Add(plDetail);
                         plDetail = null;
+                    }
+                    conn.Close();
+                    return plListDetail;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            finally
+            {
+                plListDetail = null;
+            }
+        }
+        public List<SendB2BVas_atributos> GET_LIST_ORDER_B2B_VAS_V2(SendB2BVas_baseRequest model, string cnx)
+        {
+            var plListDetail = new List<SendB2BVas_atributos>();
+            try
+            {
+
+                using (SqlConnection conn = new SqlConnection(cnx))
+                using (SqlCommand cmd = new SqlCommand(ObjectsDA.VAS_GET_LIST_ORDER_B2B_VAS, conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@id_almacen", SqlDbType.NVarChar).Value = model.id_almacen;
+                    cmd.Parameters.Add("@numero_pedido", SqlDbType.NVarChar).Value = model.numero_pedido;
+                    cmd.Parameters.Add("@fecha_inicial_despacho", SqlDbType.Date).Value = model.fecha_inicial_despacho;
+                    cmd.Parameters.Add("@fecha_final_despacho", SqlDbType.Date).Value = model.fecha_final_despacho;
+                    cmd.Parameters.Add("@id_pedido", SqlDbType.Int).Value = model.id_pedido;
+                    cmd.Parameters.Add("@id_destino", SqlDbType.NVarChar).Value = model.id_destino;
+                    cmd.Parameters.Add("@cita", SqlDbType.NVarChar).Value = model.cita;
+                    cmd.Parameters.Add("@fecha_factura", SqlDbType.NVarChar).Value = model.fecha_factura;
+                    cmd.Parameters.Add("@factura", SqlDbType.NVarChar).Value = model.factura;
+                    cmd.Parameters.Add("@lote", SqlDbType.NVarChar).Value = model.lote;
+                    conn.Open();
+                    SqlDataReader sqlReader = cmd.ExecuteReader();
+                    while (sqlReader.Read())
+                    {
+                        if (model.id_destino == "D003" || model.id_destino == "D004")//RIPLEY
+                    {
+                        var plDetail = new SendB2BVas_Modelo1Detalle();
+                        plDetail.numero_de_cita = sqlReader["numero_de_cita"].ToString();
+                        plDetail.numero_de_oc = sqlReader["numero_de_oc"].ToString();
+                        plDetail.ruc = sqlReader["ruc"].ToString();
+                        plDetail.fecha = sqlReader["fecha"].ToString();
+                        plDetail.documento = sqlReader["documento"].ToString();
+                        plDetail.contenedor = sqlReader["contenedor"].ToString();
+
+                        plDetail.correlativo = int.Parse(sqlReader["correlativo"].ToString());
+                        plDetail.articulo = sqlReader["articulo"].ToString();
+                        plDetail.cantidad = float.Parse(sqlReader["cantidad"].ToString());
+                        plDetail.na = sqlReader["na"].ToString();
+                        plDetail.cod_sucursal = sqlReader["cod_sucursal"].ToString();
+                        plDetail.costo_unitario = !sqlReader.IsDBNull(sqlReader.GetOrdinal("costo_unitario")) ? float.Parse(sqlReader["costo_unitario"].ToString()) : 0.0f; ;
+                        plDetail.inicio = sqlReader["inicio"].ToString();
+                        plDetail.salto = int.Parse(sqlReader["salto"].ToString());
+                        plDetail.titulo = sqlReader["titulo"].ToString();
+                        plDetail.hoja = sqlReader["hoja"].ToString();
+                        plDetail.color_fondo_titulo_grilla = sqlReader["color_fondo_titulo_grilla"].ToString();
+                        plDetail.color_letra_titulo_grilla = sqlReader["color_letra_titulo_grilla"].ToString();
+                        plDetail.nombre_archivo = sqlReader["nombre_archivo"].ToString();
+                        plDetail.extension_archivo = sqlReader["extension_archivo"].ToString();
+                        plListDetail.Add(plDetail);
+                        plDetail = null;
+                    }
+                    else if (model.id_destino == "D001" || model.id_destino == "D002")//SAGA
+                    {
+                        var plDetail = new SendB2BVas_Modelo2Detalle();
+                        plDetail.nro_lote = sqlReader["nro_lote"].ToString();
+
+                        plDetail.negocio = sqlReader["negocio"].ToString();
+                        plDetail.orden_de_compra = sqlReader["orden_de_compra"].ToString();
+                        plDetail.upc_ean = sqlReader["upc_ean"].ToString();
+                        plDetail.descripcion = sqlReader["descripcion"].ToString();
+                        plDetail.caducidad = sqlReader["caducidad"].ToString();
+                        plDetail.cantidad = float.Parse(sqlReader["cantidad"].ToString());
+                        plDetail.cantidad_a_enviar = float.Parse(sqlReader["cantidad_a_enviar"].ToString());
+                        plDetail.tienda_destino = sqlReader["tienda_destino"].ToString();
+                        plDetail.nombre_tienda = sqlReader["nombre_tienda"].ToString();
+                        plDetail.tipo_embalaje = sqlReader["tipo_embalaje"].ToString();
+                        plDetail.lpn = sqlReader["lpn"].ToString();
+                        plDetail.inicio = sqlReader["inicio"].ToString();
+                        plDetail.salto = int.Parse(sqlReader["salto"].ToString());
+                        plDetail.titulo = sqlReader["titulo"].ToString();
+                        plDetail.hoja = sqlReader["hoja"].ToString();
+                        plDetail.color_fondo_titulo_grilla = sqlReader["color_fondo_titulo_grilla"].ToString();
+                        plDetail.color_letra_titulo_grilla = sqlReader["color_letra_titulo_grilla"].ToString();
+                        plDetail.nombre_archivo = sqlReader["nombre_archivo"].ToString();
+                        plDetail.extension_archivo = sqlReader["extension_archivo"].ToString();
+                        plListDetail.Add(plDetail);
+                        plDetail = null;
+                    }
+                    else if (model.id_destino == "D005" || model.id_destino == "D006")//TIENDAS PERUANAS
+                    {
+                        var plDetail = new SendB2BVas_Modelo3Detalle();
+                        plDetail.codigo_proveedor = sqlReader["codigo_proveedor"].ToString();
+                        plDetail.sucursal_destino = sqlReader["sucursal_destino"].ToString();
+                        plDetail.n_de_oc = sqlReader["n_de_oc"].ToString();
+                        plDetail.lpn = sqlReader["lpn"].ToString();
+                        plDetail.codigo_producto = sqlReader["codigo_producto"].ToString();
+                        plDetail.cantidad_und = float.Parse(sqlReader["cantidad_und"].ToString());
+                        plDetail.inicio = sqlReader["inicio"].ToString();
+                        plDetail.salto = int.Parse(sqlReader["salto"].ToString());
+                        plDetail.titulo = sqlReader["titulo"].ToString();
+                        plDetail.hoja = sqlReader["hoja"].ToString();
+                        plDetail.color_fondo_titulo_grilla = sqlReader["color_fondo_titulo_grilla"].ToString();
+                        plDetail.color_letra_titulo_grilla = sqlReader["color_letra_titulo_grilla"].ToString();
+                        plDetail.nombre_archivo = sqlReader["nombre_archivo"].ToString();
+                        plDetail.extension_archivo = sqlReader["extension_archivo"].ToString();
+                        plListDetail.Add(plDetail);
+                        plDetail = null;
+                    }
+                    else {//OTROS   
+            
+                        var plDetail = new SendB2BVas_Modelo4Detalle();
+                        plDetail.o_r = sqlReader["o_r"].ToString();
+                        plDetail.o_c = sqlReader["o_c"].ToString();
+                        plDetail.id_destino = sqlReader["id_destino"].ToString();
+                        plDetail.nombre_destino = sqlReader["nombre_destino"].ToString();
+                        plDetail.destino_cod = sqlReader["destino_cod"].ToString();
+                        plDetail.destino_des = sqlReader["destino_des"].ToString();
+                        plDetail.sku = sqlReader["sku"].ToString();
+                        plDetail.item = sqlReader["item"].ToString();
+                        plDetail.talla = sqlReader["talla"].ToString();
+                        plDetail.cantidad = float.Parse(sqlReader["cantidad"].ToString());
+                        plDetail.ean13 = sqlReader["ean13"].ToString();
+                        plDetail.precio = sqlReader["precio"].ToString();
+                        plDetail.lpn = sqlReader["lpn"].ToString();
+                        plDetail.inicio = sqlReader["inicio"].ToString();
+                        plDetail.salto = int.Parse(sqlReader["salto"].ToString());
+                        plDetail.titulo = sqlReader["titulo"].ToString();
+                        plDetail.hoja = sqlReader["hoja"].ToString();
+                        plDetail.color_fondo_titulo_grilla = sqlReader["color_fondo_titulo_grilla"].ToString();
+                        plDetail.color_letra_titulo_grilla = sqlReader["color_letra_titulo_grilla"].ToString();
+                        plDetail.nombre_archivo = sqlReader["nombre_archivo"].ToString();
+                        plDetail.extension_archivo = sqlReader["extension_archivo"].ToString();
+                        plListDetail.Add(plDetail);
+                        plDetail = null;
+                        }
                     }
                     conn.Close();
                     return plListDetail;

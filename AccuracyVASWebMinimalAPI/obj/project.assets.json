@@ -1343,6 +1343,7 @@
       "Dapper >= 2.0.123",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.0",
       "Microsoft.IdentityModel.Tokens >= 6.10.0",
+      "Newtonsoft.Json >= 13.0.3",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
@@ -1408,6 +1409,10 @@
           "Microsoft.IdentityModel.Tokens": {
             "target": "Package",
             "version": "[6.10.0, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.3, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

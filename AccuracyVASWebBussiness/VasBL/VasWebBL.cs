@@ -2,7 +2,9 @@
 using AccuracyData.VasDA;
 using AccuracyModel.Security;
 using AccuracyModel.Vas;
+using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -202,6 +204,167 @@ namespace AccuracyBussiness.VasBL
             List<B2BVasResponse> resp = new List<B2BVasResponse>();
             resp = poObjects.GET_LIST_ORDER_B2B_VAS(model, cnx);
             return resp;
+        }
+        public RootB2BResponse GET_LIST_ORDER_B2B_VAS_V2(SendB2BVas_baseRequest model, string cnx)
+        {
+            VasWebDA poObjects = new VasWebDA();
+            List<SendB2BVas_atributos> resp = new List<SendB2BVas_atributos>();
+            resp = poObjects.GET_LIST_ORDER_B2B_VAS_V2(model, cnx);
+            int i = 0;           
+            /*Transformacion de objeto*/
+            RootB2BResponse objTransformado = new RootB2BResponse();
+            RootB2BResponse objRootB2BResponse = null;
+            foreach (var item in resp)
+            {
+                if (objRootB2BResponse == null)
+                {
+                    objRootB2BResponse = new RootB2BResponse
+                    {
+                        cabeceraB2BResponse = new CabeceraB2BResponse(), // Asignación por defecto
+                        cuerpoB2BResponse = new List<CuerpoB2BResponse>(),
+                        pieB2BResponse = new PieB2BResponse() // Asignación por defecto
+                    };
+                }
+                if (item is SendB2BVas_Modelo1Detalle detalle1 && (model.id_destino == "D003" || model.id_destino == "D004") && i == 0)
+                {
+                    var lista = new CabeceraB2BResponse()
+                    {
+                        numero_de_cita = detalle1.numero_de_cita,
+                        numero_de_oc = detalle1.numero_de_oc,
+                        ruc = detalle1.ruc,
+                        fecha = detalle1.fecha,
+                        documento = detalle1.documento,
+                        contenedor = detalle1.contenedor
+                    };
+                    objRootB2BResponse.cabeceraB2BResponse = lista;
+                }
+                else if (item is SendB2BVas_Modelo2Detalle detalle2 && (model.id_destino == "D001" || model.id_destino == "D002") && i == 0)
+                {
+                    var lista = new CabeceraB2BResponse()
+                    {
+                        nro_lote = detalle2.nro_lote
+                    };
+                    objRootB2BResponse.cabeceraB2BResponse = lista;
+                }
+                else
+                {
+                    // Handle other cases or set cabeceraB2BResponse to null if needed
+                }
+                if (item is SendB2BVas_Modelo1Detalle cuerpo1 && (model.id_destino == "D003" || model.id_destino == "D004"))
+                {
+                    var lista = new CuerpoB2BResponse();
+                    lista.correlativo = cuerpo1.correlativo;
+                    lista.articulo = cuerpo1.articulo;
+                    lista.cantidad = cuerpo1.cantidad;
+                    lista.na = cuerpo1.na;
+                    lista.cod_sucursal = cuerpo1.cod_sucursal;
+                    lista.costo_unitario = cuerpo1.costo_unitario;
+                    objRootB2BResponse.cuerpoB2BResponse.Add(lista);
+                }
+                else if (item is SendB2BVas_Modelo2Detalle cuerpo2 && (model.id_destino == "D001" || model.id_destino == "D002"))
+                {
+                    var lista = new CuerpoB2BResponse();
+                    lista.negocio = cuerpo2.negocio;
+                    lista.orden_de_compra = cuerpo2.orden_de_compra;
+                    lista.upc_ean = cuerpo2.upc_ean;
+                    lista.descripcion = cuerpo2.descripcion;
+                    lista.caducidad = cuerpo2.caducidad;
+                    lista.cantidad = cuerpo2.cantidad;
+                    lista.cantidad_a_enviar = cuerpo2.cantidad_a_enviar;
+                    lista.tienda_destino = cuerpo2.tienda_destino;
+                    lista.nombre_tienda = cuerpo2.nombre_tienda;
+                    lista.tipo_embalaje = cuerpo2.tipo_embalaje;
+                    lista.lpn = cuerpo2.lpn;
+                    objRootB2BResponse.cuerpoB2BResponse.Add(lista);
+                }
+                else if (item is SendB2BVas_Modelo3Detalle cuerpo3 && (model.id_destino == "D005" || model.id_destino == "D006"))
+                {
+                    var lista = new CuerpoB2BResponse();
+                    lista.codigo_proveedor = cuerpo3.codigo_proveedor;
+                    lista.sucursal_destino = cuerpo3.sucursal_destino;
+                    lista.n_de_oc = cuerpo3.n_de_oc;
+                    lista.lpn = cuerpo3.lpn;
+                    lista.codigo_producto = cuerpo3.codigo_producto;
+                    lista.cantidad_und = cuerpo3.cantidad_und;
+                    objRootB2BResponse.cuerpoB2BResponse.Add(lista);
+                }
+                else if (item is SendB2BVas_Modelo4Detalle cuerpo4)
+                {
+                    var lista = new CuerpoB2BResponse();
+                    lista.o_r = cuerpo4.o_r;
+                    lista.o_c = cuerpo4.o_c;
+                    lista.id_destino = cuerpo4.id_destino;
+                    lista.nombre_destino = cuerpo4.nombre_destino;
+                    lista.destino_cod = cuerpo4.destino_cod;
+                    lista.destino_des = cuerpo4.destino_des;
+                    lista.sku = cuerpo4.sku;
+                    lista.item = cuerpo4.item;
+                    lista.talla = cuerpo4.talla;
+                    lista.cantidad = cuerpo4.cantidad;
+                    lista.ean13 = cuerpo4.ean13;
+                    lista.precio = cuerpo4.precio;
+                    lista.lpn = cuerpo4.lpn;
+                    objRootB2BResponse.cuerpoB2BResponse.Add(lista);
+                }
+                if (i == 0)
+                {
+                    var lista = new PieB2BResponse()
+                    {
+                        inicio = item.inicio,
+                        salto = item.salto,
+                        titulo = item.titulo,
+                        nombre_archivo = item.nombre_archivo,
+                        extension_archivo = item.extension_archivo,
+                        hoja = item.hoja,
+                        color_fondo_titulo_grilla = item.color_fondo_titulo_grilla,
+                        color_letra_titulo_grilla = item.color_letra_titulo_grilla
+                    };
+                    objRootB2BResponse.pieB2BResponse = lista;
+                }
+
+                objTransformado = objRootB2BResponse;
+                i++;
+            }
+            var filteredResponse = new RootB2BResponse
+            {
+                cabeceraB2BResponse = FilterNullProperties(objTransformado.cabeceraB2BResponse),
+                cuerpoB2BResponse = objTransformado.cuerpoB2BResponse?.Where(c => !AllPropertiesNull(c)).ToList(),
+                pieB2BResponse = FilterNullProperties(objTransformado.pieB2BResponse)
+            };
+            return filteredResponse;
+        }
+
+        private CabeceraB2BResponse FilterNullProperties(CabeceraB2BResponse input)
+        {
+            return new CabeceraB2BResponse
+            {
+                numero_de_cita = input?.numero_de_cita,
+                numero_de_oc = input?.numero_de_oc,
+                ruc = input?.ruc,
+                fecha = input?.fecha,
+                documento = input?.documento,
+                contenedor = input?.contenedor,
+                nro_lote = input?.nro_lote
+            };
+        }
+        private PieB2BResponse FilterNullProperties(PieB2BResponse input)
+        {
+            return new PieB2BResponse
+            {
+                inicio = input?.inicio,
+                salto = input?.salto,
+                titulo = input?.titulo,
+                nombre_archivo = input?.nombre_archivo,
+                extension_archivo = input?.extension_archivo,
+                hoja = input?.hoja,
+                color_fondo_titulo_grilla = input?.color_fondo_titulo_grilla,
+                color_letra_titulo_grilla = input?.color_letra_titulo_grilla
+            };
+        }
+        private bool AllPropertiesNull(CuerpoB2BResponse input)
+        {
+            return input == null ||
+                   input.GetType().GetProperties().All(p => p.GetValue(input) == null);
         }
         public List<PrinterLpnResponse> POST_PRINTER_VAS(PrinteLpnRequest model, string cnx)
         {

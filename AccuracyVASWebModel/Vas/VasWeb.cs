@@ -289,6 +289,7 @@ namespace AccuracyModel.Vas
     }
     public class OrdenesVasResponse
     {
+        public int id_pedido { get; set; }
         public string proveedor { get; set; }
         public string numero_pedido { get; set; }
         public string id_destino { get; set; }
