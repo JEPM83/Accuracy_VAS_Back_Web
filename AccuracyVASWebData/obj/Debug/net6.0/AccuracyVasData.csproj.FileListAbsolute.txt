@@ -13,3 +13,18 @@ D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebData\obj\Debug\net6.0\A
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebData\obj\Debug\net6.0\refint\AccuracyVASData.dll
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebData\obj\Debug\net6.0\AccuracyVASData.pdb
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebData\obj\Debug\net6.0\ref\AccuracyVASData.dll
+C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebData\bin\Debug\net6.0\AccuracyVASData.deps.json
+C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebData\bin\Debug\net6.0\AccuracyVASData.dll
+C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebData\bin\Debug\net6.0\AccuracyVASData.pdb
+C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebData\bin\Debug\net6.0\AccuracyVASModel.dll
+C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebData\bin\Debug\net6.0\AccuracyVASModel.pdb
+C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebData\obj\Debug\net6.0\AccuracyVASData.csproj.AssemblyReference.cache
+C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebData\obj\Debug\net6.0\AccuracyVASData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebData\obj\Debug\net6.0\AccuracyVASData.AssemblyInfoInputs.cache
+C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebData\obj\Debug\net6.0\AccuracyVASData.AssemblyInfo.cs
+C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebData\obj\Debug\net6.0\AccuracyVASData.csproj.CoreCompileInputs.cache
+C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebData\obj\Debug\net6.0\AccuracyVASData.csproj.CopyComplete
+C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebData\obj\Debug\net6.0\AccuracyVASData.dll
+C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebData\obj\Debug\net6.0\refint\AccuracyVASData.dll
+C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebData\obj\Debug\net6.0\AccuracyVASData.pdb
+C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebData\obj\Debug\net6.0\ref\AccuracyVASData.dll

@@ -17,6 +17,15 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Primitives;
 using Microsoft.OpenApi.Models;
 using System.Diagnostics.Eventing.Reader;
+using NPOI.HSSF.UserModel;
+using NPOI.SS.UserModel;
+using NPOI.XSSF.UserModel;
+using NPOI.HPSF;
+using NPOI.HSSF.Util;
+using System.Text.Json.Serialization;
+using System.Drawing;
+using NPOI.OOXML.XSSF.UserModel;
+using AccuracyVASMinimalAPI.Documents;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -2612,8 +2621,202 @@ app.MapPost("/accuracy/vas/api/v2/GetB2BVasV2",
                 }
                 else
                 {
-                    context.Response.StatusCode = StatusCodes.Status200OK;
-                    return Results.Ok(resp);
+                    MemoryStream memoryStream = new MemoryStream();
+                    byte[] bytes = { };
+                    string contentType = "";
+                    string fileName = "";
+
+                    //ICellStyle headerStyle;
+                    resp.pieB2BResponse.extension_archivo = "XLS";
+                    resp.pieB2BResponse.color_fondo_titulo_grilla = "#003366";
+
+                    // aca se crea el excel
+                    if (resp.pieB2BResponse.extension_archivo == "XLS") 
+                    {
+                        HSSFWorkbook workbook = new HSSFWorkbook();
+                        ISheet sheet = workbook.CreateSheet(resp.pieB2BResponse.hoja);
+
+                        //sheet.SetColumnWidth(14, 40 * 256);
+
+                        // Crear Paleta
+                        var palette = ((HSSFWorkbook)workbook).GetCustomPalette();
+                        var rgb = System.Drawing.ColorTranslator.FromHtml(resp.pieB2BResponse.color_fondo_titulo_grilla);
+                        palette.SetColorAtIndex(HSSFColor.PaleBlue.Index, rgb.R, rgb.G, rgb.B);
+
+                        ICellStyle headerStyle = workbook.CreateCellStyle();
+                        headerStyle.FillForegroundColor = HSSFColor.PaleBlue.Index;
+                        IFont headerFont = workbook.CreateFont();
+                        rgb = System.Drawing.ColorTranslator.FromHtml(resp.pieB2BResponse.color_letra_titulo_grilla);
+                        headerFont.Color = palette.FindSimilarColor(rgb.R, rgb.G, rgb.B).Indexed;
+
+                        headerStyle.FillPattern = FillPattern.SolidForeground;
+                        headerStyle.Alignment = HorizontalAlignment.Center;
+                        headerFont.Boldweight = (short)FontBoldWeight.Bold;
+                        headerStyle.SetFont(headerFont);
+
+                        var headerRow = sheet.CreateRow(0);
+                        //short heightInPoints = 16; // El alto en puntos.
+                        headerRow.HeightInPoints = 16.5f;
+
+                        PropertyInfo[] properties = typeof(CuerpoB2BResponse).GetProperties();
+
+                        int columnIndex = 0;
+
+                        foreach (var prop in properties)
+                        {
+                            var value = prop.GetValue(resp.cuerpoB2BResponse.First());
+
+                            if (value != null)
+                            {
+                                var jsonProperty = prop.GetCustomAttribute<JsonPropertyNameAttribute>()?.Name ?? prop.Name;
+                                var cell = headerRow.CreateCell(columnIndex);
+                                cell.SetCellValue(jsonProperty);
+                                cell.CellStyle = headerStyle;
+                                columnIndex++;
+                            }
+                        }
+
+                        int rowIndex = 1;
+                        foreach (CuerpoB2BResponse item in resp.cuerpoB2BResponse)
+                        {
+                            var row = sheet.CreateRow(rowIndex);
+                            columnIndex = 0;
+
+                            foreach (var prop in properties)
+                            {
+                                var value = prop.GetValue(item);
+                                if (value != null)
+                                {
+                                    var cell = row.CreateCell(columnIndex);
+                                    cell.SetCellValue(value.ToString());
+                                    columnIndex++;
+                                }
+                            }
+                            rowIndex++;
+                        }
+
+                        for (int i = 0; i < columnIndex; i++)
+                        {
+                            sheet.AutoSizeColumn(i);
+                        }
+
+
+
+                        //workbook.Write(memoryStream);
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            workbook.Write(ms, true);
+                            ms.Position = 0;
+                            bytes = ms.ToArray();
+                            // Otras operaciones con memoryStream
+                        }
+                        contentType = "application/vnd.ms-excel";
+                        fileName = resp.pieB2BResponse.nombre_archivo + ".xls";
+
+                        //using (var fileData = new FileStream(resp.pieB2BResponse.nombre_archivo + ".xls", FileMode.Create))
+                        //{
+                        //    workbook.Write(fileData);
+                        //}
+
+                    } else if (resp.pieB2BResponse.extension_archivo == "XLSX")
+                    {
+                        XSSFWorkbook workbook = new XSSFWorkbook(); 
+                        ISheet sheet = workbook.CreateSheet(resp.pieB2BResponse.hoja);
+
+                        XSSFCellStyle headerStyle = (XSSFCellStyle)workbook.CreateCellStyle();
+                        XSSFFont headerFont = (XSSFFont)workbook.CreateFont();
+
+                        var manager = new DocumentManager();
+
+                        var rgbFondo = manager.HexToRgb(resp.pieB2BResponse.color_fondo_titulo_grilla);
+                        XSSFColor fondoTituloColor = new XSSFColor(rgbFondo);
+
+                        // Conversión del color de letra hexadecimal a RGB para la cabecera
+                        var rgbLetra = manager.HexToRgb(resp.pieB2BResponse.color_letra_titulo_grilla);
+                        XSSFColor letraTituloColor = new XSSFColor(rgbLetra);
+
+                        headerStyle.SetFillForegroundColor(fondoTituloColor);
+                        headerStyle.FillPattern = FillPattern.SolidForeground;
+
+                        headerFont.SetColor(letraTituloColor);
+                        headerFont.IsBold = true;
+                        headerStyle.SetFont(headerFont);
+                        headerStyle.Alignment = HorizontalAlignment.Center;
+
+                        IRow headerRow = sheet.CreateRow(0);
+                        headerRow.HeightInPoints = 16.5f; // Establece el alto de la fila para la cabecera
+
+                        PropertyInfo[] properties = typeof(CuerpoB2BResponse).GetProperties();
+
+                        int columnIndex = 0;
+
+                        foreach (var prop in properties)
+                        {
+                            var value = prop.GetValue(resp.cuerpoB2BResponse.First());
+
+                            if (value != null)
+                            {
+                                var jsonProperty = prop.GetCustomAttribute<JsonPropertyNameAttribute>()?.Name ?? prop.Name;
+                                var cell = headerRow.CreateCell(columnIndex);
+                                cell.SetCellValue(jsonProperty);
+                                cell.CellStyle = headerStyle;
+                                columnIndex++;
+                            }
+                        }
+
+                        int rowIndex = 1;
+                        foreach (CuerpoB2BResponse item in resp.cuerpoB2BResponse)
+                        {
+                            var row = sheet.CreateRow(rowIndex);
+                            columnIndex = 0;
+
+                            foreach (var prop in properties)
+                            {
+                                var value = prop.GetValue(item);
+                                if (value != null)
+                                {
+                                    var cell = row.CreateCell(columnIndex);
+                                    cell.SetCellValue(value.ToString());
+                                    columnIndex++;
+                                }
+                            }
+                            rowIndex++;
+                        }
+
+                        for (int i = 0; i < columnIndex; i++)
+                        {
+                            sheet.AutoSizeColumn(i);
+                        }
+                        
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            workbook.Write(ms, true);
+                            ms.Position = 0;
+                            bytes = ms.ToArray();
+                            // Otras operaciones con memoryStream
+                        }
+                        contentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                        fileName = resp.pieB2BResponse.nombre_archivo + ".xlsx";
+
+                        //using (var fileData = new FileStream(resp.pieB2BResponse.nombre_archivo + ".xlsx", FileMode.Create))
+                        //{
+                        //    workbook.Write(fileData);
+                        //}
+                    } else
+                    {
+                        throw new Exception("Formato de archivo no disponible");
+                    }
+
+
+                    //context.Response.StatusCode = StatusCodes.Status200OK;
+                    //return Results.Ok(resp);
+                    
+                    //var streamResult = new FileStreamResult(memoryStream, context.Response.ContentType)
+                    //{
+                    //    FileDownloadName = resp.pieB2BResponse.nombre_archivo + (resp.pieB2BResponse.extension_archivo == "XLS" ? ".xls" : ".xlsx")
+                    //};
+
+                    return Results.File(bytes, contentType, fileName);
                 }
             }
             catch (Exception ex)
