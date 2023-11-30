@@ -310,7 +310,8 @@ namespace AccuracyBussiness.VasBL
                 {
                     var lista = new PieB2BResponse()
                     {
-                        inicio = item.inicio,
+                        columna = item.columna,
+                        fila = item.fila,
                         salto = item.salto,
                         titulo = item.titulo,
                         nombre_archivo = item.nombre_archivo,
@@ -333,7 +334,6 @@ namespace AccuracyBussiness.VasBL
             };
             return filteredResponse;
         }
-
         private CabeceraB2BResponse FilterNullProperties(CabeceraB2BResponse input)
         {
             return new CabeceraB2BResponse
@@ -351,7 +351,8 @@ namespace AccuracyBussiness.VasBL
         {
             return new PieB2BResponse
             {
-                inicio = input?.inicio,
+                columna = (int)(input?.columna),
+                fila = (int)(input?.fila),
                 salto = input?.salto,
                 titulo = input?.titulo,
                 nombre_archivo = input?.nombre_archivo,

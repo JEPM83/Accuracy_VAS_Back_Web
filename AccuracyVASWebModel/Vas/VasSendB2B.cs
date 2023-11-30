@@ -20,7 +20,8 @@ namespace AccuracyModel.Vas
         public string? lote { get; set; }
     }
     public class SendB2BVas_atributos{
-        public string inicio { get; set; }
+        public int columna { get; set; }
+        public int fila { get; set; }
         public int? salto { get; set; }
         public string? titulo { get; set; }
         public string nombre_archivo { get; set; }

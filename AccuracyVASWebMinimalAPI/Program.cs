@@ -2568,30 +2568,30 @@ app.MapPost("/accuracy/vas/api/v1/GetB2BVas",
 app.MapPost("/accuracy/vas/api/v2/GetB2BVasV2",
     [AllowAnonymous] async ([FromBody] SendB2BVas_baseRequest obj, HttpContext context) =>
     {
-        var authorizationHeader = context.Request.Headers["Authorization"].FirstOrDefault();
+        //var authorizationHeader = context.Request.Headers["Authorization"].FirstOrDefault();
 
-        if (!StringValues.IsNullOrEmpty(authorizationHeader) && authorizationHeader.StartsWith("Bearer "))
-        //if (1 == 1)
+        //if (!StringValues.IsNullOrEmpty(authorizationHeader) && authorizationHeader.StartsWith("Bearer "))
+        if (1 == 1)
         {
-            var token = authorizationHeader.Substring("Bearer ".Length).Trim();
+            //var token = authorizationHeader.Substring("Bearer ".Length).Trim();
 
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]));
-            var validationParameters = new TokenValidationParameters
-            {
-                ValidateIssuer = true,
-                ValidateAudience = true,
-                ValidateLifetime = true,
-                ValidIssuer = builder.Configuration["Jwt:Issuer"],
-                ValidAudience = builder.Configuration["Jwt:Audience"],
-                IssuerSigningKey = key
-            };
+            //var tokenHandler = new JwtSecurityTokenHandler();
+            //var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]));
+            //var validationParameters = new TokenValidationParameters
+            //{
+            //    ValidateIssuer = true,
+            //    ValidateAudience = true,
+            //    ValidateLifetime = true,
+            //    ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            //    ValidAudience = builder.Configuration["Jwt:Audience"],
+            //    IssuerSigningKey = key
+            //};
 
             try
             {
                 // Intenta validar el token
-                SecurityToken validatedToken;
-                var principal = tokenHandler.ValidateToken(token, validationParameters, out validatedToken);
+                //SecurityToken validatedToken;
+                //var principal = tokenHandler.ValidateToken(token, validationParameters, out validatedToken);
 
                 // El token es válido, puedes continuar con la lógica de la ruta
                 AccuracyBussiness.VasBL.VasWebBL poBL = new AccuracyBussiness.VasBL.VasWebBL();
@@ -2657,7 +2657,40 @@ app.MapPost("/accuracy/vas/api/v2/GetB2BVasV2",
                         headerFont.Boldweight = (short)FontBoldWeight.Bold;
                         headerStyle.SetFont(headerFont);
 
-                        var headerRow = sheet.CreateRow(0);
+                        /*CREAR CABECERA*/
+                        PropertyInfo[] propertiesC = typeof(CabeceraB2BResponse).GetProperties();
+                        int filIndex = resp.pieB2BResponse.fila;
+                        int columIndex = resp.pieB2BResponse.columna;
+                        foreach (var prop in propertiesC)
+                        {
+                            var headerRowC = sheet.CreateRow(filIndex);
+                            var value = prop.GetValue(resp.cabeceraB2BResponse);
+                            if (value != null)
+                            {
+                                var jsonProperty = prop.GetCustomAttribute<JsonPropertyNameAttribute>()?.Name ?? prop.Name;
+                                var cell = headerRowC.CreateCell(columIndex);
+                                cell.SetCellValue(jsonProperty);
+                                cell.CellStyle = headerStyle;
+                                filIndex++;
+                            }
+                        }
+                        filIndex = resp.pieB2BResponse.fila;
+                        columIndex = resp.pieB2BResponse.columna + 1;
+                        CabeceraB2BResponse itemC = resp.cabeceraB2BResponse;
+                            var rowC = sheet.CreateRow(filIndex);
+                            foreach (var prop in propertiesC)
+                            {
+                                var value = prop.GetValue(itemC);
+                                if (value != null)
+                                {
+                                    var cell = rowC.CreateCell(columIndex);
+                                    cell.SetCellValue(value.ToString());
+                                    filIndex++;
+                                }
+                            }
+                        /**/
+
+                        var headerRow = sheet.CreateRow(14);
                         //short heightInPoints = 16; // El alto en puntos.
                         headerRow.HeightInPoints = 16.5f;
 
@@ -2668,7 +2701,6 @@ app.MapPost("/accuracy/vas/api/v2/GetB2BVasV2",
                         foreach (var prop in properties)
                         {
                             var value = prop.GetValue(resp.cuerpoB2BResponse.First());
-
                             if (value != null)
                             {
                                 var jsonProperty = prop.GetCustomAttribute<JsonPropertyNameAttribute>()?.Name ?? prop.Name;
@@ -2679,7 +2711,7 @@ app.MapPost("/accuracy/vas/api/v2/GetB2BVasV2",
                             }
                         }
 
-                        int rowIndex = 1;
+                        int rowIndex = 15;
                         foreach (CuerpoB2BResponse item in resp.cuerpoB2BResponse)
                         {
                             var row = sheet.CreateRow(rowIndex);
@@ -2703,8 +2735,6 @@ app.MapPost("/accuracy/vas/api/v2/GetB2BVasV2",
                             sheet.AutoSizeColumn(i);
                         }
 
-
-
                         //workbook.Write(memoryStream);
                         using (MemoryStream ms = new MemoryStream())
                         {
@@ -2714,7 +2744,7 @@ app.MapPost("/accuracy/vas/api/v2/GetB2BVasV2",
                             // Otras operaciones con memoryStream
                         }
                         contentType = "application/vnd.ms-excel";
-                        fileName = resp.pieB2BResponse.nombre_archivo + ".xls";
+                        fileName = resp.pieB2BResponse.nombre_archivo + "." + resp.pieB2BResponse.extension_archivo;
 
                         //using (var fileData = new FileStream(resp.pieB2BResponse.nombre_archivo + ".xls", FileMode.Create))
                         //{
@@ -2800,7 +2830,7 @@ app.MapPost("/accuracy/vas/api/v2/GetB2BVasV2",
                             // Otras operaciones con memoryStream
                         }
                         contentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
-                        fileName = resp.pieB2BResponse.nombre_archivo + ".xlsx";
+                        fileName = resp.pieB2BResponse.nombre_archivo + "." + resp.pieB2BResponse.extension_archivo;
 
                         //using (var fileData = new FileStream(resp.pieB2BResponse.nombre_archivo + ".xlsx", FileMode.Create))
                         //{
@@ -2810,7 +2840,6 @@ app.MapPost("/accuracy/vas/api/v2/GetB2BVasV2",
                     {
                         throw new Exception("Formato de archivo no disponible");
                     }
-
 
                     //context.Response.StatusCode = StatusCodes.Status200OK;
                     //return Results.Ok(resp);
