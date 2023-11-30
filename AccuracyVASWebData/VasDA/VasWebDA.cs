@@ -880,8 +880,8 @@ namespace AccuracyData.VasDA
                         plDetail.columna = int.Parse(sqlReader["columna"].ToString());
                         plDetail.fila = int.Parse(sqlReader["fila"].ToString()); 
                         plDetail.salto = int.Parse(sqlReader["salto"].ToString());
-                        plDetail.titulo = sqlReader["titulo"].ToString();
-                        plDetail.hoja = sqlReader["hoja"].ToString();
+                            plDetail.titulo = (sqlReader["titulo"] != DBNull.Value) ? sqlReader["titulo"].ToString() : null;
+                            plDetail.hoja = sqlReader["hoja"].ToString();
                         plDetail.color_fondo_titulo_grilla = sqlReader["color_fondo_titulo_grilla"].ToString();
                         plDetail.color_letra_titulo_grilla = sqlReader["color_letra_titulo_grilla"].ToString();
                         plDetail.nombre_archivo = sqlReader["nombre_archivo"].ToString();
@@ -908,8 +908,8 @@ namespace AccuracyData.VasDA
                             plDetail.columna = int.Parse(sqlReader["columna"].ToString());
                             plDetail.fila = int.Parse(sqlReader["fila"].ToString());
                             plDetail.salto = int.Parse(sqlReader["salto"].ToString());
-                        plDetail.titulo = sqlReader["titulo"].ToString();
-                        plDetail.hoja = sqlReader["hoja"].ToString();
+                            plDetail.titulo = (sqlReader["titulo"] != DBNull.Value) ? sqlReader["titulo"].ToString() : null;
+                            plDetail.hoja = sqlReader["hoja"].ToString();
                         plDetail.color_fondo_titulo_grilla = sqlReader["color_fondo_titulo_grilla"].ToString();
                         plDetail.color_letra_titulo_grilla = sqlReader["color_letra_titulo_grilla"].ToString();
                         plDetail.nombre_archivo = sqlReader["nombre_archivo"].ToString();
@@ -929,8 +929,8 @@ namespace AccuracyData.VasDA
                             plDetail.columna = int.Parse(sqlReader["columna"].ToString());
                             plDetail.fila = int.Parse(sqlReader["fila"].ToString());
                             plDetail.salto = int.Parse(sqlReader["salto"].ToString());
-                        plDetail.titulo = sqlReader["titulo"].ToString();
-                        plDetail.hoja = sqlReader["hoja"].ToString();
+                            plDetail.titulo = (sqlReader["titulo"] != DBNull.Value) ? sqlReader["titulo"].ToString() : null;
+                            plDetail.hoja = sqlReader["hoja"].ToString();
                         plDetail.color_fondo_titulo_grilla = sqlReader["color_fondo_titulo_grilla"].ToString();
                         plDetail.color_letra_titulo_grilla = sqlReader["color_letra_titulo_grilla"].ToString();
                         plDetail.nombre_archivo = sqlReader["nombre_archivo"].ToString();
@@ -957,8 +957,8 @@ namespace AccuracyData.VasDA
                             plDetail.columna = int.Parse(sqlReader["columna"].ToString());
                             plDetail.fila = int.Parse(sqlReader["fila"].ToString());
                             plDetail.salto = int.Parse(sqlReader["salto"].ToString());
-                        plDetail.titulo = sqlReader["titulo"].ToString();
-                        plDetail.hoja = sqlReader["hoja"].ToString();
+                        plDetail.titulo = (sqlReader["titulo"] != DBNull.Value) ? sqlReader["titulo"].ToString() : null;
+                            plDetail.hoja = sqlReader["hoja"].ToString();
                         plDetail.color_fondo_titulo_grilla = sqlReader["color_fondo_titulo_grilla"].ToString();
                         plDetail.color_letra_titulo_grilla = sqlReader["color_letra_titulo_grilla"].ToString();
                         plDetail.nombre_archivo = sqlReader["nombre_archivo"].ToString();

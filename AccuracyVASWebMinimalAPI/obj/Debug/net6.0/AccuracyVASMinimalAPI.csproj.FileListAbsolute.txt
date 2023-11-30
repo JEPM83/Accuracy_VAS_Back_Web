@@ -1,9 +1,4 @@
-D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\AccuracyVASMinimalAPI.csproj.AssemblyReference.cache
-D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\AccuracyVASMinimalAPI.GeneratedMSBuildEditorConfig.editorconfig
-D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\AccuracyVASMinimalAPI.AssemblyInfoInputs.cache
-D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\AccuracyVASMinimalAPI.AssemblyInfo.cs
-D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\AccuracyVASMinimalAPI.csproj.CoreCompileInputs.cache
-D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\AccuracyVASMinimalAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\NPOI.Core.dll
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\appsettings.Development.json
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\appsettings.json
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\AccuracyVASMinimalAPI.exe
@@ -11,31 +6,62 @@ D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\ne
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\AccuracyVASMinimalAPI.runtimeconfig.json
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\AccuracyVASMinimalAPI.dll
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\AccuracyVASMinimalAPI.pdb
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\Dapper.dll
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\Enums.NET.dll
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\MathNet.Numerics.dll
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\Microsoft.IO.RecyclableMemoryStream.dll
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\NPOI.OOXML.dll
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\NPOI.OpenXml4Net.dll
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\NPOI.OpenXmlFormats.dll
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\ICSharpCode.SharpZipLib.dll
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\SixLabors.Fonts.dll
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\SixLabors.ImageSharp.dll
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\System.Data.SqlClient.dll
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\System.Drawing.Common.dll
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\System.Security.Cryptography.Xml.dll
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\AccuracyVASBussiness.dll
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\AccuracyVASData.dll
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\AccuracyVASModel.dll
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\AccuracyVASBussiness.pdb
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\AccuracyVASModel.pdb
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\AccuracyVASData.pdb
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\AccuracyVASMinimalAPI.csproj.AssemblyReference.cache
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\AccuracyVASMinimalAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\AccuracyVASMinimalAPI.AssemblyInfoInputs.cache
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\AccuracyVASMinimalAPI.AssemblyInfo.cs
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\AccuracyVASMinimalAPI.csproj.CoreCompileInputs.cache
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\AccuracyVASMinimalAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\AccuracyVASMinimalAPI.MvcApplicationPartsAssemblyInfo.cache
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\staticwebassets\msbuild.AccuracyVASMinimalAPI.Microsoft.AspNetCore.StaticWebAssets.props
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\staticwebassets\msbuild.build.AccuracyVASMinimalAPI.props
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.AccuracyVASMinimalAPI.props
@@ -50,107 +76,3 @@ D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\ne
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\AccuracyVASMinimalAPI.pdb
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\AccuracyVASMinimalAPI.genruntimeconfig.cache
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\ref\AccuracyVASMinimalAPI.dll
-D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\AccuracyVASMinimalAPI.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\appsettings.Development.json
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\appsettings.json
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\AccuracyVASMinimalAPI.exe
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\AccuracyVASMinimalAPI.deps.json
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\AccuracyVASMinimalAPI.runtimeconfig.json
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\AccuracyVASMinimalAPI.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\AccuracyVASMinimalAPI.pdb
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\Dapper.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\Microsoft.OpenApi.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\System.Data.SqlClient.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\AccuracyVASBussiness.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\AccuracyVASData.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\AccuracyVASModel.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\AccuracyVASBussiness.pdb
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\AccuracyVASModel.pdb
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\AccuracyVASData.pdb
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\AccuracyVASMinimalAPI.csproj.AssemblyReference.cache
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\AccuracyVASMinimalAPI.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\AccuracyVASMinimalAPI.AssemblyInfoInputs.cache
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\AccuracyVASMinimalAPI.AssemblyInfo.cs
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\AccuracyVASMinimalAPI.csproj.CoreCompileInputs.cache
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\AccuracyVASMinimalAPI.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\AccuracyVASMinimalAPI.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\staticwebassets\msbuild.AccuracyVASMinimalAPI.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\staticwebassets\msbuild.build.AccuracyVASMinimalAPI.props
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.AccuracyVASMinimalAPI.props
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.AccuracyVASMinimalAPI.props
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\staticwebassets.pack.json
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\staticwebassets.build.json
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\staticwebassets.development.json
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\scopedcss\bundle\AccuracyVASMinimalAPI.styles.css
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\AccuracyVASMinimalAPI.csproj.CopyComplete
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\AccuracyVASMinimalAPI.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\refint\AccuracyVASMinimalAPI.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\AccuracyVASMinimalAPI.pdb
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\AccuracyVASMinimalAPI.genruntimeconfig.cache
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\obj\Debug\net6.0\ref\AccuracyVASMinimalAPI.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\Enums.NET.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\MathNet.Numerics.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\Microsoft.IO.RecyclableMemoryStream.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\NPOI.Core.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\NPOI.OOXML.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\NPOI.OpenXml4Net.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\NPOI.OpenXmlFormats.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\ICSharpCode.SharpZipLib.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\SixLabors.Fonts.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\SixLabors.ImageSharp.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\System.Drawing.Common.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\System.Security.Cryptography.Xml.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\System.Security.Permissions.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\System.Windows.Extensions.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
-D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\Enums.NET.dll
-D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\MathNet.Numerics.dll
-D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\Microsoft.IO.RecyclableMemoryStream.dll
-D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
-D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\NPOI.Core.dll
-D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\NPOI.OOXML.dll
-D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\NPOI.OpenXml4Net.dll
-D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\NPOI.OpenXmlFormats.dll
-D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\ICSharpCode.SharpZipLib.dll
-D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\SixLabors.Fonts.dll
-D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\SixLabors.ImageSharp.dll
-D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
-D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\System.Drawing.Common.dll
-D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
-D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
-D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\System.Security.Cryptography.Xml.dll
-D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\System.Security.Permissions.dll
-D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\System.Windows.Extensions.dll
-D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
-D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
-D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
-D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebMinimalAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll

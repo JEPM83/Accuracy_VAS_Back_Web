@@ -2661,12 +2661,21 @@ app.MapPost("/accuracy/vas/api/v1/GetB2BVasV2",
                         PropertyInfo[] propertiesC = typeof(CabeceraB2BResponse).GetProperties();
                         int filIndex = resp.pieB2BResponse.fila;
                         int columIndex = resp.pieB2BResponse.columna;
+                        //Titulo
+                        PieB2BResponse pieB2BResponse = resp.pieB2BResponse;
+                        if (pieB2BResponse.titulo != null) { 
+                            var headerRowT = sheet.CreateRow(filIndex);
+                            var cell = headerRowT.CreateCell(columIndex);
+                            cell.SetCellValue(pieB2BResponse.titulo);
+                            filIndex = filIndex + 1 + (int.Parse(resp.pieB2BResponse.salto.ToString()));
+                        }
+
                         foreach (var prop in propertiesC)
                         {
-                            var headerRowC = sheet.CreateRow(filIndex);
                             var value = prop.GetValue(resp.cabeceraB2BResponse);
                             if (value != null)
                             {
+                                var headerRowC = sheet.CreateRow(filIndex);
                                 var jsonProperty = prop.GetCustomAttribute<JsonPropertyNameAttribute>()?.Name ?? prop.Name;
                                 var cell = headerRowC.CreateCell(columIndex);
                                 cell.SetCellValue(jsonProperty);
@@ -2674,23 +2683,23 @@ app.MapPost("/accuracy/vas/api/v1/GetB2BVasV2",
                                 filIndex++;
                             }
                         }
-                        filIndex = resp.pieB2BResponse.fila;
-                        columIndex = resp.pieB2BResponse.columna + 1;
+                        filIndex = resp.pieB2BResponse.fila + (pieB2BResponse.titulo != null ? 1 + (int.Parse(resp.pieB2BResponse.salto.ToString())) : 0);
+                        columIndex++;
                         CabeceraB2BResponse itemC = resp.cabeceraB2BResponse;
-                            var rowC = sheet.CreateRow(filIndex);
-                            foreach (var prop in propertiesC)
+                        foreach (var prop in propertiesC)
+                        {
+                            var value = prop.GetValue(itemC);
+                            if (value != null)
                             {
-                                var value = prop.GetValue(itemC);
-                                if (value != null)
-                                {
-                                    var cell = rowC.CreateCell(columIndex);
-                                    cell.SetCellValue(value.ToString());
-                                    filIndex++;
-                                }
+                                var row = sheet.GetRow(filIndex);
+                                var cell = row.CreateCell(columIndex);
+                                cell.SetCellValue(value.ToString());
+                                filIndex++;
                             }
+                        }
                         /**/
 
-                        var headerRow = sheet.CreateRow(14);
+                        var headerRow = sheet.CreateRow(filIndex + (int.Parse(resp.pieB2BResponse.salto.ToString())));
                         //short heightInPoints = 16; // El alto en puntos.
                         headerRow.HeightInPoints = 16.5f;
 
@@ -2711,10 +2720,10 @@ app.MapPost("/accuracy/vas/api/v1/GetB2BVasV2",
                             }
                         }
 
-                        int rowIndex = 15;
+                        filIndex = filIndex + 1 + (int.Parse(resp.pieB2BResponse.salto.ToString()));
                         foreach (CuerpoB2BResponse item in resp.cuerpoB2BResponse)
                         {
-                            var row = sheet.CreateRow(rowIndex);
+                            var row = sheet.CreateRow(filIndex);
                             columnIndex = 0;
 
                             foreach (var prop in properties)
@@ -2727,7 +2736,7 @@ app.MapPost("/accuracy/vas/api/v1/GetB2BVasV2",
                                     columnIndex++;
                                 }
                             }
-                            rowIndex++;
+                            filIndex++;
                         }
 
                         for (int i = 0; i < columnIndex; i++)
@@ -2777,7 +2786,50 @@ app.MapPost("/accuracy/vas/api/v1/GetB2BVasV2",
                         headerStyle.SetFont(headerFont);
                         headerStyle.Alignment = HorizontalAlignment.Center;
 
-                        IRow headerRow = sheet.CreateRow(0);
+                        /*CREAR CABECERA*/
+                        PropertyInfo[] propertiesC = typeof(CabeceraB2BResponse).GetProperties();
+                        int filIndex = resp.pieB2BResponse.fila;
+                        int columIndex = resp.pieB2BResponse.columna;
+                        //Titulo
+                        PieB2BResponse pieB2BResponse = resp.pieB2BResponse;
+                        if (pieB2BResponse.titulo != null)
+                        {
+                            var headerRowT = sheet.CreateRow(filIndex);
+                            var cell = headerRowT.CreateCell(columIndex);
+                            cell.SetCellValue(pieB2BResponse.titulo);
+                            filIndex = filIndex + 1 + (int.Parse(resp.pieB2BResponse.salto.ToString()));
+                        }
+
+                        foreach (var prop in propertiesC)
+                        {
+                            var value = prop.GetValue(resp.cabeceraB2BResponse);
+                            if (value != null)
+                            {
+                                var headerRowC = sheet.CreateRow(filIndex);
+                                var jsonProperty = prop.GetCustomAttribute<JsonPropertyNameAttribute>()?.Name ?? prop.Name;
+                                var cell = headerRowC.CreateCell(columIndex);
+                                cell.SetCellValue(jsonProperty);
+                                cell.CellStyle = headerStyle;
+                                filIndex++;
+                            }
+                        }
+                        filIndex = resp.pieB2BResponse.fila + (pieB2BResponse.titulo != null ? 1 + (int.Parse(resp.pieB2BResponse.salto.ToString())) : 0);
+                        columIndex++;
+                        CabeceraB2BResponse itemC = resp.cabeceraB2BResponse;
+                        foreach (var prop in propertiesC)
+                        {
+                            var value = prop.GetValue(itemC);
+                            if (value != null)
+                            {
+                                var row = sheet.GetRow(filIndex);
+                                var cell = row.CreateCell(columIndex);
+                                cell.SetCellValue(value.ToString());
+                                filIndex++;
+                            }
+                        }
+                        /**/
+
+                        IRow headerRow = sheet.CreateRow(filIndex + (int.Parse(resp.pieB2BResponse.salto.ToString())));
                         headerRow.HeightInPoints = 16.5f; // Establece el alto de la fila para la cabecera
 
                         PropertyInfo[] properties = typeof(CuerpoB2BResponse).GetProperties();
@@ -2797,11 +2849,10 @@ app.MapPost("/accuracy/vas/api/v1/GetB2BVasV2",
                                 columnIndex++;
                             }
                         }
-
-                        int rowIndex = 1;
+                        filIndex = filIndex + 1 + (int.Parse(resp.pieB2BResponse.salto.ToString()));
                         foreach (CuerpoB2BResponse item in resp.cuerpoB2BResponse)
                         {
-                            var row = sheet.CreateRow(rowIndex);
+                            var row = sheet.CreateRow(filIndex);
                             columnIndex = 0;
 
                             foreach (var prop in properties)
@@ -2814,7 +2865,7 @@ app.MapPost("/accuracy/vas/api/v1/GetB2BVasV2",
                                     columnIndex++;
                                 }
                             }
-                            rowIndex++;
+                            filIndex++;
                         }
 
                         for (int i = 0; i < columnIndex; i++)
