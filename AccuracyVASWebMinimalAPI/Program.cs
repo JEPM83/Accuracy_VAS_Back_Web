@@ -3,12 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 using AccuracyModel.Printer;
 using AccuracyModel.General;
 using AccuracyModel.Vas;
-using Microsoft.Extensions.Configuration;
+//using Microsoft.Extensions.Configuration;
 using System.Reflection;
 using System.Text;
-using System.Xml;
+//using System.Xml;
 using AccuracyModel.Security;
-using Microsoft.Extensions.Logging;
+//using Microsoft.Extensions.Logging;
 // 
 using System.Security.Claims;
 using System.IdentityModel.Tokens.Jwt;
@@ -16,16 +16,16 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Primitives;
 using Microsoft.OpenApi.Models;
-using System.Diagnostics.Eventing.Reader;
+//using System.Diagnostics.Eventing.Reader;
 using NPOI.HSSF.UserModel;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
-using NPOI.HPSF;
-using NPOI.HSSF.Util;
+//using NPOI.HPSF;
+//using NPOI.HSSF.Util;
 using System.Text.Json.Serialization;
-using System.Drawing;
-using NPOI.OOXML.XSSF.UserModel;
 using AccuracyVASMinimalAPI.Documents;
+using NPOI.HSSF.Util;
+//using AccuracyVASMinimalAPI.Documents;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -2626,9 +2626,11 @@ app.MapPost("/accuracy/vas/api/v2/GetB2BVasV2",
                     string contentType = "";
                     string fileName = "";
 
+                    //FontFactory.RegisterDirectory("/usr/share/fonts", true);
+
                     //ICellStyle headerStyle;
-                    resp.pieB2BResponse.extension_archivo = "XLS";
-                    resp.pieB2BResponse.color_fondo_titulo_grilla = "#003366";
+                    //resp.pieB2BResponse.extension_archivo = "XLS";
+                    //resp.pieB2BResponse.color_fondo_titulo_grilla = "#003366";
 
                     // aca se crea el excel
                     if (resp.pieB2BResponse.extension_archivo == "XLS") 
@@ -2646,6 +2648,7 @@ app.MapPost("/accuracy/vas/api/v2/GetB2BVasV2",
                         ICellStyle headerStyle = workbook.CreateCellStyle();
                         headerStyle.FillForegroundColor = HSSFColor.PaleBlue.Index;
                         IFont headerFont = workbook.CreateFont();
+                        headerFont.FontName = "Arial";
                         rgb = System.Drawing.ColorTranslator.FromHtml(resp.pieB2BResponse.color_letra_titulo_grilla);
                         headerFont.Color = palette.FindSimilarColor(rgb.R, rgb.G, rgb.B).Indexed;
 
@@ -2725,6 +2728,7 @@ app.MapPost("/accuracy/vas/api/v2/GetB2BVasV2",
 
                         XSSFCellStyle headerStyle = (XSSFCellStyle)workbook.CreateCellStyle();
                         XSSFFont headerFont = (XSSFFont)workbook.CreateFont();
+                        headerFont.FontName = "Arial";
 
                         var manager = new DocumentManager();
 
@@ -2821,6 +2825,7 @@ app.MapPost("/accuracy/vas/api/v2/GetB2BVasV2",
             }
             catch (Exception ex)
             {
+                throw ex;
                 // Ocurrió un error al validar el token, devolver un error de autorización con mensaje JSON personalizado
                 var errorResponse = new
                 {

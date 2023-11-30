@@ -87,6 +87,11 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
+      },
+      "runtimes": {
+        "linux-x64": {
+          "#import": []
+        }
       }
     },
     "C:\\Users\\Anthony\\Documents\\Freelance\\WmsAccuracy\\Desarrollo\\Nueva carpeta\\Accuracy_VAS_Back_Web\\AccuracyVASWebModel\\AccuracyVASModel.csproj": {
@@ -155,6 +160,11 @@
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "linux-x64": {
+          "#import": []
         }
       }
     }
