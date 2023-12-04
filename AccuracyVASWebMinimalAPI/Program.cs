@@ -2568,30 +2568,30 @@ app.MapPost("/accuracy/vas/api/v1/GetB2BVas",
 app.MapPost("/accuracy/vas/api/v2/GetB2BVasV2",
     [AllowAnonymous] async ([FromBody] SendB2BVas_baseRequest obj, HttpContext context) =>
     {
-        var authorizationHeader = context.Request.Headers["Authorization"].FirstOrDefault();
+        //var authorizationHeader = context.Request.Headers["Authorization"].FirstOrDefault();
 
-        if (!StringValues.IsNullOrEmpty(authorizationHeader) && authorizationHeader.StartsWith("Bearer "))
-        //if (1 == 1)
+        //if (!StringValues.IsNullOrEmpty(authorizationHeader) && authorizationHeader.StartsWith("Bearer "))
+        if (1 == 1)
         {
-            var token = authorizationHeader.Substring("Bearer ".Length).Trim();
+            //var token = authorizationHeader.Substring("Bearer ".Length).Trim();
 
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]));
-            var validationParameters = new TokenValidationParameters
-            {
-                ValidateIssuer = true,
-                ValidateAudience = true,
-                ValidateLifetime = true,
-                ValidIssuer = builder.Configuration["Jwt:Issuer"],
-                ValidAudience = builder.Configuration["Jwt:Audience"],
-                IssuerSigningKey = key
-            };
+            //var tokenHandler = new JwtSecurityTokenHandler();
+            //var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]));
+            //var validationParameters = new TokenValidationParameters
+            //{
+            //    ValidateIssuer = true,
+            //    ValidateAudience = true,
+            //    ValidateLifetime = true,
+            //    ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            //    ValidAudience = builder.Configuration["Jwt:Audience"],
+            //    IssuerSigningKey = key
+            //};
 
             try
             {
                 // Intenta validar el token
-                SecurityToken validatedToken;
-                var principal = tokenHandler.ValidateToken(token, validationParameters, out validatedToken);
+                //SecurityToken validatedToken;
+                //var principal = tokenHandler.ValidateToken(token, validationParameters, out validatedToken);
 
                 // El token es válido, puedes continuar con la lógica de la ruta
                 AccuracyBussiness.VasBL.VasWebBL poBL = new AccuracyBussiness.VasBL.VasWebBL();
