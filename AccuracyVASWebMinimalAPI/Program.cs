@@ -2565,13 +2565,18 @@ app.MapPost("/accuracy/vas/api/v1/GetB2BVas",
     .WithName("GetB2BVas")
     .WithTags("Vas");
 //
-app.MapPost("/accuracy/vas/api/v2/GetB2BVasV2",
+app.MapPost("/accuracy/vas/api/v1/GetB2BVasV2",
     [AllowAnonymous] async ([FromBody] SendB2BVas_baseRequest obj, HttpContext context) =>
     {
         //var authorizationHeader = context.Request.Headers["Authorization"].FirstOrDefault();
 
+<<<<<<< HEAD
         //if (!StringValues.IsNullOrEmpty(authorizationHeader) && authorizationHeader.StartsWith("Bearer "))
         if (1 == 1)
+=======
+        //if (1 == 1)
+        if (!StringValues.IsNullOrEmpty(authorizationHeader) && authorizationHeader.StartsWith("Bearer "))
+>>>>>>> 02f46fc32e974c925f17d50c7b86c8e45e8e5c05
         {
             //var token = authorizationHeader.Substring("Bearer ".Length).Trim();
 
@@ -2894,11 +2899,15 @@ app.MapPost("/accuracy/vas/api/v2/GetB2BVasV2",
 
                     //context.Response.StatusCode = StatusCodes.Status200OK;
                     //return Results.Ok(resp);
-                    
+
                     //var streamResult = new FileStreamResult(memoryStream, context.Response.ContentType)
                     //{
                     //    FileDownloadName = resp.pieB2BResponse.nombre_archivo + (resp.pieB2BResponse.extension_archivo == "XLS" ? ".xls" : ".xlsx")
                     //};
+
+
+                    // Esta línea asegura que la cabecera Content-Disposition sea establecida con el nombre de archivo.
+                    context.Response.Headers["Content-Disposition"] = $"attachment; filename=\"{fileName}\"";
 
                     return Results.File(bytes, contentType, fileName);
                 }

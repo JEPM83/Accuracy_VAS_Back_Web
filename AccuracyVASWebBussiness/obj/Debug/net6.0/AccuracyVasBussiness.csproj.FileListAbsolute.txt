@@ -1,20 +1,3 @@
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\bin\Debug\net6.0\AccuracyVASBussiness.deps.json
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\bin\Debug\net6.0\AccuracyVASBussiness.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\bin\Debug\net6.0\AccuracyVASBussiness.pdb
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\bin\Debug\net6.0\AccuracyVASData.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\bin\Debug\net6.0\AccuracyVASModel.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\bin\Debug\net6.0\AccuracyVASData.pdb
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\bin\Debug\net6.0\AccuracyVASModel.pdb
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\obj\Debug\net6.0\AccuracyVASBussiness.csproj.AssemblyReference.cache
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\obj\Debug\net6.0\AccuracyVASBussiness.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\obj\Debug\net6.0\AccuracyVASBussiness.AssemblyInfoInputs.cache
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\obj\Debug\net6.0\AccuracyVASBussiness.AssemblyInfo.cs
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\obj\Debug\net6.0\AccuracyVASBussiness.csproj.CoreCompileInputs.cache
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\obj\Debug\net6.0\AccuracyVASBussiness.csproj.CopyComplete
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\obj\Debug\net6.0\AccuracyVASBussiness.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\obj\Debug\net6.0\refint\AccuracyVASBussiness.dll
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\obj\Debug\net6.0\AccuracyVASBussiness.pdb
-C:\Users\Anthony\Documents\Freelance\WmsAccuracy\Desarrollo\Nueva carpeta\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\obj\Debug\net6.0\ref\AccuracyVASBussiness.dll
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\bin\Debug\net6.0\AccuracyVASBussiness.deps.json
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\bin\Debug\net6.0\AccuracyVASBussiness.dll
 D:\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebBussiness\bin\Debug\net6.0\AccuracyVASBussiness.pdb
