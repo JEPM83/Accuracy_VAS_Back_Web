@@ -113,57 +113,70 @@ app.MapPost("/accuracy/vas/api/v1/LoginWeb", [AllowAnonymous] async ([FromBody] 
     AccuracyBussiness.SecurityBL.SecurityWebBL poBL = new AccuracyBussiness.SecurityBL.SecurityWebBL();
     string HostGroupId = DateTime.Now.ToString("yyyyMMddHHmmssfff");
     List<UserResponse> resp = poBL.Login(obj, HostGroupId, connString);
-    if (resp[0].status == "1")
-    //if (resp[0].mensaje == "EL USUARIO YA TIENE UNA SESIÓN ACTIVA EN OTRO DISPOSITIVO" || resp[0].mensaje == "LAS CREDENCIALES ESTAN INCORRECTAS" || resp[0].mensaje == "NO EXISTE EL USUARIO EN LA BASE DE DATOS, VERIFIQUE.")
+    //0=succes, 1=Error,2=Info,3=Warning
+    if (resp[0].status == "0")
+    {
+        var claims = new List<Claim>();
+        foreach (var userResponse in resp)
+        {
+            claims.Add(new Claim("usuario", userResponse.usuario));
+            claims.Add(new Claim("nombres", userResponse.nombres ?? ""));
+            claims.Add(new Claim("apellidos", userResponse.apellidos ?? ""));
+            claims.Add(new Claim("guid_sesion", userResponse.guid_sesion));
+            claims.Add(new Claim("linea_produccion", userResponse.linea_produccion));
+            claims.Add(new Claim("almacen", "01"));
+            claims.Add(new Claim("tipo", userResponse.tipo.ToString()));
+        }
+        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:key"]));
+        // Crear el token JWT
+        var token = new JwtSecurityToken(
+            issuer: builder.Configuration["Jwt:Issuer"],
+            audience: builder.Configuration["Jwt:Audience"],
+            claims: claims,
+            expires: DateTime.UtcNow.AddHours(12),
+            signingCredentials: new SigningCredentials(key, SecurityAlgorithms.HmacSha256)
+        );
+        var jwtToken = new JwtSecurityTokenHandler().WriteToken(token);
+        var tokenResponse = new
+        {
+            Token = jwtToken,
+            usuario = resp[0].usuario,
+            nombres = resp[0].nombres,
+            apellidos = resp[0].apellidos,
+            estado_sesion = resp[0].estado_sesion,
+            guid_sesion = resp[0].guid_sesion,
+            status = resp[0].status,
+            mensaje = resp[0].mensaje,
+            ruta = resp[0].ruta,
+            tipo = resp[0].tipo
+        };
+        response.Headers.Add("Access-Control-Allow-Origin", "*");
+        response.StatusCode = StatusCodes.Status200OK;
+        return Results.Ok(tokenResponse);
+    }
+    else
     {
         var modalResponse = new
         {
-            title = "Warning",
+            title = resp[0].tittle,
             message = resp[0].mensaje,
-            type = 3//resp[0].mensaje == "EL USUARIO YA TIENE UNA SESIÓN ACTIVA EN OTRO DISPOSITIVO" ? 1 : resp[0].mensaje == "LAS CREDENCIALES ESTAN INCORRECTAS" ? 2 : 3
+            type = resp[0].status,
+            estado_sesion = resp[0].estado_sesion
         };
-
         response.Headers.Add("Access-Control-Allow-Origin", "*");
-        response.StatusCode = StatusCodes.Status400BadRequest;
+        if (resp[0].status == "1") {
+            response.StatusCode = StatusCodes.Status401Unauthorized;
+        }
+        else if (resp[0].status == "2")
+        {
+            response.StatusCode = StatusCodes.Status200OK;
+        }
+        else if (resp[0].status == "3")
+        {
+            response.StatusCode = StatusCodes.Status406NotAcceptable;
+        }
         return Results.Json(modalResponse);
     }
-
-    var claims = new List<Claim>(); 
-    foreach (var userResponse in resp)
-    {
-        claims.Add(new Claim("usuario", userResponse.usuario));
-        claims.Add(new Claim("nombres", userResponse.nombres ?? ""));
-        claims.Add(new Claim("apellidos", userResponse.apellidos ?? ""));
-        claims.Add(new Claim("guid_sesion", userResponse.guid_sesion));
-        claims.Add(new Claim("linea_produccion", userResponse.linea_produccion));
-        claims.Add(new Claim("almacen", "01"));
-        claims.Add(new Claim("tipo", userResponse.tipo.ToString()));
-    } 
-    var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:key"])); 
-    // Crear el token JWT
-    var token = new JwtSecurityToken(
-        issuer: builder.Configuration["Jwt:Issuer"],
-        audience: builder.Configuration["Jwt:Audience"],
-        claims: claims,
-        expires: DateTime.UtcNow.AddHours(12),
-        signingCredentials: new SigningCredentials(key, SecurityAlgorithms.HmacSha256)
-    );
-    var jwtToken = new JwtSecurityTokenHandler().WriteToken(token);
-    var tokenResponse = new
-    {
-        Token = jwtToken,
-        usuario = resp[0].usuario,
-        nombres = resp[0].nombres,
-        apellidos = resp[0].apellidos,
-        estado_sesion = resp[0].estado_sesion,
-        guid_sesion = resp[0].guid_sesion,
-        status = resp[0].status,
-        mensaje = resp[0].mensaje,
-        ruta = resp[0].ruta,
-        tipo = resp[0].tipo
-    }; 
-    response.Headers.Add("Access-Control-Allow-Origin", "*");
-    return Results.Ok(tokenResponse);
 })
 .Accepts<UserRequest>("application/json")
 .Produces(StatusCodes.Status200OK)

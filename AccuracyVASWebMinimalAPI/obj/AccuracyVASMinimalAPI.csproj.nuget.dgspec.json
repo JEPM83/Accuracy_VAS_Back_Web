@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebMinimalAPI\\AccuracyVASMinimalAPI.csproj": {}
+    "C:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebMinimalAPI\\AccuracyVASMinimalAPI.csproj": {}
   },
   "projects": {
-    "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebBussiness\\AccuracyVASBussiness.csproj": {
+    "C:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebBussiness\\AccuracyVASBussiness.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebBussiness\\AccuracyVASBussiness.csproj",
+        "projectUniqueName": "C:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebBussiness\\AccuracyVASBussiness.csproj",
         "projectName": "AccuracyVASBussiness",
-        "projectPath": "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebBussiness\\AccuracyVASBussiness.csproj",
-        "packagesPath": "C:\\Users\\Eduardo\\.nuget\\packages\\",
-        "outputPath": "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebBussiness\\obj\\",
+        "projectPath": "C:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebBussiness\\AccuracyVASBussiness.csproj",
+        "packagesPath": "C:\\Users\\axl18\\.nuget\\packages\\",
+        "outputPath": "C:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebBussiness\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Eduardo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\axl18\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -32,11 +28,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebData\\AccuracyVASData.csproj": {
-                "projectPath": "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebData\\AccuracyVASData.csproj"
+              "C:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebData\\AccuracyVASData.csproj": {
+                "projectPath": "C:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebData\\AccuracyVASData.csproj"
               },
-              "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebModel\\AccuracyVASModel.csproj": {
-                "projectPath": "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebModel\\AccuracyVASModel.csproj"
+              "C:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebModel\\AccuracyVASModel.csproj": {
+                "projectPath": "C:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebModel\\AccuracyVASModel.csproj"
               }
             }
           }
@@ -76,25 +72,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebData\\AccuracyVASData.csproj": {
+    "C:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebData\\AccuracyVASData.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebData\\AccuracyVASData.csproj",
+        "projectUniqueName": "C:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebData\\AccuracyVASData.csproj",
         "projectName": "AccuracyVASData",
-        "projectPath": "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebData\\AccuracyVASData.csproj",
-        "packagesPath": "C:\\Users\\Eduardo\\.nuget\\packages\\",
-        "outputPath": "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebData\\obj\\",
+        "projectPath": "C:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebData\\AccuracyVASData.csproj",
+        "packagesPath": "C:\\Users\\axl18\\.nuget\\packages\\",
+        "outputPath": "C:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebData\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Eduardo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\axl18\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -108,8 +100,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebModel\\AccuracyVASModel.csproj": {
-                "projectPath": "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebModel\\AccuracyVASModel.csproj"
+              "C:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebModel\\AccuracyVASModel.csproj": {
+                "projectPath": "C:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebModel\\AccuracyVASModel.csproj"
               }
             }
           }
@@ -161,25 +153,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebMinimalAPI\\AccuracyVASMinimalAPI.csproj": {
+    "C:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebMinimalAPI\\AccuracyVASMinimalAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebMinimalAPI\\AccuracyVASMinimalAPI.csproj",
+        "projectUniqueName": "C:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebMinimalAPI\\AccuracyVASMinimalAPI.csproj",
         "projectName": "AccuracyVASMinimalAPI",
-        "projectPath": "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebMinimalAPI\\AccuracyVASMinimalAPI.csproj",
-        "packagesPath": "C:\\Users\\Eduardo\\.nuget\\packages\\",
-        "outputPath": "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebMinimalAPI\\obj\\",
+        "projectPath": "C:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebMinimalAPI\\AccuracyVASMinimalAPI.csproj",
+        "packagesPath": "C:\\Users\\axl18\\.nuget\\packages\\",
+        "outputPath": "C:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebMinimalAPI\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Eduardo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\axl18\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -193,11 +181,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebBussiness\\AccuracyVASBussiness.csproj": {
-                "projectPath": "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebBussiness\\AccuracyVASBussiness.csproj"
+              "C:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebBussiness\\AccuracyVASBussiness.csproj": {
+                "projectPath": "C:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebBussiness\\AccuracyVASBussiness.csproj"
               },
-              "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebModel\\AccuracyVASModel.csproj": {
-                "projectPath": "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebModel\\AccuracyVASModel.csproj"
+              "C:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebModel\\AccuracyVASModel.csproj": {
+                "projectPath": "C:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebModel\\AccuracyVASModel.csproj"
               }
             }
           }
@@ -256,25 +244,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebModel\\AccuracyVASModel.csproj": {
+    "C:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebModel\\AccuracyVASModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebModel\\AccuracyVASModel.csproj",
+        "projectUniqueName": "C:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebModel\\AccuracyVASModel.csproj",
         "projectName": "AccuracyVASModel",
-        "projectPath": "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebModel\\AccuracyVASModel.csproj",
-        "packagesPath": "C:\\Users\\Eduardo\\.nuget\\packages\\",
-        "outputPath": "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebModel\\obj\\",
+        "projectPath": "C:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebModel\\AccuracyVASModel.csproj",
+        "packagesPath": "C:\\Users\\axl18\\.nuget\\packages\\",
+        "outputPath": "C:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebModel\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Eduardo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\axl18\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -325,7 +309,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

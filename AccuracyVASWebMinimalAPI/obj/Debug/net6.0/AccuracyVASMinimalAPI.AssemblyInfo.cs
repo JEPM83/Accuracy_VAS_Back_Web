@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AccuracyVASMinimalAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+353fa85272732ef9889adb8714a49fab0fca080d")]
 [assembly: System.Reflection.AssemblyProductAttribute("AccuracyVASMinimalAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AccuracyVASMinimalAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

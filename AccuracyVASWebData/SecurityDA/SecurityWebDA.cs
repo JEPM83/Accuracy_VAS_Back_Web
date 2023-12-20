@@ -32,9 +32,27 @@ namespace AccuracyData.SecurityDA
                     {
                         var plDetail = new UserResponse();
                         plDetail.usuario = sqlReader["usuario"].ToString();
-                        plDetail.estado_sesion = sqlReader["estado_sesion"].ToString();
                         plDetail.guid_sesion = sqlReader["guid_sesion"].ToString();
                         plDetail.status = sqlReader["status"].ToString();
+                        if (sqlReader["status"].ToString() == "0") {
+                            plDetail.estado_sesion = sqlReader["estado_sesion"].ToString();
+                            plDetail.tittle = "Succes";
+                        }
+                        else if (sqlReader["status"].ToString() == "1")
+                        {
+                            plDetail.estado_sesion = "0";
+                            plDetail.tittle = "Error";
+                        }
+                        else if (sqlReader["status"].ToString() == "2")
+                        {
+                            plDetail.estado_sesion = sqlReader["estado_sesion"].ToString();
+                            plDetail.tittle = "Info";
+                        }
+                        else if (sqlReader["status"].ToString() == "3")
+                        {
+                            plDetail.estado_sesion = "0";
+                            plDetail.tittle = "Warning";
+                        }
                         plDetail.mensaje = sqlReader["mensaje"].ToString();
                         plDetail.linea_produccion = sqlReader["linea_produccion"].ToString();
                         plDetail.ruta = sqlReader["ruta"].ToString();

@@ -1060,24 +1060,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Eduardo\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\axl18\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebData\\AccuracyVASData.csproj",
+      "projectUniqueName": "C:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebData\\AccuracyVASData.csproj",
       "projectName": "AccuracyVASData",
-      "projectPath": "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebData\\AccuracyVASData.csproj",
-      "packagesPath": "C:\\Users\\Eduardo\\.nuget\\packages\\",
-      "outputPath": "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebData\\obj\\",
+      "projectPath": "C:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebData\\AccuracyVASData.csproj",
+      "packagesPath": "C:\\Users\\axl18\\.nuget\\packages\\",
+      "outputPath": "C:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebData\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Eduardo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\axl18\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1091,8 +1086,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebModel\\AccuracyVASModel.csproj": {
-              "projectPath": "D:\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebModel\\AccuracyVASModel.csproj"
+            "C:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebModel\\AccuracyVASModel.csproj": {
+              "projectPath": "C:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebModel\\AccuracyVASModel.csproj"
             }
           }
         }
@@ -1144,8 +1139,20 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"System.Data.SqlClient\" 4.8.3 tiene una vulnerabilidad de gravedad moderada conocida, https://github.com/advisories/GHSA-8g2p-5pqh-5jmc",
+      "libraryId": "System.Data.SqlClient",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }
