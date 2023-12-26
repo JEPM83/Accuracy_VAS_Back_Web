@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AccuracyVASBussiness")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+353fa85272732ef9889adb8714a49fab0fca080d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3615835f09f51c0e569aaeb6cd2a269d41044e30")]
 [assembly: System.Reflection.AssemblyProductAttribute("AccuracyVASBussiness")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AccuracyVASBussiness")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EeWoGNiUAq4Zkc0dU82tN+hE4ARpvq4MQXRII7dpVRD4FPfSdEA3d5k7++tpyfWlgssT0w2b4KPLBnMPMJdg+w==",
+  "dgSpecHash": "thMhcvFl1WFnIo+amjjSUnHvIBf32VphEWPy16AL3DF3zixOsGWuiMugQax1iDWEQ7h3fYq+NPhSgMb6NzjQYA==",
   "success": true,
-  "projectFilePath": "C:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebBussiness\\AccuracyVASBussiness.csproj",
+  "projectFilePath": "D:\\Trabajo\\Proyectos\\Itsanet\\Accuracy_VAS_Back_Web\\AccuracyVASWebBussiness\\AccuracyVASBussiness.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\axl18\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.0\\microsoft.aspnetcore.authentication.jwtbearer.6.0.0.nupkg.sha512",
     "C:\\Users\\axl18\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

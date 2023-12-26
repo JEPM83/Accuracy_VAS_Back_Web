@@ -402,5 +402,12 @@ namespace AccuracyBussiness.VasBL
             resp = poObjects.GET_LPN_CORRELATIVE_DESTINITY(model, cnx);
             return resp;
         }
+        public List<B2BAdvanceResponse> GET_B2B_ADVANCE(B2BAdvanceRequest model, string cnx)
+        {
+            VasWebDA poObjects = new VasWebDA();
+            List<B2BAdvanceResponse> resp = new List<B2BAdvanceResponse>();
+            resp = poObjects.GET_B2B_ADVANCE(model, cnx);
+            return resp;
+        }
     }
 }

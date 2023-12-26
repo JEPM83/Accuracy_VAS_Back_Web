@@ -401,4 +401,18 @@ namespace AccuracyModel.Vas
         public string prefijo { get; set; }
         public string correlativo { get; set; }
     }
+    public class B2BAdvanceRequest {
+        public string id_almacen { get; set; }
+        public string id_cliente { get; set; }
+        public string id_destino { get; set; }
+        public string numero_pedido { get; set; }
+    }
+    public class B2BAdvanceResponse
+    {
+        public string numero_pedido { get; set; }
+        public string destino_des { get; set; }
+        public string numero_item { get; set; }
+        public string talla { get; set; }
+        public float cantidad { get; set; }
+    }
 }

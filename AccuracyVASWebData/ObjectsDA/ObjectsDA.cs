@@ -52,6 +52,7 @@ namespace AccuracyData.ObjectosDA
         public static string VAS_GET_LIST_DESTINITY = "SP_VAS_WEB_GET_LIST_DESTINY";
         public static string VAS_POST_PRINTER_LPN_VAS = "SP_VAS_WEB_POST_PRINTER_LPN_VAS";
         public static string VAS_GET_LPN_CORRELATIVE_DESTINITY = "SP_VAS_WEB_GET_LPN_CORRELATIVE_DESTINITY";
+        public static string VAS_GET_B2B_ADVANCE = "SP_VAS_WEB_GET_B2B_ADVANCE";
         #endregion
     }
 }

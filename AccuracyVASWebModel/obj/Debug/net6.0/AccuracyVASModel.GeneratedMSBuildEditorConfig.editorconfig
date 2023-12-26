@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AccuracyVASModel
-build_property.ProjectDir = C:\Trabajo\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebModel\
+build_property.ProjectDir = D:\Trabajo\Proyectos\Itsanet\Accuracy_VAS_Back_Web\AccuracyVASWebModel\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

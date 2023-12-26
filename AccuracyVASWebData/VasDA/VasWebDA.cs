@@ -1176,6 +1176,46 @@ namespace AccuracyData.VasDA
                 plListDetail = null;
             }
         }
+        public List<B2BAdvanceResponse> GET_B2B_ADVANCE(B2BAdvanceRequest model, string cnx)
+        {
+            var plListDetail = new List<B2BAdvanceResponse>();
+            try
+            {
+
+                using (SqlConnection conn = new SqlConnection(cnx))
+                using (SqlCommand cmd = new SqlCommand(ObjectsDA.VAS_GET_B2B_ADVANCE, conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@id_almacen", SqlDbType.NVarChar).Value = model.id_almacen;
+                    cmd.Parameters.Add("@id_cliente", SqlDbType.NVarChar).Value = model.id_cliente;
+                    cmd.Parameters.Add("@id_destino", SqlDbType.NVarChar).Value = model.id_destino;
+                    cmd.Parameters.Add("@numero_pedido", SqlDbType.NVarChar).Value = model.numero_pedido;
+                    conn.Open();
+                    SqlDataReader sqlReader = cmd.ExecuteReader();
+                    while (sqlReader.Read())
+                    {
+                        var plDetail = new B2BAdvanceResponse();
+                        plDetail.numero_pedido = sqlReader["numero_pedido"].ToString();
+                        plDetail.destino_des = sqlReader["destino_des"].ToString();
+                        plDetail.numero_item = sqlReader["numero_item"].ToString();
+                        plDetail.talla = sqlReader["talla"].ToString();
+                        plDetail.cantidad = float.Parse(sqlReader["cantidad"].ToString());
+                        plListDetail.Add(plDetail);
+                        plDetail = null;
+                    }
+                    conn.Close();
+                    return plListDetail;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            finally
+            {
+                plListDetail = null;
+            }
+        }
     }
 }
 
